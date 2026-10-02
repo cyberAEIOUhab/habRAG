@@ -1,0 +1,912 @@
+[
+  {
+    "filename": "一战奥官（英译）.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\一战奥官（英译）.pdf",
+    "extension": ".pdf",
+    "page_count": 1087,
+    "is_scanned": "likely",
+    "has_bookmarks": true,
+    "bookmark_titles": [
+      {
+        "level": 1,
+        "title": "Table of Contents",
+        "page": 6
+      },
+      {
+        "level": 1,
+        "title": "Introduction",
+        "page": 13
+      },
+      {
+        "level": 1,
+        "title": "Chapter I – Arming for the Great Trial of Arms",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "A. Preparations in Peacetime",
+        "page": 22
+      },
+      {
+        "level": 1,
+        "title": "B. Mobilization and the March to the Front – 1914",
+        "page": 35
+      },
+      {
+        "level": 1,
+        "title": "C. The Armed Forces in 1914",
+        "page": 45
+      },
+      {
+        "level": 1,
+        "title": "D. Initial Deployment in the Field",
+        "page": 102
+      },
+      {
+        "level": 1,
+        "title": "Chapter II – The August Campaign against Serbia and Montenegro",
+        "page": 137
+      },
+      {
+        "level": 1,
+        "title": "A. Events Leading Up to the Austrian Offensive",
+        "page": 138
+      },
+      {
+        "level": 1,
+        "title": "B. Actions through 20 August",
+        "page": 161
+      },
+      {
+        "level": 1,
+        "title": "C. The Austrian Offensive Ebbs",
+        "page": 187
+      },
+      {
+        "level": 1,
+        "title": "D. Results and Evaluations of the First Balkan Campaign",
+        "page": 200
+      },
+      {
+        "level": 1,
+        "title": "Chapter III – The Campaign against Russia in Summer 1914",
+        "page": 207
+      },
+      {
+        "level": 1,
+        "title": "A. Deployment and Border Actions",
+        "page": 208
+      },
+      {
+        "level": 1,
+        "title": "B. The Northern Attack of the Austro-Hungarians",
+        "page": 235
+      },
+      {
+        "level": 1,
+        "title": "C. The Austrian Offensive at High Tide",
+        "page": 281
+      },
+      {
+        "level": 1,
+        "title": "D. The Austrians Shift their Attention to the Lemberg Area (first week of September)",
+        "page": 317
+      },
+      {
+        "level": 1,
+        "title": "E. The Battle of Rawa Russka-Lemberg (6-11 September)",
+        "page": 329
+      },
+      {
+        "level": 1,
+        "title": "F. The Campaign is Decided (10-11 September)",
+        "page": 358
+      },
+      {
+        "level": 1,
+        "title": "G. An Analysis of Austria-Hungary’s First Campaign Against Russia",
+        "page": 380
+      },
+      {
+        "level": 1,
+        "title": "Chapter IV – The Campaign Against Russia in Fall 1914",
+        "page": 396
+      },
+      {
+        "level": 1,
+        "title": "A. Campaign Plans of Both Sides",
+        "page": 397
+      },
+      {
+        "level": 1,
+        "title": "B. The Allied Advance to the San and Vistula",
+        "page": 414
+      },
+      {
+        "level": 1,
+        "title": "C. The First Siege of Przemysl, and the Relief of the Fortress",
+        "page": 437
+      },
+      {
+        "level": 1,
+        "title": "D. The Battle of Przemysl-Chyrow, First Phase (10-23 October)",
+        "page": 457
+      },
+      {
+        "level": 1,
+        "title": "E. The Battle of Ivangorod (22-26 October)",
+        "page": 509
+      },
+      {
+        "level": 1,
+        "title": "F. The Battle of Przemysl-Chyrow, Second Phase (23 October-2 November)",
+        "page": 530
+      },
+      {
+        "level": 1,
+        "title": "G. The Major Regrouping by the Allies",
+        "page": 549
+      },
+      {
+        "level": 1,
+        "title": "H. The Battles of Cracow and Czenstochau",
+        "page": 582
+      },
+      {
+        "level": 1,
+        "title": "I. The First Major Actions in the Carpathians",
+        "page": 631
+      },
+      {
+        "level": 1,
+        "title": "Chapter V – The Campaign against Serbia and Montenegro in Fall 1914",
+        "page": 668
+      },
+      {
+        "level": 1,
+        "title": "A. The Battle of the Drina (6 September-4 October)",
+        "page": 669
+      },
+      {
+        "level": 1,
+        "title": "B. A Pause in Operations, 11-17 October",
+        "page": 717
+      },
+      {
+        "level": 1,
+        "title": "C. The Battle of the Romanja Planina, 18-30 October",
+        "page": 721
+      },
+      {
+        "level": 1,
+        "title": "D. The Offensive to Valjevo, 24 October-15 November",
+        "page": 729
+      },
+      {
+        "level": 1,
+        "title": "E. The Battle on the Kolubara and the Ljig, 16-28 November",
+        "page": 754
+      },
+      {
+        "level": 1,
+        "title": "F. The Setback, 29 November-15 December",
+        "page": 785
+      },
+      {
+        "level": 1,
+        "title": "G. Summary and Results of the Campaign",
+        "page": 831
+      },
+      {
+        "level": 1,
+        "title": "Chapter VI – The Limanowa-Lapanow Campaign",
+        "page": 846
+      },
+      {
+        "level": 1,
+        "title": "A. Events North of the Vistula",
+        "page": 848
+      },
+      {
+        "level": 1,
+        "title": "B. The Battle of Limanowa-Lapanow",
+        "page": 858
+      },
+      {
+        "level": 1,
+        "title": "C. Retrospective: Damming the Russian Flood",
+        "page": 898
+      },
+      {
+        "level": 1,
+        "title": "Appendix – Chronology of 1914 Campaigns",
+        "page": 904
+      },
+      {
+        "level": 1,
+        "title": "Leaflets",
+        "page": 911
+      },
+      {
+        "level": 1,
+        "title": "Sketches",
+        "page": 972
+      },
+      {
+        "level": 1,
+        "title": "About the Translator",
+        "page": 1029
+      },
+      {
+        "level": 1,
+        "title": "Endnotes",
+        "page": 1030
+      }
+    ],
+    "first_pages_text": "--- PAGE 1 ---\n\n--- PAGE 2 ---\nAustria-Hungary’s Last War, 1914-1918\nVol 1 (1914)\nOutbreak of War to the Outcome of the Battle of\nLimanowa-Lapanow\nCompiled by\nThe Austrian Federal Ministry of the Army and War\nArchive\nUnder the Direction of\nEdmund Glaise-Horstenau\nEdited by\nEduard Czegka, Maximilian Hoen, Rudolf Kiszling,\nViktor Meduna-Riedburg, Eduard Steinitz, and Ernst\nWisshaupt\nTranslated by Stan Hanna\nIntroduction by\nSir Hew Strachan\n\n--- PAGE 3 ---\nLegacy Books Press\n",
+    "file_size_mb": 18.41
+  },
+  {
+    "filename": "作为财政军事国家的哈布斯堡王朝：1648-1815的概况与前景.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\作为财政军事国家的哈布斯堡王朝：1648-1815的概况与前景.pdf",
+    "extension": ".pdf",
+    "page_count": 338,
+    "is_scanned": false,
+    "has_bookmarks": true,
+    "bookmark_titles": [
+      {
+        "level": 1,
+        "title": "1.1Copyright Page",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "1.2Dedication",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "1.3List of Illustrations",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "1.4List of Tables",
+        "page": 5
+      },
+      {
+        "level": 1,
+        "title": "1.5Notes on Contributors",
+        "page": 7
+      },
+      {
+        "level": 1,
+        "title": "1.6Note on Place Names",
+        "page": 11
+      },
+      {
+        "level": 1,
+        "title": "1.7Glossary of Place-Name Variants",
+        "page": 12
+      },
+      {
+        "level": 1,
+        "title": "1.8Acknowledgements",
+        "page": 16
+      },
+      {
+        "level": 1,
+        "title": "1.9Abbreviations",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "2.1The Austrian Fiscal-Military State in International",
+        "page": 21
+      },
+      {
+        "level": 1,
+        "title": "2.2The Fiscal-Military Constitution of Bourbon France in",
+        "page": 41
+      },
+      {
+        "level": 1,
+        "title": "2.3The European Fiscal-Military System and the Habsburg",
+        "page": 61
+      },
+      {
+        "level": 1,
+        "title": "2.4Hungarian Border Defence and the Habsburg Financial",
+        "page": 77
+      },
+      {
+        "level": 1,
+        "title": "2.5The General War Commissariat：A Neglected Pivot of the",
+        "page": 95
+      },
+      {
+        "level": 1,
+        "title": "2.6Magnates and Military Contracting in Hungary after 1648",
+        "page": 113
+      },
+      {
+        "level": 1,
+        "title": "2.7Fiscal-Military Exigency and Authority in 17th-Century",
+        "page": 127
+      },
+      {
+        "level": 1,
+        "title": "2.8Negotiating Fiscal-Military Coordination： Provincial Tax",
+        "page": 143
+      },
+      {
+        "level": 1,
+        "title": "2.9The Holy Roman Empire and the Habsburg Fiscal-Military",
+        "page": 166
+      },
+      {
+        "level": 1,
+        "title": "2.10Noble Enterprisers：Regimental Proprietorship in the",
+        "page": 181
+      },
+      {
+        "level": 1,
+        "title": "2.11Habsburg War Finance and Noble Credit-Brokerage in the",
+        "page": 196
+      },
+      {
+        "level": 1,
+        "title": "2.12The Rise of a Sustainable Public Debt in the 18th-Century",
+        "page": 210
+      },
+      {
+        "level": 1,
+        "title": "2.13Conscription in the Habsburg Monarchy 1740– 1792",
+        "page": 238
+      },
+      {
+        "level": 1,
+        "title": "2.14Free Money for War Wartime Subsidies and the 18thCentury Habsburg Monarchy",
+        "page": 257
+      },
+      {
+        "level": 1,
+        "title": "2.15The ‘Business of War’ in Hungary：Saltpetre Contracting",
+        "page": 270
+      },
+      {
+        "level": 1,
+        "title": "2.Introduction",
+        "page": 286
+      },
+      {
+        "level": 1,
+        "title": "3.Index",
+        "page": 310
+      }
+    ],
+    "first_pages_text": "--- PAGE 1 ---\nThe Habsburg Monarchy as a Fiscal-Military State: Contours and Perspectives 1648-1815\nWilliam D. Godsey (ed.), Petr Maťa (ed.)\nhttps://doi.org/10.5871/bacad/9780197267349.001.0001\nPublished: 2022 \nOnline ISBN: 9780191976742 \nPrint ISBN: 9780197267349\nSearch in this book\nFRONT MATTER\nhttps://doi.org/10.5871/bacad/9780197267349.002.0004\n Page iv\nPublished: March 2022\nSubject:  Early Modern History (1500 to 1700), European History\nCopyright Page \nOxford University Press, Great Clarendon Street, Oxford OX2 6DP\np. iv\n© The British Academy 2022\nDatabase right The British Academy (maker)\nFirst edition published in 2022\nAll rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in\nany form or by any means, without the prior permission in writing of the British Academy, or as expressly\npermitted by law, by licence or under terms agreed with the appropriate reprographics rights organisation.\nEnquiries concerning reproduction outside the scope of the above should be sent to the Publications Department,\nThe British Academy, 10–11 Carlton House Terrace, London SW1Y5AH\nYou must not circulate this book in any other form and you must impose this same condition on any acquirer\nBritish Library Cataloguing in Publication Data\nData available\nLibrary of Congress Cataloging in Publication Data\nData available\nTypeset by Newgen Publishing UK\nPrinted in Great Britain by TJ Books Ltd, Padstow, Cornwall\nISBN 978-0-19-726734-9\nDownlo",
+    "file_size_mb": 5.59
+  },
+  {
+    "filename": "国际条约集 （1648-1871）.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\国际条约集 （1648-1871）.pdf",
+    "extension": ".pdf",
+    "page_count": 481,
+    "is_scanned": "likely",
+    "has_bookmarks": false,
+    "bookmark_titles": [],
+    "first_pages_text": "--- PAGE 1 ---\nPDF 文件使用 \"pdfFactory Pro\" 试用版本创建  www.fineprint.com.cn\n\n--- PAGE 2 ---\nPDF 文件使用 \"pdfFactory Pro\" 试用版本创建  www.fineprint.com.cn\n\n--- PAGE 3 ---\nPDF 文件使用 \"pdfFactory Pro\" 试用版本创建  www.fineprint.com.cn\n",
+    "file_size_mb": 21.7
+  },
+  {
+    "filename": "奥匈帝国政治体系.docx",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\奥匈帝国政治体系.docx",
+    "extension": ".docx",
+    "page_count": 0,
+    "is_scanned": false,
+    "has_bookmarks": null,
+    "bookmark_titles": null,
+    "first_pages_text": "国家制度：君主立宪\n中央——地方制度：\n奥地利皇帝兼匈牙利国王以及一系列头衔：帝国的统治者，可令任一忠于皇帝的党派组建帝国内阁，有权解散内阁和帝国议会可直接任免奥地利地区的神职人员\n帝国议会：由皇室代表，匈牙利议会代表，其他地方民族议会代表组成。拥有立法，监督，和修改宪法和解决中央民族事务问题\n皇家军事委员会∶由皇帝直接认命，负责战时军事调度指挥以及军事战略部署，主席一般是帝国最高军事统帅\n匈牙利议会：由匈牙利地区民族代表组成，拥有匈牙利地区立法（除宪法外）权和有权对本地区中央管理大臣和神职人员在帝国议会提交候选名单（匈牙利地区人民拥有中央普通法法律豁免权，只遵守匈牙利议会法律）\n其他地区民族议会：由其他地区民族代表组成有权对中央管理大臣和地方神职人员在帝国议会提交候选名单\n帝国内阁\n帝国国防部：负责奥匈帝国国防军，奥匈帝国预备役和奥匈帝国海军训练及装备革新以及和平时期征兵事宜和军官士官晋升\n内政部：负责对政府经济而有效的管理\n外交部：负责对外事宜以及帝国形象\n财政部：负责帝国事务预算以及帝国财政收入和支出管理\n内务部：负责皇室财产及日常事务管理和处理，直接向皇帝负责\n行政部：负责政府日常运转和其他政府日常事务处理\n帝国中央司法部：负责帝国中央法庭的日常事务和大法官的建议任命权\n中央政府机构：\n情报机构\n1.证据局：负责为政府处理安全、防务、外事、经济方面的事物搜集情报和负责调查权力法庭\n2.调查权力法庭：由证据局主导可越过现有司法机构直接审判严重危害国家安全的秘密司法机构\n司法机构\n1.帝国贵族法院：负责审判帝国内贵族。向皇帝负责\n2.帝国中央法院：由大法官领导遵守帝国议会编纂的奥匈帝国宪法以及其由奥地利政府所编纂的奥匈帝国普通法负责审判奥地利地区\n3.帝国匈牙利地方法院：由匈牙利议会领导遵守帝国议会所编纂的奥匈帝国宪法及匈牙利议会所编纂的匈牙利地区普通法负责审判匈牙利地区\n4.帝国其他民族地方法院：由其他民族地区议会领导遵守帝国议会所编纂的奥匈帝国宪法及奥地利政府所编纂的奥匈帝国普通法负责审判本地民族地区\n治安管理机构\n帝国中央警察局：负责奥地利地区治安管理及匈牙利和其他民族地方警察局的领导和指导工作。可自行招募警员和自行采购装备\n地方政府制度\n匈牙利民族地方行政局：负责匈牙利地区的行政事务以及日常事务处理和其他事物处理，遵守帝国议会所编纂的奥匈帝国宪法以及匈牙利议会所编纂的匈牙利地区普通法，向匈牙利议会负责\n其他民族地方行政局：负责本民族地区的行政事务以及日常事务和其他事物处理，遵守帝国议会所编纂的奥匈帝国宪法以及奥地利政府所编纂的奥匈帝国普通法，并且向地区民族议会负责\n匈牙利地区议会立法局：负责收集匈牙利地区民族代表立法提议，在局内进行不透明表决后提交到匈牙利地区民族议会而后进行表决，向匈牙利地区民族议会负责，人员由匈牙利地区民族议会议会长在匈牙利地区民族议会提交候选名单经过表决后就任\n匈牙利地区中央管理大臣办公处：负责监督匈牙利地区民族议会以及其他地方机构是否合法运行。直接向皇帝负责\n其他民族地区中央管理大臣办公处：负责监督本地区民族议会以及其他地方机构是否合法运行。直接向皇帝负责\n匈牙利民族地方行政局\n匈牙利民族地方行政局内政处：匈牙利地区日常事务及其他事物管理权",
+    "file_size_mb": 0.01
+  },
+  {
+    "filename": "奥地利统治下的加利西亚和克拉科夫.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\奥地利统治下的加利西亚和克拉科夫.pdf",
+    "extension": ".pdf",
+    "page_count": 434,
+    "is_scanned": "likely",
+    "has_bookmarks": false,
+    "bookmark_titles": [],
+    "first_pages_text": "--- PAGE 1 ---\n\n--- PAGE 2 ---\nV.\nv*\n^.rs\\\nI\n\"%\no.v\nt\n'-%\n\\°\n<\n' A\n<$,\ny o *\nV\n\"*\nH ^\n-\nA'\n*\n> /V\nA\n°/\n\\\nVIS.\n\"t*\no o\nv\n<y\n\n--- PAGE 3 ---\nv\n1V\n-\nJ> %\nC\n'.AA\n*A V\nA-\nV*V\n^\n^\n'•^\nS.\\\n« V\nI\n8\nfi\n**.\n4 tC\n.A\n•\n-\n^\nV\n^\n. s\n6\n\\(F\n^,.\n,v\n>„~'c\n,\nA\n-v-\nA^\n«\n•\".. ^\nW\n.0\n^\n:\n£.\n",
+    "file_size_mb": 31.49
+  },
+  {
+    "filename": "帕尔格雷夫世界历史统计  欧洲卷：1750-1993年：第四版-1.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\帕尔格雷夫世界历史统计  欧洲卷：1750-1993年：第四版-1.pdf",
+    "extension": ".pdf",
+    "page_count": 1035,
+    "is_scanned": true,
+    "has_bookmarks": true,
+    "bookmark_titles": [
+      {
+        "level": 1,
+        "title": "封面页\u0000",
+        "page": 1
+      },
+      {
+        "level": 1,
+        "title": "书名页\u0000",
+        "page": 2
+      },
+      {
+        "level": 1,
+        "title": "版权页\u0000",
+        "page": 3
+      },
+      {
+        "level": 1,
+        "title": "前言页\u0000",
+        "page": 4
+      },
+      {
+        "level": 1,
+        "title": "目录页\u0000",
+        "page": 17
+      },
+      {
+        "level": 1,
+        "title": "A 人口和生命统计\u0000",
+        "page": 21
+      },
+      {
+        "level": 2,
+        "title": "1 各国人口普查数据\u0000",
+        "page": 23
+      },
+      {
+        "level": 2,
+        "title": "2 各国人口性别和年龄分组\u0000",
+        "page": 34
+      },
+      {
+        "level": 2,
+        "title": "3 主要地区人口数\u0000",
+        "page": 71
+      },
+      {
+        "level": 2,
+        "title": "4 主要城市人口数\u0000",
+        "page": 98
+      },
+      {
+        "level": 2,
+        "title": "5 年中人口估计数\u0000",
+        "page": 102
+      },
+      {
+        "level": 2,
+        "title": "6 出生、死亡和结婚统计：千分比\u0000",
+        "page": 117
+      },
+      {
+        "level": 2,
+        "title": "7 一岁婴儿死亡率(第一千存活婴儿比率)\u0000",
+        "page": 145
+      },
+      {
+        "level": 2,
+        "title": "8 每十年移出欧洲人口数\u0000",
+        "page": 154
+      },
+      {
+        "level": 2,
+        "title": "9 年度移民统计\u0000",
+        "page": 155
+      },
+      {
+        "level": 1,
+        "title": "B 劳动力\u0000",
+        "page": 171
+      },
+      {
+        "level": 2,
+        "title": "1 主要产业部门经济活动人口\u0000",
+        "page": 173
+      },
+      {
+        "level": 2,
+        "title": "2 失业\u0000",
+        "page": 191
+      },
+      {
+        "level": 2,
+        "title": "3 产业纠纷\u0000",
+        "page": 200
+      },
+      {
+        "level": 2,
+        "title": "4 工业中的化币工资\u0000",
+        "page": 214
+      },
+      {
+        "level": 2,
+        "title": "5 农业中的货币工资\u0000",
+        "page": 223
+      },
+      {
+        "level": 1,
+        "title": "C 农业\u0000",
+        "page": 233
+      },
+      {
+        "level": 2,
+        "title": "1 主要谷物、马铃薯和甜菜种植面积\u0000",
+        "page": 235
+      },
+      {
+        "level": 2,
+        "title": "2 主要谷物、马铃薯和甜菜产量\u0000",
+        "page": 291
+      },
+      {
+        "level": 2,
+        "title": "3 葡萄园林面积和葡萄酒产量\u0000",
+        "page": 350
+      },
+      {
+        "level": 2,
+        "title": "4 内陆作物种植面积和产量\u0000",
+        "page": 358
+      },
+      {
+        "level": 2,
+        "title": "5 牲畜数量\u0000",
+        "page": 364
+      },
+      {
+        "level": 2,
+        "title": "6 牛奶产量\u0000",
+        "page": 412
+      },
+      {
+        "level": 2,
+        "title": "7 黄油产量\u0000",
+        "page": 419
+      },
+      {
+        "level": 2,
+        "title": "8 肉产量\u0000",
+        "page": 424
+      },
+      {
+        "level": 2,
+        "title": "9 捕鱼量\u0000",
+        "page": 432
+      },
+      {
+        "level": 2,
+        "title": "10 玉米对外贸易\u0000",
+        "page": 437
+      },
+      {
+        "level": 2,
+        "title": "11 农渔林产品的出口\u0000",
+        "page": 447
+      },
+      {
+        "level": 1,
+        "title": "D 工业\u0000",
+        "page": 455
+      },
+      {
+        "level": 2,
+        "title": "1 工业产量指数\u0000",
+        "page": 457
+      },
+      {
+        "level": 2,
+        "title": "2 煤产量\u0000",
+        "page": 465
+      },
+      {
+        "level": 2,
+        "title": "3 原油产量\u0000",
+        "page": 476
+      },
+      {
+        "level": 2,
+        "title": "4 天然气产量\u0000",
+        "page": 480
+      },
+      {
+        "level": 2,
+        "title": "5 主要有色金属矿产量\u0000",
+        "page": 483
+      },
+      {
+        "level": 2,
+        "title": "6 主要非金属矿产量\u0000",
+        "page": 490
+      },
+      {
+        "level": 2,
+        "title": "7 铁矿石产量\u0000",
+        "page": 492
+      },
+      {
+        "level": 2,
+        "title": "8 生铁产量\u0000",
+        "page": 497
+      },
+      {
+        "level": 2,
+        "title": "9 原钢产量\u0000",
+        "page": 508
+      },
+      {
+        "level": 2,
+        "title": "10 铝产量\u0000",
+        "page": 516
+      },
+      {
+        "level": 2,
+        "title": "11 主要煤贸易国的煤进出口\u0000",
+        "page": 519
+      },
+      {
+        "level": 2,
+        "title": "12 主要石油贸易国的石油进出口\u0000",
+        "page": 531
+      },
+      {
+        "level": 2,
+        "title": "13 主要贸易国的铁矿进出口\u0000",
+        "page": 544
+      },
+      {
+        "level": 2,
+        "title": "14 原棉消费指标\u0000",
+        "page": 548
+      },
+      {
+        "level": 2,
+        "title": "15 棉纺锭数\u0000",
+        "page": 555
+      },
+      {
+        "level": 2,
+        "title": "16 棉纱产量\u0000",
+        "page": 559
+      },
+      {
+        "level": 2,
+        "title": "17 棉织物产量\u0000",
+        "page": 564
+      },
+      {
+        "level": 2,
+        "title": "18 原毛消费指标\u0000",
+        "page": 569
+      },
+      {
+        "level": 2,
+        "title": "19 毛纱产量\u0000",
+        "page": 75
+      },
+      {
+        "level": 2,
+        "title": "20 毛织物产量\u0000",
+        "page": 580
+      },
+      {
+        "level": 2,
+        "title": "21 人工合成纤维产量\u0000",
+        "page": 585
+      },
+      {
+        "level": 2,
+        "title": "22 麻纺织指标\u0000",
+        "page": 589
+      },
+      {
+        "level": 2,
+        "title": "23 硫酸产量\u0000",
+        "page": 592
+      },
+      {
+        "level": 2,
+        "title": "24 木材业指标\u0000",
+        "page": 598
+      },
+      {
+        "level": 2,
+        "title": "25 汽车产量\u0000",
+        "page": 602
+      },
+      {
+        "level": 2,
+        "title": "26 啤酒产量\u0000",
+        "page": 606
+      },
+      {
+        "level": 2,
+        "title": "27 发电量\u0000",
+        "page": 615
+      },
+      {
+        "level": 1,
+        "title": "E 对外贸易\u0000",
+        "page": 623
+      },
+      {
+        "level": 2,
+        "title": "1 对外贸易总额现价\u0000",
+        "page": 625
+      },
+      {
+        "level": 2,
+        "title": "2 与主要贸易伙伴的贸易额\u0000",
+        "page": 642
+      },
+      {
+        "level": 1,
+        "title": "F 交通通讯\u0000",
+        "page": 727
+      },
+      {
+        "level": 2,
+        "title": "1 营业铁路长度\u0000",
+        "page": 730
+      },
+      {
+        "level": 2,
+        "title": "2 铁路货运量\u0000",
+        "page": 742
+      },
+      {
+        "level": 2,
+        "title": "3 铁路客运量\u0000",
+        "page": 756
+      },
+      {
+        "level": 2,
+        "title": "4 商船登记数\u0000",
+        "page": 770
+      },
+      {
+        "level": 2,
+        "title": "5 内河航运运输量\u0000",
+        "page": 792
+      },
+      {
+        "level": 2,
+        "title": "6 在用汽车数\u0000",
+        "page": 796
+      },
+      {
+        "level": 2,
+        "title": "7 民用航空\u0000",
+        "page": 806
+      },
+      {
+        "level": 2,
+        "title": "8 邮政与电报服务\u0000",
+        "page": 811
+      },
+      {
+        "level": 2,
+        "title": "9 电话服务\u0000",
+        "page": 826
+      },
+      {
+        "level": 2,
+        "title": "10 广播和电视接收执照\u0000",
+        "page": 836
+      },
+      {
+        "level": 1,
+        "title": "G 财政金融\u0000",
+        "page": 843
+      },
+      {
+        "level": 2,
+        "title": "1 现钞流通量\u0000",
+        "page": 845
+      },
+      {
+        "level": 2,
+        "title": "2 商业银行存款\u0000",
+        "page": 856
+      },
+      {
+        "level": 2,
+        "title": "3 储蓄银行存款\u0000",
+        "page": 863
+      },
+      {
+        "level": 2,
+        "title": "4 货币供给\u0000",
+        "page": 875
+      },
+      {
+        "level": 2,
+        "title": "5 中央政府财政支出总额\u0000",
+        "page": 880
+      },
+      {
+        "level": 2,
+        "title": "6 政府岁入及主要税收\u0000",
+        "page": 890
+      },
+      {
+        "level": 1,
+        "title": "H 物价\u0000",
+        "page": 921
+      },
+      {
+        "level": 2,
+        "title": "1 批发物价指数\u0000",
+        "page": 923
+      },
+      {
+        "level": 2,
+        "title": "2 生活费用/消费物价指数\u0000",
+        "page": 931
+      },
+      {
+        "level": 1,
+        "title": "I 教育\u0000",
+        "page": 939
+      },
+      {
+        "level": 2,
+        "title": "1 在校学生和教师数\u0000",
+        "page": 940
+      },
+      {
+        "level": 2,
+        "title": "2 在校大学生数\u0000",
+        "page": 965
+      },
+      {
+        "level": 1,
+        "title": "J 国民帐户\u0000",
+        "page": 973
+      },
+      {
+        "level": 2,
+        "title": "1 国民帐户合计\u0000",
+        "page": 975
+      },
+      {
+        "level": 2,
+        "title": "2 国民产值的部门比重\u0000",
+        "page": 1001
+      },
+      {
+        "level": 2,
+        "title": "3 国际收支平衡\u0000",
+        "page": 1009
+      },
+      {
+        "level": 1,
+        "title": "附录页\u0000",
+        "page": -1
+      }
+    ],
+    "first_pages_text": "--- PAGE 1 ---\n\n--- PAGE 2 ---\n\n--- PAGE 3 ---\n",
+    "file_size_mb": 19.39
+  },
+  {
+    "filename": "近代早期哈布斯堡君主国行政史·第1卷：宫廷与王朝、皇帝与帝国和中央行政机构、战争与邦君财政.pdf",
+    "filepath": "C:\\Users\\notch\\Desktop\\哈布斯堡史\\近代早期哈布斯堡君主国行政史·第1卷：宫廷与王朝、皇帝与帝国和中央行政机构、战争与邦君财政.pdf",
+    "extension": ".pdf",
+    "page_count": 1309,
+    "is_scanned": "likely",
+    "has_bookmarks": false,
+    "bookmark_titles": [],
+    "first_pages_text": "--- PAGE 1 ---\nVerwaltungsgeschichte  \nder Habsburgermonarchie  \nin der Frühen Neuzeit\nBand 1/1 \nHof und Dynastie, Kaiser und Reich,  \nZentralverwaltungen, Kriegswesen und  \nlandesfürstliches Finanzwesen\nHerausgegeben von Michael Hochedlinger,  \nPetr Mat’a und Thomas Winkelbauer\n\n--- PAGE 2 ---\nVerwaltungsgeschichte der Habsburgermonarchie  \nin der Frühen Neuzeit \nBand 1\nTeilband 1\n\n--- PAGE 3 ---\nMitteilungen des Instituts\nfür Österreichische Geschichtsforschung\nErgänzungsband 62\nTeilband 1\n2019\nBöhlau Verlag Wien\n",
+    "file_size_mb": 8.37
+  }
+]

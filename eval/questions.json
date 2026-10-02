@@ -1,0 +1,168 @@
+{
+  "name": "habRAG 评测种子集",
+  "version": 1,
+  "description": "用于 eval/run_eval.py 的种子问题集。每道题含：question（问题）、expected_titles（期望命中的书目，必须是库内已有的书名）、expected_citations（期望出现的 作者姓氏, 年份 引用）、filters（可选，检索过滤条件）、gold_points（full模式裁判用的参考答案要点）、note（出题意图）。expected_titles 与 expected_citations 中的书目信息已在 2026-08 由 bookdata.json 核实。",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "《Fin-de-Siècle Vienna》中，Schorske 如何解释 19 世纪末维也纳自由主义的衰落？",
+      "expected_titles": ["Fin-de-Siècle Vienna: Politics and Culture"],
+      "expected_citations": ["Schorske, 2012"],
+      "filters": {},
+      "gold_points": [
+        "自由主义的政治失败（1895-1897 年卢埃格尔当选维也纳市长）",
+        "政治失败后创造性能量转向美学现代主义（艺术、建筑、精神分析等）",
+        "大众政治（基督教社会党）与反犹主义取代自由主义"
+      ],
+      "note": "单书语义检索；测试书名/作者限定的检索质量"
+    },
+    {
+      "id": "q02",
+      "question": "为什么说 Judson 的《The Habsburg Empire: A New History》属于修正主义阵营？他的核心论点是什么？",
+      "expected_titles": ["The Habsburg Empire: A New History"],
+      "expected_citations": ["Judson, 2016"],
+      "filters": {},
+      "gold_points": [
+        "反对帝国必然衰落的衰落论叙事",
+        "强调帝国制度的韧性与适应性（修正主义）",
+        "提出日常生活中的民族无差异（national indifference）概念",
+        "地方机构在帝国晚期的持续运转"
+      ],
+      "note": "测试修正主义立场的检索；该书是库内修正主义代表"
+    },
+    {
+      "id": "q03",
+      "question": "奥斯卡·雅西（Oscar Jászi）如何论证哈布斯堡王朝解体的必然性？",
+      "expected_titles": ["The Dissolution of the Habsburg Monarchy"],
+      "expected_citations": ["Jászi, 1929"],
+      "filters": {},
+      "gold_points": [
+        "离心力（民族主义）与向心力（王朝、军队、官僚）的失衡",
+        "1867 年二元体制对斯拉夫民族的不公",
+        "马扎尔化政策激化民族矛盾",
+        "一战最终摧毁了帝国的凝聚力"
+      ],
+      "note": "测试衰落论代表著作的检索；与 q02 构成对立阵营"
+    },
+    {
+      "id": "q04",
+      "question": "请引用奥匈帝国官方出版物中收录的 1914 年七月危机外交文件，说明奥匈对塞尔维亚的最后通牒。",
+      "expected_titles": ["The Austro-Hungarian Red Book"],
+      "expected_citations": ["Foreign Affairs, 1915"],
+      "filters": {"source_type": "primary"},
+      "gold_points": [
+        "红皮书收录 1914 年 6-7 月奥匈外交电报与文件",
+        "1914 年 7 月 23 日对塞尔维亚最后通牒的条款",
+        "奥匈官方对战争责任的立场"
+      ],
+      "note": "测试 source_type=primary 过滤 + 一手史料检索"
+    },
+    {
+      "id": "q05",
+      "question": "加利西亚的石油产业在 19 世纪末 20 世纪初如何塑造了当地的社会与经济？",
+      "expected_titles": ["Oil Empire: Visions of Prosperity in Austrian Galicia"],
+      "expected_citations": ["Frank, 2005"],
+      "filters": {"region": "加利西亚"},
+      "gold_points": [
+        "加利西亚油田的繁荣期与衰落",
+        "石油财富引发的繁荣愿景与现实落差",
+        "石油产业与当地民族/社会结构的关系"
+      ],
+      "note": "测试 region 过滤 + 地区史检索"
+    },
+    {
+      "id": "q06",
+      "question": "奥匈帝国关税同盟对 19 世纪帝国经济发展起到了什么作用？",
+      "expected_titles": ["The Habsburg Monarchy as a Customs Union: Economic Development in Austria-Hungary in the Nineteenth Century"],
+      "expected_citations": ["Komlos, 1983"],
+      "filters": {"subfield": "经济史"},
+      "gold_points": [
+        "关税同盟作为统一市场的制度框架",
+        "对帝国整体经济增长的影响（Komlos 的量化估计）",
+        "帝国内部地区间经济差距问题"
+      ],
+      "note": "测试 subfield 过滤 + 经济史检索"
+    },
+    {
+      "id": "q07",
+      "question": "Beller 在《Vienna and the Jews》中如何讨论 1867-1938 年维也纳犹太人的同化与文化身份？",
+      "expected_titles": ["Vienna and the Jews, 1867-1938: A Cultural History"],
+      "expected_citations": ["Beller, 1989"],
+      "filters": {"subfield": "犹太史"},
+      "gold_points": [
+        "犹太人在维也纳文化生活中的突出角色",
+        "同化与身份认同的张力",
+        "反犹主义对犹太身份的塑造作用"
+      ],
+      "note": "测试 subfield=犹太史 过滤"
+    },
+    {
+      "id": "q08",
+      "question": "伊松佐河战役为什么被称为“被遗忘的牺牲”？奥匈军队在这场战役中的表现如何？",
+      "expected_titles": ["Isonzo: The Forgotten Sacrifice of the Great War"],
+      "expected_citations": ["Schindler, 2001"],
+      "filters": {},
+      "gold_points": [
+        "意大利战线 12 次伊松佐战役的巨大伤亡",
+        "奥匈军队在山地防御中的表现",
+        "该战线在主流一战叙事中被忽视"
+      ],
+      "note": "测试军事史检索"
+    },
+    {
+      "id": "q09",
+      "question": "Williamson 认为奥匈帝国在第一次世界大战爆发中承担什么责任？",
+      "expected_titles": ["Austria-Hungary and the Origins of the First World War"],
+      "expected_citations": ["Williamson, 1991"],
+      "filters": {},
+      "gold_points": [
+        "1914 年做出战争关键决策的是奥匈而非德国",
+        "巴尔干战争后维也纳决策层的军事化",
+        "斐迪南遇刺移除了主和派障碍"
+      ],
+      "note": "测试一战起源史学检索"
+    },
+    {
+      "id": "q10",
+      "question": "近代早期哈布斯堡君主国的中央行政机构与战争财政是如何组织的？（请参考德文文献）",
+      "expected_titles": ["Verwaltungsgeschichte der Habsburgermonarchie in der Frühen Neuzeit, Band 1/1: Hof und Dynastie, Kaiser und Reich, Zentralverwaltungen, Kriegswesen und landesfürstliches Finanzwesen"],
+      "expected_citations": ["Hochedlinger, 2019"],
+      "filters": {"lang": "德文"},
+      "gold_points": [
+        "宫廷与王朝、皇帝与帝国的制度结构",
+        "中央行政机构（Zentralverwaltungen）的组织",
+        "战争体制（Kriegswesen）与邦君财政"
+      ],
+      "note": "测试 lang=德文 过滤 + 非英语语料检索"
+    },
+    {
+      "id": "q11",
+      "question": "1908-1909 年波斯尼亚危机（奥匈兼并波黑）引起了怎样的国际反响？",
+      "expected_titles": ["The Annexation of Bosnia, 1908-1909"],
+      "expected_citations": ["Schmitt, 1937"],
+      "filters": {"region": "波斯尼亚-黑塞哥维那"},
+      "gold_points": [
+        "奥匈 1908 年 10 月宣布兼并波黑",
+        "塞尔维亚与俄国的强烈反应",
+        "德国对奥匈的支持与危机平息"
+      ],
+      "note": "测试 region 过滤 + 外交史检索"
+    },
+    {
+      "id": "q12",
+      "question": "关于哈布斯堡帝国在 1914 年前是否必然衰落，请对比衰落论与修正主义两派的代表性著作和核心论点。",
+      "expected_titles": [
+        "The Dissolution of the Habsburg Monarchy",
+        "The Habsburg Empire: A New History"
+      ],
+      "expected_citations": ["Jászi, 1929", "Judson, 2016"],
+      "filters": {},
+      "gold_points": [
+        "衰落论（如 Jászi）：民族离心力、二元体制不公、解体不可避免",
+        "修正主义（如 Judson）：制度韧性、民族无差异、反对目的论叙事",
+        "两派分歧的原因：史学研究范式与民族国家预设"
+      ],
+      "note": "测试多书对比问题的检索覆盖；期望同时命中两派代表著作"
+    }
+  ]
+}

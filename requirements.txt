@@ -1,0 +1,29 @@
+# ============================================================
+# habRAG 依赖
+# ============================================================
+# 安装：pip install -r requirements.txt
+#
+# ★ 云端向量库客户端（pymilvus）**不在**这里 —— 它必须装到项目内的 _libs/，
+#   见 README「安装依赖」一节。全局安装 pymilvus 会把 protobuf 升到 7.x、
+#   pandas 升到 3.x，而 streamlit 1.50 要求 protobuf<7、pandas<3。
+# ============================================================
+
+# --- 界面 ---
+streamlit>=1.50,<2
+
+# --- 本地向量库（BACKEND="chroma" 时需要；连云端也要它提供 Collection 之外的底层依赖）---
+chromadb>=1.5,<2
+
+# --- 原始素材解析（PDF）---
+PyMuPDF>=1.27,<2
+
+# --- HTTP 调用（DeepSeek / SiliconFlow / GLM）---
+requests>=2.32,<3
+
+# --- 数值与表格（迁移、召回测试脚本用）---
+numpy>=2.0,<3
+pandas>=2.2,<3          # ★ 必须 <3：streamlit 1.50 不兼容 pandas 3.x
+
+# --- 显式锁住 protobuf 上界，防止被其它包带上去 ---
+# streamlit 1.50 要求 protobuf>=3.20,<7
+protobuf>=3.20,<7

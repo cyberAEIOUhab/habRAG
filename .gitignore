@@ -1,0 +1,92 @@
+# ============================================================
+# habRAG .gitignore
+# ============================================================
+# 注意：gitignore 只把**行首**的 # 当注释。
+#       行尾的 # 是模式的一部分，会让整条规则失效 —— 所以本文件里
+#       所有注释都独占一行，模式行里不带任何行尾注释。
+# ============================================================
+
+# ---- ★ 密钥，绝对不要提交 ----
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# ---- 数据与索引（体积大，且可由原始素材重建）----
+# db/ 是本地 Chroma 数据库，完整时约 3 GiB
+db/
+# _libs/ 是项目内隔离安装的依赖（pymilvus 等），约 136 MB
+_libs/
+_piptmp/
+_wheels/
+_recall_fts.sqlite3
+_scale_test.sqlite3
+_fts_test.sqlite3
+_lat.sqlite3
+
+# ---- ★ 版权风险：受版权保护书籍的原文摘录 ----
+# textfix_cache.json 是「排版修正」的 LLM 产物，内容是**逐字的书籍原文**：
+#   206 段 / 约 48 万字符 / 最长单段 1.2 万字符，来自 206 本（多为在版权期的）学术著作。
+# 推到公开仓库即构成侵权。它是可再生的派生物（重新跑修正流程即可重建），
+# 没有任何必要进版本库。
+# → 仅当仓库确定为**私有**、且你确实想把它当备份时，才注释掉下面这行。
+textfix_cache.json
+
+# 其他含书籍正文的派生物，如日后新增一并挡住
+*_cache.json
+chunk_cache*.json
+
+# ---- 个人数据：对话记录与反馈 ----
+sessions/
+feedback.jsonl
+
+# ---- 编辑器 / 工具的本地配置 ----
+.claude/settings.local.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- 运行产物 / 临时文件 ----
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+.~*
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# 以下内容**应当**提交，不要加进本文件：
+#   bookdata.json / metadata.json / book.json
+#       书目与标签，项目的核心资产。
+#       注：其中 description 是中文综述性摘要（平均 420 字符，来源 web_search /
+#       模型知识），不是出版社原文的复制，风险低。
+#       若日后改为照抄出版社简介，需重新评估。
+#   ingest*_log.txt / ingest*_processed.txt
+#       入库历史，便于复盘
+#   eval/questions.json
+#       自己出的评测题
+#   *.md / *.py / requirements.txt / LICENSE / CITATION.cff
+#       代码与文档
+#
+# ★ 已确认有版权风险、不可提交：
+#   textfix_cache.json          书籍原文摘录（见上）
+#   db/ 与 Zilliz 语料          书籍全文
+# ============================================================

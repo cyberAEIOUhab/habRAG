@@ -1,0 +1,72 @@
+================================================================================
+needs_review 书目核查报告
+更新: 2026-07-30（最终版）
+总计: 136 本书，5 本仍需人工核查
+================================================================================
+
+已完成（已清除 needs_review 41 本，已移除 5 本）:
+  ✓ EPUB 类       — 11本确认，1本移除（Rumania损坏）
+  ✓ PDF首页扫描类 — 7本确认（Apis, Austria Iron Ring, Between States,
+                     Economic Dev, Francis Joseph Beller, Idea of Nation,
+                     Austrian History Yearbook→1982）
+  ✓ 书名版本分歧类 — 5本确认/移除（Austria-Hungary Economy, Engineering书评,
+                     Exclusive revolutionaries节选, 一战奥官×2, 奥匈政治体系docx）
+  ✓ 中文文献类     — 6本全部修正（Galicya→波兰文1853, Fiscal-Military State→英文2022,
+                     Verwaltungsgeschichte→德文2019, Das integrative Empire→德文2023,
+                     国际条约集→移除, 奥地利统治下的加利西亚→波兰文1853）
+  ✓ 期刊短篇类     — 7本确认（Galician Haskalah/Manekin, Jews/Rozenblit,
+                     landownership/Eddie, dichotomy/Bugge, WP106/Schulze,
+                     Pillars of Dynasty/Roddy, Multicultural Cities/Horel）
+  ✓ Hoyos Alexander — 移除（PDF文字层极差）
+  ✓ Emperor Francis Joseph — 1929初版确认
+  ✓ Joseph II — Vol.I确认
+  ✓ Habsburg Empire 1790-1918 — year=null已确认
+
+
+================================================================================
+仍需核查（5本）
+================================================================================
+
+一、On the Economic Consequences of the Peace（1本）
+-----------------------------------------------------------------
+1. On the Economic Consequences of the Peace.pdf  [standard]
+   当前: John Maynard Keynes (presumed) / 1920 / 35pp
+   问题: 搜索未找到完全匹配。凯恩斯1919年原书远超35页，Béla Tomka 2020年
+         有特里亚农经济影响论文但标题不同。需翻PDF首页确认作者。
+
+
+二、Österreich-Ungarns letzter Krieg 系列 — 卷次需确认（4本）
+-----------------------------------------------------------------
+全部 priority_tier: high。文件名为相同模板无卷次标注。
+需翻到每本PDF的标题页（通常第3-5页），确认Band号和Das Kriegsjahr。
+
+2. Ö-U letzter Krieg (.pdf) [840pp]
+   推测: Band I: Das Kriegsjahr 1914 / 1930
+
+3. Ö-U letzter Krieg (1).pdf [774pp]
+   推测: Band II: Das Kriegsjahr 1915, Erster Teil / 1931
+
+4. Ö-U letzter Krieg (2).pdf [648pp]
+   推测: Band III: Das Kriegsjahr 1915, Zweiter Teil / 1932
+
+5. Ö-U letzter Krieg (3).pdf [884pp]
+   推测: Band IV: Das Kriegsjahr 1916, Erster Teil / 1933
+
+
+================================================================================
+处理历史
+================================================================================
+2026-07-29  初始报告: 46本 needs_review
+2026-07-30  EPUB OPF直接解析: 8本确认清除
+2026-07-30  人工核查EPUB版权页: Ring of Steel, Judson, Ingrao 确认
+2026-07-30  Rumania 1866-1947 移除（EPUB损坏）
+2026-07-30  PDF首页扫描类批量核查: 6本清除
+2026-07-30  Austrian History Yearbook → 1982确认
+2026-07-30  Emperor Francis Joseph → 1929初版确认
+2026-07-30  Joseph II → Vol.I确认
+2026-07-30  Hoyos Alexander 移除（文字层极差）
+2026-07-30  书名版本分歧类: 3本移除，5本确认
+2026-07-30  四本"中文文献"全部修正为原文（波兰文/英文/德文）
+2026-07-30  期刊短篇类: 7本网络搜索确认
+2026-07-30  → 最终剩余 5本
+================================================================================

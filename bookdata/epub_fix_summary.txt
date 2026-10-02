@@ -1,0 +1,57 @@
+EPUB Metadata Fix Summary
+Generated: 2026-07-30T08:03:17.317869+00:00
+============================================================
+
+Total EPUBs processed: 13
+Fixes applied: 17
+Already correct: 3
+
+Fixes:
+  Fin-de-siecle Vienna politics and culture (Schorske, Carl E) (z-library.sk, 1lib...
+    - publisher: 'Alfred A. Knopf / Vintage Books' → 'Knopf' (from EPUB OPF)
+    - year: 1980 → 2012 (from EPUB OPF date: 2012-01-11)
+    - ISBN added from EPUB: 978-0-307-81451-7
+  From Prejudice to Persecution A History of Austrian Anti-Semitism (Bruce F. Paul...
+    - year: 1992 → 1998 (from EPUB OPF date: 1998-03-02T00:00:00+00:00)
+  History of Slovakia The Struggle for Survival (2005) (Stanislav J. Kirschbaum) (...
+    - publisher: 'St. Martin's Griffin / Palgrave Macmillan' → 'Griffin' (from EPUB OPF)
+    - ISBN added from EPUB: 9781403969293
+  Isonzo The Forgotten Sacrifice of the Great War (John R. Schindler) (z-library.s...
+    - ISBN added from EPUB: 0275972046
+  Ring of Steel Germany and Austria-Hungary in World War I (Alexander Watson) (z-l...
+    - publisher: 'Basic Books / Allen Lane' → 'Basic Books' (from EPUB OPF)
+  The Habsburg Empire A New History (Pieter M. Judson) (z-library.sk, 1lib.sk, z-l...
+    - publisher: 'Belknap Press of Harvard University Press' → 'Harvard University Press' (from EPUB OPF)
+    - ISBN added from EPUB: 9780674047761
+  The Habsburg Empire, 1790-1918 (C.A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk...
+    - publisher: 'Weidenfeld & Nicolson' → 'Faber & Faber' (from EPUB OPF)
+    - year: 1968 → 2014 (from EPUB OPF date: 2014)
+    - ISBN added from EPUB: 9780571306299
+  The Habsburg Monarchy, 1618–1815 (Charles W. Ingrao) (z-library.sk, 1lib.sk, z-l...
+    - year: 2000 → 2019 (from EPUB OPF date: 2019-07-22T00:00:00+00:00)
+  The Limits of Loyalty Imperial Symbolism, Popular Allegiances, and State Patriot...
+    - ISBN added from EPUB: 9780857452245
+  The Nation in the Village The Genesis of Peasant National Identity in Austrian P...
+    - year: 2001 → 2015 (from EPUB OPF date: 2015-09-25T16:06:43+00:00)
+    - ISBN added from EPUB: 9781501702235
+  From Prejudice to Persecution A History of Austrian Anti-Semitism (Bruce F. Paul...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  History of Slovakia The Struggle for Survival (2005) (Stanislav J. Kirschbaum) (...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  Isonzo The Forgotten Sacrifice of the Great War (John R. Schindler) (z-library.s...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  The Czechs and the Lands of the Bohemian Crown (Hugh LeCaine Agnew) (z-library.s...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  The Great Departure  Mass Migration from Eastern Europe and the Making of the Fr...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  The Limits of Loyalty Imperial Symbolism, Popular Allegiances, and State Patriot...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+  The Nation in the Village The Genesis of Peasant National Identity in Austrian P...
+    - needs_review cleared: EPUB OPF metadata confirms bibliographic data
+
+Still needs review:
+  - Rumania 1866-1947
+  - The Habsburg Empire A New History
+  - The Habsburg Empire, 1790-1918
+  - The Habsburg Monarchy, 1618–1815
+  - Ring of Steel

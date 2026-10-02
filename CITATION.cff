@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+title: "habRAG: 奥匈帝国史研究助手"
+abstract: >-
+  A retrieval-augmented research assistant for Habsburg and Austro-Hungarian
+  history. Performs hybrid retrieval (dense vector search fused with lexical
+  BM25 / FTS5 search via RRF, followed by reranking) over a corpus of 160,475
+  passages drawn from 190 works in English, German, Polish and Chinese, of which
+  21.6% are primary archival sources (ÖUA, MRP, Conrad memoirs). Designed around
+  citation verifiability: generated answers carry machine-checkable citations in
+  two formats (secondary literature and archival document numbers), and long
+  documents can be verified claim-by-claim through an agentic tool loop.
+authors:
+  - name: "notch"
+    email: "internationale5@163.com"
+type: software
+license: MIT
+version: "0.1.0"
+date-released: "2026-10-01"
+keywords:
+  - retrieval-augmented generation
+  - RAG
+  - Habsburg Monarchy
+  - Austria-Hungary
+  - digital history
+  - hybrid search
+  - citation verification
+  - diplomacy
+  - First World War
+repository-code: "https://github.com/<你的账号>/habRAG"

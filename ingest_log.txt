@@ -1,0 +1,422 @@
+[2026-07-31 16:50:47] 开始处理（1/136）：Apis, the congenial conspirator : the life of Colonel Dragutin T. Dimitrijević
+[2026-07-31 16:53:07] 《Apis, the congenial conspirator : the life of Colonel Dragutin T. Dimitrijević》完成：1216个chunk已写入
+[2026-07-31 16:53:07] 开始处理（2/136）：Austria under the Iron Ring, 1879-1893
+[2026-07-31 16:53:08]   过滤噪声block：1种，共3次出现
+[2026-07-31 16:54:55] 《Austria under the Iron Ring, 1879-1893》完成：915个chunk已写入
+[2026-07-31 16:54:55] 开始处理（3/136）：Culture and Political Crisis in Vienna: Christian Socialism in Power, 1897-1918
+[2026-07-31 16:54:58]   过滤噪声block：1种，共4次出现
+[2026-07-31 17:00:33] 《Culture and Political Crisis in Vienna: Christian Socialism in Power, 1897-1918》完成：2727个chunk已写入
+[2026-07-31 17:00:33] 开始处理（4/136）：Bosnia and Hercegovina: A Tradition Betrayed
+[2026-07-31 17:00:35]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:02:11] 《Bosnia and Hercegovina: A Tradition Betrayed》完成：770个chunk已写入
+[2026-07-31 17:02:11] 开始处理（5/136）：A History of Habsburg Jews, 1670-1918
+[2026-07-31 17:04:01] 《A History of Habsburg Jews, 1670-1918》完成：873个chunk已写入
+[2026-07-31 17:04:01] 开始处理（6/136）：Croatian National-Integrational Ideologies from the End of Illyrism to the Creation of Yugoslavia
+[2026-07-31 17:04:13] 《Croatian National-Integrational Ideologies from the End of Illyrism to the Creation of Yugoslavia》完成：104个chunk已写入
+[2026-07-31 17:04:13] 开始处理（7/136）：Austria-Hungary and the Origins of the First World War
+[2026-07-31 17:04:53] 《Austria-Hungary and the Origins of the First World War》完成：328个chunk已写入
+[2026-07-31 17:04:53] 开始处理（8/136）：Austrian History Yearbook, Volume XV-XVI (1979-1980)
+[2026-07-31 17:04:54]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:07:10] 《Austrian History Yearbook, Volume XV-XVI (1979-1980)》完成：1315个chunk已写入
+[2026-07-31 17:07:10] 开始处理（9/136）：Andreiu Şaguna and the Restoration of the Rumanian Orthodox Metropolis in Transylvania, 1846-1868
+[2026-07-31 17:07:14] 《Andreiu Şaguna and the Restoration of the Rumanian Orthodox Metropolis in Transylvania, 1846-1868》完成：33个chunk已写入
+[2026-07-31 17:07:14] 开始处理（10/136）：Between States: The Transylvanian Question and the European Idea during World War II
+[2026-07-31 17:07:15]   过滤噪声block：3种，共16次出现
+[2026-07-31 17:08:27] 《Between States: The Transylvanian Question and the European Idea during World War II》完成：660个chunk已写入
+[2026-07-31 17:08:27] 开始处理（11/136）：Austria-Hungary and the First World War
+[2026-07-31 17:08:37] 《Austria-Hungary and the First World War》完成：81个chunk已写入
+[2026-07-31 17:08:37] 开始处理（12/136）：Die Habsburger Reiche, 1555-1740: Herrschaft – Gesellschaft – Politik
+[2026-07-31 17:08:38]   过滤噪声block：6种，共28次出现
+[2026-07-31 17:10:03] 《Die Habsburger Reiche, 1555-1740: Herrschaft – Gesellschaft – Politik》完成：643个chunk已写入
+[2026-07-31 17:10:03] 开始处理（13/136）：The Economics of World War I
+[2026-07-31 17:10:04]   过滤噪声block：8种，共46次出现
+[2026-07-31 17:10:29] 《The Economics of World War I》处理时发生未捕获异常：Expected metadata list value for key 'region' to be non-empty in add.
+Traceback (most recent call last):
+  File "C:\Users\notch\Desktop\habRAG\ingest.py", line 482, in main
+    ok = process_book(book, content_meta_lookup, collection)
+  File "C:\Users\notch\Desktop\habRAG\ingest.py", line 451, in process_book
+    collection.add(
+    ~~~~~~~~~~~~~~^
+        ids=ids[start:end],
+        ^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        metadatas=metadatas[start:end],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\Collection.py", line 109, in add
+    add_request = self._validate_and_prepare_add_request(
+        ids=ids,
+    ...<4 lines>...
+        uris=uris,
+    )
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\CollectionCommon.py", line 103, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\CollectionCommon.py", line 235, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 447, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1175, in validate_metadatas
+    validate_metadata(metadata)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1087, in validate_metadata
+    _validate_metadata_list_value(key, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1046, in _validate_metadata_list_value
+    raise ValueError(
+        f"Expected metadata list value for key '{key}' to be non-empty"
+    )
+ValueError: Expected metadata list value for key 'region' to be non-empty in add.
+
+[2026-07-31 17:10:29] 开始处理（14/136）：Austria-Hungary's Last War, 1914-1918, Vol. 3 (1915): From the Capture of Brest-Litowsk to the End of the Year
+[2026-07-31 17:10:30]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:12:56] 《Austria-Hungary's Last War, 1914-1918, Vol. 3 (1915): From the Capture of Brest-Litowsk to the End of the Year》完成：1437个chunk已写入
+[2026-07-31 17:12:56] 开始处理（15/136）：Bosnia: A Short History
+[2026-07-31 17:12:56]   过滤噪声block：13种，共99次出现
+[2026-07-31 17:14:43] 《Bosnia: A Short History》完成：1028个chunk已写入
+[2026-07-31 17:14:43] 开始处理（16/136）：Der habsburgische Mythos in der modernen österreichischen Literatur
+[2026-07-31 17:16:15] 《Der habsburgische Mythos in der modernen österreichischen Literatur》完成：902个chunk已写入
+[2026-07-31 17:16:15] 开始处理（17/136）：Diaspora Nationalism and Jewish Identity in Habsburg Galicia
+[2026-07-31 17:16:16]   过滤噪声block：3种，共15次出现
+[2026-07-31 17:17:18] 《Diaspora Nationalism and Jewish Identity in Habsburg Galicia》完成：605个chunk已写入
+[2026-07-31 17:17:18] 开始处理（18/136）：Economic Development in East-Central Europe in the 19th and 20th Centuries
+[2026-07-31 17:17:19]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:19:29] 《Economic Development in East-Central Europe in the 19th and 20th Centuries》完成：1296个chunk已写入
+[2026-07-31 17:19:29] 开始处理（19/136）：Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century
+[2026-07-31 17:19:39] 《Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century》完成：95个chunk已写入
+[2026-07-31 17:19:39] 开始处理（20/136）：Economics and Empire, 1830-1914
+[2026-07-31 17:21:26] 《Economics and Empire, 1830-1914》完成：1029个chunk已写入
+[2026-07-31 17:21:26] 开始处理（21/136）：Education and Middle-Class Society in Imperial Austria, 1848-1918
+[2026-07-31 17:21:26]   过滤噪声block：3种，共9次出现
+[2026-07-31 17:23:42] 《Education and Middle-Class Society in Imperial Austria, 1848-1918》完成：1341个chunk已写入
+[2026-07-31 17:23:42] 开始处理（22/136）：Emperor Francis Joseph of Austria: A Biography
+[2026-07-31 17:23:44]   过滤噪声block：8种，共368次出现
+[2026-07-31 17:25:20] 《Emperor Francis Joseph of Austria: A Biography》完成：938个chunk已写入
+[2026-07-31 17:25:20] 开始处理（23/136）：Endogenous Borders? The Effects of New Borders on Trade in Central Europe 1885-1933
+[2026-07-31 17:25:21]   过滤噪声block：3种，共52次出现
+[2026-07-31 17:25:31] 《Endogenous Borders? The Effects of New Borders on Trade in Central Europe 1885-1933》完成：99个chunk已写入
+[2026-07-31 17:25:31] 开始处理（24/136）：Ethnic Nationalism and the Fall of Empires: Central Europe, Russia and the Middle East, 1914-1923
+[2026-07-31 17:26:31] 《Ethnic Nationalism and the Fall of Empires: Central Europe, Russia and the Middle East, 1914-1923》完成：545个chunk已写入
+[2026-07-31 17:26:31] 开始处理（25/136）：European Goods Market Integration in the Very Long Run: From the Black Death to the First World War
+[2026-07-31 17:26:37] 《European Goods Market Integration in the Very Long Run: From the Black Death to the First World War》完成：50个chunk已写入
+[2026-07-31 17:26:37] 开始处理（26/136）：Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914
+[2026-07-31 17:26:37] 《Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914》过滤后没有剩余内容，跳过
+[2026-07-31 17:26:37] 开始处理（27/136）：Fin-de-Siècle Vienna: Politics and Culture
+[2026-07-31 17:26:37]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:27:59] 《Fin-de-Siècle Vienna: Politics and Culture》完成：788个chunk已写入
+[2026-07-31 17:27:59] 开始处理（28/136）：Francis Joseph
+[2026-07-31 17:29:04] 《Francis Joseph》完成：619个chunk已写入
+[2026-07-31 17:29:04] 开始处理（29/136）：Franz Conrad von Hötzendorf: Architect of the Apocalypse
+[2026-07-31 17:30:48] 《Franz Conrad von Hötzendorf: Architect of the Apocalypse》完成：1021个chunk已写入
+[2026-07-31 17:30:48] 开始处理（30/136）：From Prejudice to Persecution: A History of Austrian Anti-Semitism
+[2026-07-31 17:32:53] 《From Prejudice to Persecution: A History of Austrian Anti-Semitism》完成：1149个chunk已写入
+[2026-07-31 17:32:53] 开始处理（31/136）：From Sadowa to Sarajevo: The Foreign Policy of Austria-Hungary, 1866-1914
+[2026-07-31 17:32:55]   过滤噪声block：28种，共178次出现
+[2026-07-31 17:34:06] 《From Sadowa to Sarajevo: The Foreign Policy of Austria-Hungary, 1866-1914》完成：680个chunk已写入
+[2026-07-31 17:34:06] 开始处理（32/136）：Frontiers, Islands, Forests, Stones: Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900
+[2026-07-31 17:34:12] 《Frontiers, Islands, Forests, Stones: Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900》完成：34个chunk已写入
+[2026-07-31 17:34:12] 开始处理（33/136）：From Johann Pezzl to Joseph Perl: Galician Haskalah and the Austrian Enlightenment
+[2026-07-31 17:34:14] 《From Johann Pezzl to Joseph Perl: Galician Haskalah and the Austrian Enlightenment》完成：20个chunk已写入
+[2026-07-31 17:34:14] 开始处理（34/136）：Guardians of the Nation: Activists on the Language Frontiers of Imperial Austria
+[2026-07-31 17:35:05] 《Guardians of the Nation: Activists on the Language Frontiers of Imperial Austria》完成：452个chunk已写入
+[2026-07-31 17:35:05] 开始处理（35/136）：History in Exile: Memory and Identity at the Borders of the Balkans
+[2026-07-31 17:35:06]   过滤噪声block：2种，共6次出现
+[2026-07-31 17:36:58] 《History in Exile: Memory and Identity at the Borders of the Balkans》完成：1093个chunk已写入
+[2026-07-31 17:36:58] 开始处理（36/136）：A History of Slovakia: The Struggle for Survival
+[2026-07-31 17:38:43] 《A History of Slovakia: The Struggle for Survival》完成：1011个chunk已写入
+[2026-07-31 17:38:43] 开始处理（37/136）：Hungary and Her Successors: The Treaty of Trianon and Its Consequences, 1919-1937
+[2026-07-31 17:38:44]   过滤噪声block：1种，共3次出现
+[2026-07-31 17:41:10] 《Hungary and Her Successors: The Treaty of Trianon and Its Consequences, 1919-1937》完成：1351个chunk已写入
+[2026-07-31 17:41:10] 开始处理（38/136）：Hungary's Long Nineteenth Century: Constitutional and Democratic Traditions in a European Perspective. Collected Studies
+[2026-07-31 17:42:50] 《Hungary's Long Nineteenth Century: Constitutional and Democratic Traditions in a European Perspective. Collected Studies》完成：906个chunk已写入
+[2026-07-31 17:42:50] 开始处理（39/136）：In the Service of the Emperor: Italians in the Austrian Armed Forces, 1814-1918
+[2026-07-31 17:42:51]   过滤噪声block：1种，共19次出现
+[2026-07-31 17:43:42] 《In the Service of the Emperor: Italians in the Austrian Armed Forces, 1814-1918》完成：487个chunk已写入
+[2026-07-31 17:43:42] 开始处理（40/136）：Interwar Vienna: Culture between Tradition and Modernity
+[2026-07-31 17:44:46] 《Interwar Vienna: Culture between Tradition and Modernity》完成：591个chunk已写入
+[2026-07-31 17:44:46] 开始处理（41/136）：Inventing Germans: Class, Nationality and Colonial Fantasy at the Margins of the Hapsburg Monarchy
+[2026-07-31 17:44:52] 《Inventing Germans: Class, Nationality and Colonial Fantasy at the Margins of the Hapsburg Monarchy》完成：58个chunk已写入
+[2026-07-31 17:44:52] 开始处理（42/136）：Islam under the Double Eagle: The Muslims of Bosnia and Hercegovina, 1878-1914
+[2026-07-31 17:46:16] 《Islam under the Double Eagle: The Muslims of Bosnia and Hercegovina, 1878-1914》完成：814个chunk已写入
+[2026-07-31 17:46:16] 开始处理（43/136）：Isonzo: The Forgotten Sacrifice of the Great War
+[2026-07-31 17:47:48] 《Isonzo: The Forgotten Sacrifice of the Great War》完成：866个chunk已写入
+[2026-07-31 17:47:48] 开始处理（44/136）：Jesuits and the Politics of Religious Pluralism in Eighteenth-Century Transylvania: Culture, Politics and Religion, 1693-1773
+[2026-07-31 17:49:21] 《Jesuits and the Politics of Religious Pluralism in Eighteenth-Century Transylvania: Culture, Politics and Religion, 1693-1773》完成：911个chunk已写入
+[2026-07-31 17:49:21] 开始处理（45/136）：Jews and German Politics: The Case of Habsburg Moravia, 1867-1918
+[2026-07-31 17:49:21]   过滤噪声block：1种，共19次出现
+[2026-07-31 17:49:27] 《Jews and German Politics: The Case of Habsburg Moravia, 1867-1918》完成：59个chunk已写入
+[2026-07-31 17:49:27] 开始处理（46/136）：Galician Villagers and the Ukrainian National Movement in the Nineteenth Century
+[2026-07-31 17:49:30]   过滤噪声block：16种，共66次出现
+[2026-07-31 17:51:58] 《Galician Villagers and the Ukrainian National Movement in the Nineteenth Century》完成：1471个chunk已写入
+[2026-07-31 17:51:58] 开始处理（47/136）：Joseph II, Volume I: In the Shadow of Maria Theresa, 1741-1780
+[2026-07-31 17:54:51] 《Joseph II, Volume I: In the Shadow of Maria Theresa, 1741-1780》完成：1703个chunk已写入
+[2026-07-31 17:54:51] 开始处理（48/136）：July 1914: Soldiers, Statesmen, and the Coming of the Great War — A Brief Documentary History
+[2026-07-31 17:56:19] 《July 1914: Soldiers, Statesmen, and the Coming of the Great War — A Brief Documentary History》完成：867个chunk已写入
+[2026-07-31 17:56:19] 开始处理（49/136）：July 1914: The Outbreak of the First World War — Selected Documents
+[2026-07-31 17:56:21]   过滤噪声block：2种，共6次出现
+[2026-07-31 17:58:47] 《July 1914: The Outbreak of the First World War — Selected Documents》完成：1481个chunk已写入
+[2026-07-31 17:58:47] 开始处理（50/136）：Kidnapped Souls: National Indifference and the Battle for Children in the Bohemian Lands, 1900-1948
+[2026-07-31 17:59:36] 《Kidnapped Souls: National Indifference and the Battle for Children in the Bohemian Lands, 1900-1948》完成：437个chunk已写入
+[2026-07-31 17:59:36] 开始处理（51/136）：History and Myth in Romanian Consciousness
+[2026-07-31 17:59:36] 《History and Myth in Romanian Consciousness》过滤后没有剩余内容，跳过
+[2026-07-31 17:59:36] 开始处理（52/136）：Making Minorities and Majorities: National Indifference and National Self-Determination in Habsburg Central Europe
+[2026-07-31 17:59:41] 《Making Minorities and Majorities: National Indifference and National Self-Determination in Habsburg Central Europe》完成：47个chunk已写入
+[2026-07-31 17:59:41] 开始处理（53/136）：Review of Max-Stephan Schulze, 'Engineering and Economic Growth: The Development of Austria-Hungary's Machine-Building Industry in the Late Nineteenth Century'
+[2026-07-31 17:59:42] 《Review of Max-Stephan Schulze, 'Engineering and Economic Growth: The Development of Austria-Hungary's Machine-Building Industry in the Late Nineteenth Century'》完成：3个chunk已写入
+[2026-07-31 17:59:42] 开始处理（54/136）：A History of Modern Serbia, 1804-1918
+[2026-07-31 17:59:48] 《A History of Modern Serbia, 1804-1918》完成：49个chunk已写入
+[2026-07-31 17:59:48] 开始处理（55/136）：Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna
+[2026-07-31 18:01:46] 《Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna》完成：1149个chunk已写入
+[2026-07-31 18:01:46] 开始处理（56/136）：Nationalism and the Crowd in Liberal Hungary, 1848-1914
+[2026-07-31 18:03:28] 《Nationalism and the Crowd in Liberal Hungary, 1848-1914》完成：963个chunk已写入
+[2026-07-31 18:03:28] 开始处理（57/136）：Noble Nationalists: The Transformation of the Bohemian Aristocracy
+[2026-07-31 18:04:17] 《Noble Nationalists: The Transformation of the Bohemian Aristocracy》完成：476个chunk已写入
+[2026-07-31 18:04:17] 开始处理（58/136）：October Fifteenth: A History of Modern Hungary, 1929-1945, Volume I
+[2026-07-31 18:07:11] 《October Fifteenth: A History of Modern Hungary, 1929-1945, Volume I》完成：1715个chunk已写入
+[2026-07-31 18:07:11] 开始处理（59/136）：October Fifteenth: A History of Modern Hungary, 1929-1945, Volume II
+[2026-07-31 18:10:19] 《October Fifteenth: A History of Modern Hungary, 1929-1945, Volume II》完成：1837个chunk已写入
+[2026-07-31 18:10:19] 开始处理（60/136）：Oil Empire: Visions of Prosperity in Austrian Galicia
+[2026-07-31 18:10:19]   过滤噪声block：1种，共12次出现
+[2026-07-31 18:11:17] 《Oil Empire: Visions of Prosperity in Austrian Galicia》完成：556个chunk已写入
+[2026-07-31 18:11:17] 开始处理（61/136）：Orthodoxy and Nationality: Andreiu Şaguna and the Rumanians of Transylvania, 1846-1873
+[2026-07-31 18:13:03] 《Orthodoxy and Nationality: Andreiu Şaguna and the Rumanians of Transylvania, 1846-1873》完成：1044个chunk已写入
+[2026-07-31 18:13:03] 开始处理（62/136）：Paris 1919: Six Months that Changed the World
+[2026-07-31 18:13:30] 《Paris 1919: Six Months that Changed the World》处理时发生未捕获异常：Expected metadata list value for key 'region' to be non-empty in add.
+Traceback (most recent call last):
+  File "C:\Users\notch\Desktop\habRAG\ingest.py", line 482, in main
+    ok = process_book(book, content_meta_lookup, collection)
+  File "C:\Users\notch\Desktop\habRAG\ingest.py", line 451, in process_book
+    collection.add(
+    ~~~~~~~~~~~~~~^
+        ids=ids[start:end],
+        ^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        metadatas=metadatas[start:end],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\Collection.py", line 109, in add
+    add_request = self._validate_and_prepare_add_request(
+        ids=ids,
+    ...<4 lines>...
+        uris=uris,
+    )
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\CollectionCommon.py", line 103, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\models\CollectionCommon.py", line 235, in _validate_and_prepare_add_request
+    validate_insert_record_set(record_set=add_records)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 447, in validate_insert_record_set
+    validate_metadatas(record_set["metadatas"])
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1175, in validate_metadatas
+    validate_metadata(metadata)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1087, in validate_metadata
+    _validate_metadata_list_value(key, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\notch\AppData\Local\Programs\Python\Python313\Lib\site-packages\chromadb\api\types.py", line 1046, in _validate_metadata_list_value
+    raise ValueError(
+        f"Expected metadata list value for key '{key}' to be non-empty"
+    )
+ValueError: Expected metadata list value for key 'region' to be non-empty in add.
+
+[2026-07-31 18:13:30] 开始处理（63/136）：Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy
+[2026-07-31 18:13:39] 《Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy》完成：93个chunk已写入
+[2026-07-31 18:13:39] 开始处理（64/136）：Political Radicalism in Late Imperial Vienna: Origins of the Christian Social Movement, 1848-1897
+[2026-07-31 18:13:41]   过滤噪声block：1种，共3次出现
+[2026-07-31 18:16:52] 《Political Radicalism in Late Imperial Vienna: Origins of the Christian Social Movement, 1848-1897》完成：1913个chunk已写入
+[2026-07-31 18:16:52] 开始处理（65/136）：The Secret Treaties of Austria-Hungary, 1879-1914
+[2026-07-31 18:16:53]   过滤噪声block：115种，共431次出现
+[2026-07-31 18:18:06] 《The Secret Treaties of Austria-Hungary, 1879-1914》完成：739个chunk已写入
+[2026-07-31 18:18:06] 开始处理（66/136）：Re-estimating Austrian GDP, 1870-1913: Methods and Sources
+[2026-07-31 18:18:14] 《Re-estimating Austrian GDP, 1870-1913: Methods and Sources》完成：67个chunk已写入
+[2026-07-31 18:18:14] 开始处理（67/136）：Reconstructing a National Identity: The Jews of Habsburg Austria during World War I
+[2026-07-31 18:18:14]   过滤噪声block：6种，共23次出现
+[2026-07-31 18:19:36] 《Reconstructing a National Identity: The Jews of Habsburg Austria during World War I》完成：829个chunk已写入
+[2026-07-31 18:19:36] 开始处理（68/136）：Religion and Nationality in Western Ukraine: The Greek Catholic Church and the Ruthenian National Movement in Galicia, 1867-1900
+[2026-07-31 18:19:37]   过滤噪声block：2种，共12次出现
+[2026-07-31 18:20:16] 《Religion and Nationality in Western Ukraine: The Greek Catholic Church and the Ruthenian National Movement in Galicia, 1867-1900》完成：384个chunk已写入
+[2026-07-31 18:20:17] 开始处理（69/136）：Ring of Steel: Germany and Austria-Hungary in World War I
+[2026-07-31 18:20:17]   过滤噪声block：3种，共10次出现
+[2026-07-31 18:23:35] 《Ring of Steel: Germany and Austria-Hungary in World War I》完成：1986个chunk已写入
+[2026-07-31 18:23:35] 开始处理（70/136）：Taming Balkan Nationalism: The Habsburg 'Civilizing Mission' in Bosnia, 1878-1914
+[2026-07-31 18:23:36]   过滤噪声block：2种，共6次出现
+[2026-07-31 18:24:48] 《Taming Balkan Nationalism: The Habsburg 'Civilizing Mission' in Bosnia, 1878-1914》完成：662个chunk已写入
+[2026-07-31 18:24:48] 开始处理（71/136）：Socialism in Galicia: The Emergence of Polish Social Democracy and Ukrainian Radicalism (1860-1890)
+[2026-07-31 18:25:58] 《Socialism in Galicia: The Emergence of Polish Social Democracy and Ukrainian Radicalism (1860-1890)》完成：658个chunk已写入
+[2026-07-31 18:25:58] 开始处理（72/136）：Stjepan Radić, the Croat Peasant Party, and the Politics of Mass Mobilization, 1904-1928
+[2026-07-31 18:25:58]   过滤噪声block：1种，共6次出现
+[2026-07-31 18:26:56] 《Stjepan Radić, the Croat Peasant Party, and the Politics of Mass Mobilization, 1904-1928》完成：551个chunk已写入
+[2026-07-31 18:26:56] 开始处理（73/136）：The Annexation of Bosnia, 1908-1909
+[2026-07-31 18:28:13] 《The Annexation of Bosnia, 1908-1909》完成：742个chunk已写入
+[2026-07-31 18:28:13] 开始处理（74/136）：The Army of Francis Joseph
+[2026-07-31 18:29:21] 《The Army of Francis Joseph》完成：640个chunk已写入
+[2026-07-31 18:29:21] 开始处理（75/136）：The Austrian Electoral Reform of 1907
+[2026-07-31 18:30:19] 《The Austrian Electoral Reform of 1907》完成：582个chunk已写入
+[2026-07-31 18:30:19] 开始处理（76/136）：The Austrian Mind: An Intellectual and Social History, 1848-1938
+[2026-07-31 18:31:49] 《The Austrian Mind: An Intellectual and Social History, 1848-1938》完成：850个chunk已写入
+[2026-07-31 18:31:49] 开始处理（77/136）：The Austro-Hungarian Red Book
+[2026-07-31 18:31:51]   过滤噪声block：1种，共3次出现
+[2026-07-31 18:32:31] 《The Austro-Hungarian Red Book》完成：404个chunk已写入
+[2026-07-31 18:32:31] 开始处理（78/136）：The Czechs and the Lands of the Bohemian Crown
+[2026-07-31 18:32:31]   过滤噪声block：1种，共4次出现
+[2026-07-31 18:34:22] 《The Czechs and the Lands of the Bohemian Crown》完成：1092个chunk已写入
+[2026-07-31 18:34:22] 开始处理（79/136）：The First World War and the End of the Habsburg Monarchy, 1914-1918
+[2026-07-31 18:40:18] 《The First World War and the End of the Habsburg Monarchy, 1914-1918》完成：3424个chunk已写入
+[2026-07-31 18:40:18] 开始处理（80/136）：The First World War: Germany and Austria-Hungary 1914-1918
+[2026-07-31 18:41:57] 《The First World War: Germany and Austria-Hungary 1914-1918》完成：945个chunk已写入
+[2026-07-31 18:41:57] 开始处理（81/136）：The Great Departure: Mass Migration from Eastern Europe and the Making of the Free World
+[2026-07-31 18:43:19] 《The Great Departure: Mass Migration from Eastern Europe and the Making of the Free World》完成：801个chunk已写入
+[2026-07-31 18:43:19] 开始处理（82/136）：The Great Powers and the European States System, 1814-1914
+[2026-07-31 18:43:20]   过滤噪声block：2种，共6次出现
+[2026-07-31 18:44:08] 《The Great Powers and the European States System, 1814-1914》完成：438个chunk已写入
+[2026-07-31 18:44:08] 开始处理（83/136）：The Habsburg Empire: A New History
+[2026-07-31 18:46:20] 《The Habsburg Empire: A New History》完成：1297个chunk已写入
+[2026-07-31 18:46:20] 开始处理（84/136）：The Habsburg Empire, 1790-1918
+[2026-07-31 18:50:55] 《The Habsburg Empire, 1790-1918》完成：2724个chunk已写入
+[2026-07-31 18:50:55] 开始处理（85/136）：The Habsburg Monarchy as a Customs Union: Economic Development in Austria-Hungary in the Nineteenth Century
+[2026-07-31 18:50:56]   过滤噪声block：10种，共36次出现
+[2026-07-31 18:51:57] 《The Habsburg Monarchy as a Customs Union: Economic Development in Austria-Hungary in the Nineteenth Century》完成：599个chunk已写入
+[2026-07-31 18:51:57] 开始处理（86/136）：The Habsburg Monarchy, 1618-1815
+[2026-07-31 18:51:57]   过滤噪声block：4种，共17次出现
+[2026-07-31 18:53:05] 《The Habsburg Monarchy, 1618-1815》完成：668个chunk已写入
+[2026-07-31 18:53:05] 开始处理（87/136）：The Habsburg and Hohenzollern Dynasties in the Seventeenth and Eighteenth Centuries
+[2026-07-31 18:53:05]   过滤噪声block：1种，共3次出现
+[2026-07-31 18:54:52] 《The Habsburg and Hohenzollern Dynasties in the Seventeenth and Eighteenth Centuries》完成：1061个chunk已写入
+[2026-07-31 18:54:52] 开始处理（88/136）：The Idea of Galicia: History and Fantasy in Habsburg Political Culture
+[2026-07-31 18:56:22] 《The Idea of Galicia: History and Fantasy in Habsburg Political Culture》完成：865个chunk已写入
+[2026-07-31 18:56:22] 开始处理（89/136）：The Idea of Nation: The Romanians of Transylvania, 1691-1849
+[2026-07-31 18:56:22]   过滤噪声block：19种，共403次出现
+[2026-07-31 18:58:14] 《The Idea of Nation: The Romanians of Transylvania, 1691-1849》完成：631个chunk已写入
+[2026-07-31 18:58:14] 开始处理（90/136）：The Jews of Vienna in the Age of Franz Joseph
+[2026-07-31 18:58:19]   过滤噪声block：13种，共110次出现
+[2026-07-31 19:01:46] 《The Jews of Vienna in the Age of Franz Joseph》完成：2037个chunk已写入
+[2026-07-31 19:01:46] 开始处理（91/136）：The Jews of Vienna and the First World War
+[2026-07-31 19:02:47] 《The Jews of Vienna and the First World War》完成：587个chunk已写入
+[2026-07-31 19:02:47] 开始处理（92/136）：The Jews of Vienna, 1867-1914: Assimilation and Identity
+[2026-07-31 19:02:48]   过滤噪声block：3种，共23次出现
+[2026-07-31 19:04:11] 《The Jews of Vienna, 1867-1914: Assimilation and Identity》完成：801个chunk已写入
+[2026-07-31 19:04:11] 开始处理（93/136）：The Last Years of Austria-Hungary: Essays in Political and Military History, 1908-1918
+[2026-07-31 19:04:44] 《The Last Years of Austria-Hungary: Essays in Political and Military History, 1908-1918》完成：319个chunk已写入
+[2026-07-31 19:04:44] 开始处理（94/136）：The Lights that Failed: European International History, 1919-1933
+[2026-07-31 19:04:45]   过滤噪声block：2种，共7次出现
+[2026-07-31 19:06:56] 《The Lights that Failed: European International History, 1919-1933》完成：1202个chunk已写入
+[2026-07-31 19:06:56] 开始处理（95/136）：The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy
+[2026-07-31 19:08:18] 《The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy》完成：813个chunk已写入
+[2026-07-31 19:08:18] 开始处理（96/136）：The Military Border in Croatia, 1740-1881: A Study of an Imperial Institution
+[2026-07-31 19:08:18]   过滤噪声block：1种，共3次出现
+[2026-07-31 19:09:38] 《The Military Border in Croatia, 1740-1881: A Study of an Imperial Institution》完成：787个chunk已写入
+[2026-07-31 19:09:38] 开始处理（97/136）：The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume I: Empire and Nationalities
+[2026-07-31 19:12:03] 《The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume I: Empire and Nationalities》完成：1441个chunk已写入
+[2026-07-31 19:12:03] 开始处理（98/136）：The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume II: Empire Reform
+[2026-07-31 19:14:11] 《The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume II: Empire Reform》完成：1284个chunk已写入
+[2026-07-31 19:14:11] 开始处理（99/136）：The Nation in the Village: The Genesis of Peasant National Identity in Austrian Poland, 1848-1914
+[2026-07-31 19:15:26] 《The Nation in the Village: The Genesis of Peasant National Identity in Austrian Poland, 1848-1914》完成：742个chunk已写入
+[2026-07-31 19:15:26] 开始处理（100/136）：The Origins of the War of 1914, Volume I: European Relations from the Congress of Berlin to the Eve of the Sarajevo Murder
+[2026-07-31 19:15:29]   过滤噪声block：12种，共113次出现
+[2026-07-31 19:18:07] 《The Origins of the War of 1914, Volume I: European Relations from the Congress of Berlin to the Eve of the Sarajevo Murder》完成：1597个chunk已写入
+[2026-07-31 19:18:07] 开始处理（101/136）：The Origins of the War of 1914, Volume II: The Crisis of July 1914 — From the Sarajevo Outrage to the Austro-Hungarian General Mobilization
+[2026-07-31 19:18:11]   过滤噪声block：18种，共162次出现
+[2026-07-31 19:22:28] 《The Origins of the War of 1914, Volume II: The Crisis of July 1914 — From the Sarajevo Outrage to the Austro-Hungarian General Mobilization》完成：2562个chunk已写入
+[2026-07-31 19:22:28] 开始处理（102/136）：The Origins of the War of 1914, Volume III: The Epilogue of the Crisis of July 1914 — The Declarations of War and of Neutrality
+[2026-07-31 19:22:31]   过滤噪声block：6种，共96次出现
+[2026-07-31 19:26:26] 《The Origins of the War of 1914, Volume III: The Epilogue of the Crisis of July 1914 — The Declarations of War and of Neutrality》完成：2298个chunk已写入
+[2026-07-31 19:26:26] 开始处理（103/136）：The Politics of Backwardness in Hungary, 1825-1945
+[2026-07-31 19:27:44] 《The Politics of Backwardness in Hungary, 1825-1945》完成：726个chunk已写入
+[2026-07-31 19:27:44] 开始处理（104/136）：The Pomp and Politics of Patriotism: Imperial Celebrations in Habsburg Austria, 1848-1916
+[2026-07-31 19:28:37] 《The Pomp and Politics of Patriotism: Imperial Celebrations in Habsburg Austria, 1848-1916》完成：496个chunk已写入
+[2026-07-31 19:28:37] 开始处理（105/136）：The Resurrection and Collapse of Empire in Habsburg Serbia, 1914-1918
+[2026-07-31 19:29:54] 《The Resurrection and Collapse of Empire in Habsburg Serbia, 1914-1918》完成：698个chunk已写入
+[2026-07-31 19:29:54] 开始处理（106/136）：The Road to Sarajevo
+[2026-07-31 19:30:01]   过滤噪声block：2种，共8次出现
+[2026-07-31 19:32:47] 《The Road to Sarajevo》完成：1593个chunk已写入
+[2026-07-31 19:32:47] 开始处理（107/136）：The Rumanian National Movement in Transylvania, 1780-1849
+[2026-07-31 19:33:52] 《The Rumanian National Movement in Transylvania, 1780-1849》完成：638个chunk已写入
+[2026-07-31 19:33:52] 开始处理（108/136）：The Slovenes and Yugoslavism, 1890-1914
+[2026-07-31 19:34:46] 《The Slovenes and Yugoslavism, 1890-1914》完成：516个chunk已写入
+[2026-07-31 19:34:46] 开始处理（109/136）：The Changing Pattern of Landownership in Hungary, 1867-1914
+[2026-07-31 19:34:46]   过滤噪声block：2种，共37次出现
+[2026-07-31 19:34:54] 《The Changing Pattern of Landownership in Hungary, 1867-1914》完成：71个chunk已写入
+[2026-07-31 19:34:54] 开始处理（110/136）：The History of the Dichotomy of Civic Western and Ethnic Eastern Nationalism
+[2026-07-31 19:35:04] 《The History of the Dichotomy of Civic Western and Ethnic Eastern Nationalism》完成：90个chunk已写入
+[2026-07-31 19:35:04] 开始处理（111/136）：The Making of the Habsburg Monarchy, 1550-1700: An Interpretation
+[2026-07-31 19:37:28] 《The Making of the Habsburg Monarchy, 1550-1700: An Interpretation》完成：1325个chunk已写入
+[2026-07-31 19:37:28] 开始处理（112/136）：The Socialism of Fools: Georg Ritter von Schönerer and Austrian Pan-Germanism
+[2026-07-31 19:37:29]   过滤噪声block：2种，共14次出现
+[2026-07-31 19:39:16] 《The Socialism of Fools: Georg Ritter von Schönerer and Austrian Pan-Germanism》完成：1028个chunk已写入
+[2026-07-31 19:39:16] 开始处理（113/136）：István Tisza: The Liberal Vision and Conservative Statecraft of a Magyar Nationalist
+[2026-07-31 19:42:11] 《István Tisza: The Liberal Vision and Conservative Statecraft of a Magyar Nationalist》完成：1511个chunk已写入
+[2026-07-31 19:42:11] 开始处理（114/136）：Vienna and the Fall of the Habsburg Empire: Total War and Everyday Life in World War I
+[2026-07-31 19:44:03] 《Vienna and the Fall of the Habsburg Empire: Total War and Everyday Life in World War I》完成：992个chunk已写入
+[2026-07-31 19:44:03] 开始处理（115/136）：Vienna and the Jews, 1867-1938: A Cultural History
+[2026-07-31 19:45:57] 《Vienna and the Jews, 1867-1938: A Cultural History》完成：947个chunk已写入
+[2026-07-31 19:45:57] 开始处理（116/136）：Regional Income Dispersion and Market Potential in the Late Nineteenth Century Habsburg Empire
+[2026-07-31 19:46:06] 《Regional Income Dispersion and Market Potential in the Late Nineteenth Century Habsburg Empire》完成：75个chunk已写入
+[2026-07-31 19:46:06] 开始处理（117/136）：Wittgenstein's Vienna
+[2026-07-31 19:46:07]   过滤噪声block：1种，共16次出现
+[2026-07-31 19:47:05] 《Wittgenstein's Vienna》完成：474个chunk已写入
+[2026-07-31 19:47:05] 开始处理（118/136）：Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy [duplicate copy]
+[2026-07-31 19:47:12] 《Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy [duplicate copy]》完成：51个chunk已写入
+[2026-07-31 19:47:12] 开始处理（119/136）：Austro-Hungarian Documents Relating to the Macedonian Struggle, 1896-1912
+[2026-07-31 19:50:23] 《Austro-Hungarian Documents Relating to the Macedonian Struggle, 1896-1912》完成：1545个chunk已写入
+[2026-07-31 19:50:23] 开始处理（120/136）：Sarajevo: The Story of a Political Murder
+[2026-07-31 19:51:52] 《Sarajevo: The Story of a Political Murder》完成：756个chunk已写入
+[2026-07-31 19:51:52] 开始处理（121/136）：The Dissolution of the Habsburg Monarchy
+[2026-07-31 19:54:12] 《The Dissolution of the Habsburg Monarchy》完成：1120个chunk已写入
+[2026-07-31 19:54:12] 开始处理（122/136）：Österreich-Ungarns letzter Krieg 1914-1918, Band II: Das Kriegsjahr 1915, Erster Teil
+[2026-07-31 19:54:14]   过滤噪声block：1种，共4次出现
+[2026-07-31 19:59:55] 《Österreich-Ungarns letzter Krieg 1914-1918, Band II: Das Kriegsjahr 1915, Erster Teil》完成：2842个chunk已写入
+[2026-07-31 19:59:55] 开始处理（123/136）：Österreich-Ungarns letzter Krieg 1914-1918, Band IV: Das Kriegsjahr 1916, Erster Teil
+[2026-07-31 20:04:35] 《Österreich-Ungarns letzter Krieg 1914-1918, Band IV: Das Kriegsjahr 1916, Erster Teil》完成：2576个chunk已写入
+[2026-07-31 20:04:35] 开始处理（124/136）：Österreich-Ungarns letzter Krieg 1914-1918, Band III: Das Kriegsjahr 1915, Zweiter Teil
+[2026-07-31 20:04:37]   过滤噪声block：1种，共3次出现
+[2026-07-31 20:09:04] 《Österreich-Ungarns letzter Krieg 1914-1918, Band III: Das Kriegsjahr 1915, Zweiter Teil》完成：2162个chunk已写入
+[2026-07-31 20:09:04] 开始处理（125/136）：Österreich-Ungarns letzter Krieg 1914-1918, Band VII: Das Kriegsjahr 1918
+[2026-07-31 20:15:04] 《Österreich-Ungarns letzter Krieg 1914-1918, Band VII: Das Kriegsjahr 1918》完成：2918个chunk已写入
+[2026-07-31 20:15:04] 开始处理（126/136）：Where Our Commonality Is Necessary…: Rethinking the End of the Habsburg Monarchy
+[2026-07-31 20:15:12] 《Where Our Commonality Is Necessary…: Rethinking the End of the Habsburg Monarchy》完成：60个chunk已写入
+[2026-07-31 20:15:12] 开始处理（127/136）：Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa
+[2026-07-31 20:16:28] 《Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa》完成：596个chunk已写入
+[2026-07-31 20:16:28] 开始处理（128/136）：Multicultural Cities of the Habsburg Empire, 1880-1914: Imagined Communities and Conflictual Encounters
+[2026-07-31 20:16:30]   过滤噪声block：7种，共197次出现
+[2026-07-31 20:18:14] 《Multicultural Cities of the Habsburg Empire, 1880-1914: Imagined Communities and Conflictual Encounters》完成：815个chunk已写入
+[2026-07-31 20:18:14] 开始处理（129/136）：The Pillars of Dynasty: Women, Marriage Diplomacy, and the Habsburg Dynastic Network, 1567-1570
+[2026-07-31 20:18:21] 《The Pillars of Dynasty: Women, Marriage Diplomacy, and the Habsburg Dynastic Network, 1567-1570》完成：41个chunk已写入
+[2026-07-31 20:18:21] 开始处理（130/136）：Austria-Hungary's Last War, 1914-1918, Volume II (English translation of Österreich-Ungarns letzter Krieg)
+[2026-07-31 20:18:23]   过滤噪声block：3种，共9次出现
+[2026-07-31 20:21:15] 《Austria-Hungary's Last War, 1914-1918, Volume II (English translation of Österreich-Ungarns letzter Krieg)》完成：1327个chunk已写入
+[2026-07-31 20:21:15] 开始处理（131/136）：Austria-Hungary's Last War, 1914-1918, Volume I (English translation of Österreich-Ungarns letzter Krieg)
+[2026-07-31 20:21:17]   过滤噪声block：2种，共7次出现
+[2026-07-31 20:24:10] 《Austria-Hungary's Last War, 1914-1918, Volume I (English translation of Österreich-Ungarns letzter Krieg)》完成：1334个chunk已写入
+[2026-07-31 20:24:10] 开始处理（132/136）：The Habsburg Monarchy as a Fiscal-Military State: Contours and Perspectives 1648-1815
+[2026-07-31 20:24:12]   过滤噪声block：5种，共130次出现
+[2026-07-31 20:27:38] 《The Habsburg Monarchy as a Fiscal-Military State: Contours and Perspectives 1648-1815》完成：1526个chunk已写入
+[2026-07-31 20:27:38] 开始处理（133/136）：Galicya i Kraków pod panowaniem austryackiem
+[2026-07-31 20:30:00] 《Galicya i Kraków pod panowaniem austryackiem》完成：1108个chunk已写入
+[2026-07-31 20:30:00] 开始处理（134/136）：Verwaltungsgeschichte der Habsburgermonarchie in der Frühen Neuzeit, Band 1/1: Hof und Dynastie, Kaiser und Reich, Zentralverwaltungen, Kriegswesen und landesfürstliches Finanzwesen
+[2026-07-31 20:30:04]   过滤噪声block：1种，共3次出现
+[2026-07-31 20:34:14] 《Verwaltungsgeschichte der Habsburgermonarchie in der Frühen Neuzeit, Band 1/1: Hof und Dynastie, Kaiser und Reich, Zentralverwaltungen, Kriegswesen und landesfürstliches Finanzwesen》完成：1763个chunk已写入
+[2026-07-31 20:34:14] 开始处理（135/136）：On the Economic Consequences of the Peace: Trade and Borders After Versailles
+[2026-07-31 20:34:14]   过滤噪声block：1种，共35次出现
+[2026-07-31 20:34:21] 《On the Economic Consequences of the Peace: Trade and Borders After Versailles》完成：48个chunk已写入
+[2026-07-31 20:34:21] 开始处理（136/136）：Österreich-Ungarns letzter Krieg 1914-1918, Band V: Das Kriegsjahr 1916, Zweiter Teil / 1917
+[2026-07-31 20:34:23]   过滤噪声block：1种，共3次出现
+[2026-07-31 20:39:42] 《Österreich-Ungarns letzter Krieg 1914-1918, Band V: Das Kriegsjahr 1916, Zweiter Teil / 1917》完成：2552个chunk已写入
+[2026-07-31 20:39:42] 全部处理完毕：136/136
+[2026-07-31 20:39:44] 当前collection总片段数：124621
+[2026-08-01 08:48:29] 开始处理（13/136）：The Economics of World War I
+[2026-08-01 08:48:30]   过滤噪声block：8种，共46次出现
+[2026-08-01 08:49:29] 《The Economics of World War I》完成：549个chunk已写入
+[2026-08-01 08:49:29] 开始处理（26/136）：Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914
+[2026-08-01 08:49:29] 《Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914》过滤后没有剩余内容，跳过
+[2026-08-01 08:49:29] 《Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914》未标记为已完成，下次运行会自动重试
+[2026-08-01 08:49:29] 开始处理（51/136）：History and Myth in Romanian Consciousness
+[2026-08-01 08:49:30] 《History and Myth in Romanian Consciousness》过滤后没有剩余内容，跳过
+[2026-08-01 08:49:30] 《History and Myth in Romanian Consciousness》未标记为已完成，下次运行会自动重试
+[2026-08-01 08:49:30] 开始处理（62/136）：Paris 1919: Six Months that Changed the World
+[2026-08-01 08:52:14] 《Paris 1919: Six Months that Changed the World》完成：1541个chunk已写入
+[2026-08-01 08:52:14] 全部处理完毕：136/136
+[2026-08-01 08:52:14] 当前collection总片段数：126263

@@ -1,0 +1,141 @@
+# Habsburg Metadata Generation Log
+# Started: 2026-07-31 10:10:21.189479
+# Total books: 136
+# title | granularity | chapter_count | status | timestamp
+# ================================================================================
+Apis, the congenial conspirator : the life of Colonel Dragutin T. Dimitrijević | book | 0 | DONE | 2026-07-31 10:10:45
+Austria under the Iron Ring, 1879-1893 | book | 0 | DONE | 2026-07-31 10:11:22
+Culture and Political Crisis in Vienna: Christian Socialism in Power, 1897-1918 | book | 0 | DONE | 2026-07-31 10:11:58
+Bosnia and Hercegovina: A Tradition Betrayed | book | 0 | DONE | 2026-07-31 10:13:05
+A History of Habsburg Jews, 1670-1918 | book | 0 | DONE | 2026-07-31 10:13:38
+Croatian National-Integrational Ideologies from the End of Illyrism to the Creation of Yugoslavia | book | 0 | DONE | 2026-07-31 10:13:57
+Austria-Hungary and the Origins of the First World War | book | 0 | DONE | 2026-07-31 10:14:39
+Austrian History Yearbook, Volume XV-XVI (1979-1980) | book | 0 | DONE | 2026-07-31 10:15:27
+Andreiu Şaguna and the Restoration of the Rumanian Orthodox Metropolis in Transylvania, 1846-1868 | book | 0 | DONE | 2026-07-31 10:15:45
+Austria-Hungary and the First World War | chapter | 11 | DONE | 2026-07-31 10:35:11
+Between States: The Transylvanian Question and the European Idea during World War II | chapter | 8 | DONE | 2026-07-31 10:49:44
+Die Habsburger Reiche, 1555-1740: Herrschaft – Gesellschaft – Politik | chapter | 7 | DONE | 2026-07-31 10:52:16
+The Economics of World War I | chapter | 12 | DONE | 2026-07-31 10:56:25
+Austria-Hungary's Last War, 1914-1918, Vol. 3 (1915): From the Capture of Brest-Litowsk to the End of the Year | chapter | 31 | DONE | 2026-07-31 11:04:30
+Bosnia: A Short History | book | 0 | DONE | 2026-07-31 11:04:55
+Der habsburgische Mythos in der modernen österreichischen Literatur | book | 0 | DONE | 2026-07-31 11:05:37
+Diaspora Nationalism and Jewish Identity in Habsburg Galicia | book | 0 | DONE | 2026-07-31 11:05:56
+Economic Development in East-Central Europe in the 19th and 20th Centuries | book | 0 | DONE | 2026-07-31 11:06:26
+Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century | book | 0 | DONE | 2026-07-31 11:06:40
+Economics and Empire, 1830-1914 | book | 0 | DONE | 2026-07-31 11:07:09
+Education and Middle-Class Society in Imperial Austria, 1848-1918 | book | 0 | DONE | 2026-07-31 11:07:41
+Emperor Francis Joseph of Austria: A Biography | book | 0 | DONE | 2026-07-31 11:08:05
+Endogenous Borders? The Effects of New Borders on Trade in Central Europe 1885-1933 | book | 0 | DONE | 2026-07-31 11:08:25
+Ethnic Nationalism and the Fall of Empires: Central Europe, Russia and the Middle East, 1914-1923 | book | 0 | DONE | 2026-07-31 11:09:13
+European Goods Market Integration in the Very Long Run: From the Black Death to the First World War | book | 0 | DONE | 2026-07-31 11:10:00
+Exclusive Revolutionaries: Liberal Politics, Social Experience, and National Identity in the Austrian Empire, 1848-1914 | book | 0 | DONE | 2026-07-31 11:10:17
+Fin-de-Siècle Vienna: Politics and Culture | chapter | 12 | DONE | 2026-07-31 11:14:59
+Francis Joseph | book | 0 | DONE | 2026-07-31 11:15:14
+Franz Conrad von Hötzendorf: Architect of the Apocalypse | book | 0 | DONE | 2026-07-31 11:15:47
+From Prejudice to Persecution: A History of Austrian Anti-Semitism | chapter | 10 | DONE | 2026-07-31 11:20:02
+From Sadowa to Sarajevo: The Foreign Policy of Austria-Hungary, 1866-1914 | book | 0 | DONE | 2026-07-31 11:20:22
+Frontiers, Islands, Forests, Stones: Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900 | book | 0 | DONE | 2026-07-31 11:20:37
+From Johann Pezzl to Joseph Perl: Galician Haskalah and the Austrian Enlightenment | book | 0 | DONE | 2026-07-31 11:20:58
+Guardians of the Nation: Activists on the Language Frontiers of Imperial Austria | book | 0 | DONE | 2026-07-31 11:21:16
+History in Exile: Memory and Identity at the Borders of the Balkans | book | 0 | DONE | 2026-07-31 11:21:30
+A History of Slovakia: The Struggle for Survival | chapter | 18 | DONE | 2026-07-31 11:28:07
+Hungary and Her Successors: The Treaty of Trianon and Its Consequences, 1919-1937 | book | 0 | DONE | 2026-07-31 11:28:29
+Hungary's Long Nineteenth Century: Constitutional and Democratic Traditions in a European Perspective. Collected Studies | chapter | 17 | DONE | 2026-07-31 11:34:36
+In the Service of the Emperor: Italians in the Austrian Armed Forces, 1814-1918 | book | 0 | DONE | 2026-07-31 11:34:57
+Interwar Vienna: Culture between Tradition and Modernity | chapter | 6 | DONE | 2026-07-31 11:36:55
+Inventing Germans: Class, Nationality and Colonial Fantasy at the Margins of the Hapsburg Monarchy | chapter | 12 | DONE | 2026-07-31 11:41:28
+Islam under the Double Eagle: The Muslims of Bosnia and Hercegovina, 1878-1914 | book | 0 | DONE | 2026-07-31 11:41:49
+Isonzo: The Forgotten Sacrifice of the Great War | chapter | 20 | DONE | 2026-07-31 11:48:52
+Jesuits and the Politics of Religious Pluralism in Eighteenth-Century Transylvania: Culture, Politics and Religion, 1693-1773 | book | 0 | DONE | 2026-07-31 11:49:08
+Jews and German Politics: The Case of Habsburg Moravia, 1867-1918 | chapter | 3 | DONE | 2026-07-31 11:49:55
+Galician Villagers and the Ukrainian National Movement in the Nineteenth Century | book | 0 | DONE | 2026-07-31 11:50:14
+Joseph II, Volume I: In the Shadow of Maria Theresa, 1741-1780 | book | 0 | DONE | 2026-07-31 11:50:48
+July 1914: Soldiers, Statesmen, and the Coming of the Great War — A Brief Documentary History | book | 0 | DONE | 2026-07-31 11:51:19
+July 1914: The Outbreak of the First World War — Selected Documents | book | 0 | DONE | 2026-07-31 11:51:40
+Kidnapped Souls: National Indifference and the Battle for Children in the Bohemian Lands, 1900-1948 | chapter | 10 | DONE | 2026-07-31 11:55:23
+History and Myth in Romanian Consciousness | book | 0 | DONE | 2026-07-31 11:55:45
+Making Minorities and Majorities: National Indifference and National Self-Determination in Habsburg Central Europe | book | 0 | DONE | 2026-07-31 11:56:10
+Review of Max-Stephan Schulze, 'Engineering and Economic Growth: The Development of Austria-Hungary's Machine-Building Industry in the Late Nineteenth Century' | book | 0 | DONE | 2026-07-31 11:56:29
+A History of Modern Serbia, 1804-1918 | book | 0 | DONE | 2026-07-31 11:56:50
+Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna | book | 0 | DONE | 2026-07-31 11:57:13
+Nationalism and the Crowd in Liberal Hungary, 1848-1914 | book | 0 | DONE | 2026-07-31 11:57:36
+Noble Nationalists: The Transformation of the Bohemian Aristocracy | book | 0 | DONE | 2026-07-31 11:57:59
+October Fifteenth: A History of Modern Hungary, 1929-1945, Volume I | chapter | 24 | DONE | 2026-07-31 12:07:20
+October Fifteenth: A History of Modern Hungary, 1929-1945, Volume II | chapter | 20 | DONE | 2026-07-31 12:13:36
+Oil Empire: Visions of Prosperity in Austrian Galicia | book | 0 | DONE | 2026-07-31 12:13:50
+Orthodoxy and Nationality: Andreiu Şaguna and the Rumanians of Transylvania, 1846-1873 | book | 0 | DONE | 2026-07-31 12:14:08
+Paris 1919: Six Months that Changed the World | chapter | 33 | DONE | 2026-07-31 12:27:01
+Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy | chapter | 7 | DONE | 2026-07-31 12:28:53
+Political Radicalism in Late Imperial Vienna: Origins of the Christian Social Movement, 1848-1897 | book | 0 | DONE | 2026-07-31 12:29:02
+The Secret Treaties of Austria-Hungary, 1879-1914 | book | 0 | DONE | 2026-07-31 12:29:28
+Re-estimating Austrian GDP, 1870-1913: Methods and Sources | book | 0 | DONE | 2026-07-31 12:29:46
+Reconstructing a National Identity: The Jews of Habsburg Austria during World War I | chapter | 8 | DONE | 2026-07-31 12:32:56
+Religion and Nationality in Western Ukraine: The Greek Catholic Church and the Ruthenian National Movement in Galicia, 1867-1900 | chapter | 6 | DONE | 2026-07-31 12:34:37
+Ring of Steel: Germany and Austria-Hungary in World War I | chapter | 16 | DONE | 2026-07-31 12:42:11
+Taming Balkan Nationalism: The Habsburg 'Civilizing Mission' in Bosnia, 1878-1914 | chapter | 12 | DONE | 2026-07-31 12:45:48
+Socialism in Galicia: The Emergence of Polish Social Democracy and Ukrainian Radicalism (1860-1890) | book | 0 | DONE | 2026-07-31 12:46:04
+Stjepan Radić, the Croat Peasant Party, and the Politics of Mass Mobilization, 1904-1928 | chapter | 8 | DONE | 2026-07-31 12:48:29
+The Annexation of Bosnia, 1908-1909 | book | 0 | DONE | 2026-07-31 12:48:45
+The Army of Francis Joseph | chapter | 16 | DONE | 2026-07-31 12:53:36
+The Austrian Electoral Reform of 1907 | chapter | 7 | DONE | 2026-07-31 12:56:19
+The Austrian Mind: An Intellectual and Social History, 1848-1938 | book | 0 | DONE | 2026-07-31 12:56:37
+The Austro-Hungarian Red Book | book | 0 | DONE | 2026-07-31 12:56:51
+The Czechs and the Lands of the Bohemian Crown | chapter | 6 | DONE | 2026-07-31 13:00:14
+The First World War and the End of the Habsburg Monarchy, 1914-1918 | chapter | 37 | DONE | 2026-07-31 13:14:02
+The First World War: Germany and Austria-Hungary 1914-1918 | chapter | 15 | DONE | 2026-07-31 13:19:45
+The Great Departure: Mass Migration from Eastern Europe and the Making of the Free World | chapter | 8 | DONE | 2026-07-31 13:24:11
+The Great Powers and the European States System, 1814-1914 | book | 0 | DONE | 2026-07-31 13:24:44
+The Habsburg Empire: A New History | chapter | 10 | DONE | 2026-07-31 13:29:09
+The Habsburg Empire, 1790-1918 | chapter | 23 | DONE | 2026-07-31 13:40:23
+The Habsburg Monarchy as a Customs Union: Economic Development in Austria-Hungary in the Nineteenth Century | chapter | 6 | DONE | 2026-07-31 13:42:50
+The Habsburg Monarchy, 1618-1815 | chapter | 11 | DONE | 2026-07-31 13:48:08
+The Habsburg and Hohenzollern Dynasties in the Seventeenth and Eighteenth Centuries | book | 0 | DONE | 2026-07-31 13:48:30
+The Idea of Galicia: History and Fantasy in Habsburg Political Culture | book | 0 | DONE | 2026-07-31 13:48:51
+The Idea of Nation: The Romanians of Transylvania, 1691-1849 | book | 0 | DONE | 2026-07-31 13:49:20
+The Jews of Vienna in the Age of Franz Joseph | chapter | 6 | DONE | 2026-07-31 13:51:58
+The Jews of Vienna and the First World War | chapter | 8 | DONE | 2026-07-31 13:56:05
+The Jews of Vienna, 1867-1914: Assimilation and Identity | book | 0 | DONE | 2026-07-31 13:56:27
+The Last Years of Austria-Hungary: Essays in Political and Military History, 1908-1918 | book | 0 | DONE | 2026-07-31 13:56:52
+The Lights that Failed: European International History, 1919-1933 | chapter | 4 | DONE | 2026-07-31 13:59:16
+The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy | chapter | 13 | DONE | 2026-07-31 14:03:22
+The Military Border in Croatia, 1740-1881: A Study of an Imperial Institution | book | 0 | DONE | 2026-07-31 14:03:42
+The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume I: Empire and Nationalities | book | 0 | DONE | 2026-07-31 14:04:06
+The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume II: Empire Reform | book | 0 | DONE | 2026-07-31 14:04:29
+The Nation in the Village: The Genesis of Peasant National Identity in Austrian Poland, 1848-1914 | chapter | 14 | DONE | 2026-07-31 14:07:52
+The Origins of the War of 1914, Volume I: European Relations from the Congress of Berlin to the Eve of the Sarajevo Murder | book | 0 | DONE | 2026-07-31 14:08:15
+The Origins of the War of 1914, Volume II: The Crisis of July 1914 — From the Sarajevo Outrage to the Austro-Hungarian General Mobilization | book | 0 | DONE | 2026-07-31 14:08:36
+The Politics of Backwardness in Hungary, 1825-1945 | chapter | 9 | DONE | 2026-07-31 14:32:21
+The Pomp and Politics of Patriotism: Imperial Celebrations in Habsburg Austria, 1848-1916 | book | 0 | DONE | 2026-07-31 14:32:54
+The Resurrection and Collapse of Empire in Habsburg Serbia, 1914-1918 | book | 0 | DONE | 2026-07-31 14:33:24
+The Road to Sarajevo | book | 0 | DONE | 2026-07-31 14:34:22
+The Rumanian National Movement in Transylvania, 1780-1849 | book | 0 | DONE | 2026-07-31 14:34:39
+The Slovenes and Yugoslavism, 1890-1914 | book | 0 | DONE | 2026-07-31 14:35:15
+The Changing Pattern of Landownership in Hungary, 1867-1914 | book | 0 | DONE | 2026-07-31 14:35:28
+The Making of the Habsburg Monarchy, 1550-1700: An Interpretation | book | 0 | DONE | 2026-07-31 14:37:43
+The Socialism of Fools: Georg Ritter von Schönerer and Austrian Pan-Germanism | book | 0 | DONE | 2026-07-31 14:38:50
+István Tisza: The Liberal Vision and Conservative Statecraft of a Magyar Nationalist | book | 0 | DONE | 2026-07-31 14:39:24
+Vienna and the Fall of the Habsburg Empire: Total War and Everyday Life in World War I | book | 0 | DONE | 2026-07-31 14:40:03
+Vienna and the Jews, 1867-1938: A Cultural History | book | 0 | DONE | 2026-07-31 14:40:21
+Wittgenstein's Vienna | chapter | 11 | DONE | 2026-07-31 14:47:02
+Patterns of Growth and Stagnation in the Late Nineteenth Century Habsburg Economy [duplicate copy] | chapter | 2 | DONE | 2026-07-31 14:47:43
+Austro-Hungarian Documents Relating to the Macedonian Struggle, 1896-1912 | book | 0 | DONE | 2026-07-31 14:48:06
+Sarajevo: The Story of a Political Murder | book | 0 | DONE | 2026-07-31 14:48:38
+The Dissolution of the Habsburg Monarchy | book | 0 | DONE | 2026-07-31 14:49:03
+Österreich-Ungarns letzter Krieg 1914-1918, Band II: Das Kriegsjahr 1915, Erster Teil | book | 0 | DONE | 2026-07-31 14:49:39
+Österreich-Ungarns letzter Krieg 1914-1918, Band IV: Das Kriegsjahr 1916, Erster Teil | book | 0 | DONE | 2026-07-31 14:49:54
+Österreich-Ungarns letzter Krieg 1914-1918, Band III: Das Kriegsjahr 1915, Zweiter Teil | book | 0 | DONE | 2026-07-31 14:50:06
+Österreich-Ungarns letzter Krieg 1914-1918, Band VII: Das Kriegsjahr 1918 | book | 0 | DONE | 2026-07-31 14:50:20
+Where Our Commonality Is Necessary…: Rethinking the End of the Habsburg Monarchy | chapter | 4 | DONE | 2026-07-31 14:52:00
+Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa | chapter | 19 | DONE | 2026-07-31 14:59:38
+Multicultural Cities of the Habsburg Empire, 1880-1914: Imagined Communities and Conflictual Encounters | book | 0 | DONE | 2026-07-31 15:00:08
+The Pillars of Dynasty: Women, Marriage Diplomacy, and the Habsburg Dynastic Network, 1567-1570 | book | 0 | DONE | 2026-07-31 15:00:32
+Austria-Hungary's Last War, 1914-1918, Volume II (English translation of Österreich-Ungarns letzter Krieg) | chapter | 21 | DONE | 2026-07-31 15:07:17
+Austria-Hungary's Last War, 1914-1918, Volume I (English translation of Österreich-Ungarns letzter Krieg) | chapter | 42 | DONE | 2026-07-31 15:18:58
+The Habsburg Monarchy as a Fiscal-Military State: Contours and Perspectives 1648-1815 | chapter | 26 | DONE | 2026-07-31 15:28:23
+Galicya i Kraków pod panowaniem austryackiem | book | 0 | DONE | 2026-07-31 15:28:48
+Verwaltungsgeschichte der Habsburgermonarchie in der Frühen Neuzeit, Band 1/1: Hof und Dynastie, Kaiser und Reich, Zentralverwaltungen, Kriegswesen und landesfürstliches Finanzwesen | book | 0 | DONE | 2026-07-31 15:29:05
+On the Economic Consequences of the Peace: Trade and Borders After Versailles | book | 0 | DONE | 2026-07-31 15:29:26
+Österreich-Ungarns letzter Krieg 1914-1918, Band V: Das Kriegsjahr 1916, Zweiter Teil / 1917 | book | 0 | DONE | 2026-07-31 15:29:40
+The Origins of the War of 1914, Volume III: The Epilogue of the Crisis of July 1914 — The Declarations of War and of Neutrality | book | 0 | DONE | 2026-07-31 15:37:24
+The History of the Dichotomy of Civic Western and Ethnic Eastern Nationalism | chapter | 2 | DONE | 2026-07-31 15:39:18
+Regional Income Dispersion and Market Potential in the Late Nineteenth Century Habsburg Empire | chapter | 3 | DONE | 2026-07-31 15:39:54

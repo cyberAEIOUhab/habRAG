@@ -1,0 +1,292 @@
+=== HABSBURG BOOKDATA GENERATION LOG ===
+Started: 2026-07-29T11:51:09.913492
+Source dir: C:\Users\notch\Desktop\哈布斯堡史
+Total files: 142
+
+=== FILE LIST ===
+[001] .pdf | 1555-1740年的哈布斯堡王朝：统治、社会与政治 Die Habsburger Reiche,1555-1740 Herrschaft - Gesellschaft - Politik (1).pdf
+[002] .pdf | A history of Habsburg Jews, 1670-1918 (McCagg, William O) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[003] .pdf | Andreiu Şaguna and the restoration of the Rumanian Orthodox Metropolis in Transylvania, 1846-1868.pdf
+[004] .pdf | Apis, the congenial conspirator  the life of Colonel Dragutin T. Dimitrijević (MacKenzie, David, 1927-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[005] .pdf | Austria under the Iron Ring, 1879-1893 (Jenks, William Alexander, 1918-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[006] .pdf | Austria-Hungary and the First World War.pdf
+[007] .pdf | Austria-Hungary and the Origins of the First World War (Samuel R. Williamson, Jr) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[008] .pdf | Austria-Hungary's Economy in World War I.pdf
+[009] .pdf | Austria-Hungarys Last War, 1914-1918 Vol 3 (1915) From the Capture of Brest-Litowsk to the End of the Year ( etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[010] .pdf | Austrian History Yearbook 1979-1980 15-16 (Author Unknown) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[011] .pdf | Between States The Transylvanian Question and the European Idea During World War II (Holly Case) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[012] .pdf | Bosnia  A Short History (Noel Malcolm) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[013] .pdf | Bosnia and Hercegovina  a tradition betrayed (Donia, Robert J, Fine etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[014] .pdf | Croatian National-Integrational Ideologies from the End of Illyrism to the Creation of Yugoslavia.pdf
+[015] .pdf | Culture and political crisis in Vienna  Christian socialism in power, 1897-1918 (Boyer, John W) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[016] .pdf | Der habsburgische Mythos in der modernen österreichischen Literatur (Magris, Claudio) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[017] .pdf | Diaspora Nationalism and Jewish Identity in Habsburg Galicia (Joshua Shanes) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[018] .pdf | Economic development in East-Central Europe in the 19th and 20th centuries (Berend, T. Iván (Tibor Iván), 1930-, Ránki etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[019] .pdf | Economic nationalism and economic integration the Austro_Hungarian Empire in the late nineteenth century.pdf
+[020] .pdf | Economics and Empire, 1830-1914 (David K. Fieldhouse) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[021] .pdf | Education and middle-class society in imperial Austria, 1848-1918 (Cohen, Gary B., 1948-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[022] .pdf | Emperor Francis Joseph of Austria a biography (Redlich, Josef, 1869-1936) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[023] .pdf | Endogenous Borders The Effects of New Borders on Trade in Central Europe 1885-1933.pdf
+[024] .pdf | Engineering and Economic Growth. The Development of Austria-Hungarys Machine-Building Industry in the late Nineteenth Century… (Review by Franz Mathis) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[025] .pdf | Ethnic Nationalism and the Fall of Empires Central Europe, Russia, and the Middle East, 1914-1923 (Aviel Roshwald) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[026] .pdf | European goods market integration in the very long run from the Black Death to the First World War.pdf
+[027] .pdf | Exclusive revolutionaries  liberal politics, social experience, and national identity in the Austrian Empire, 1848-1914 (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[028] .pdf | Exclusive revolutionaries liberal politics, social experience, and national identity in the Austrian Empire, 1848-1914.pdf
+[029] .epub | Fin-de-siecle Vienna politics and culture (Schorske, Carl E) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[030] .pdf | Francis Joseph (Beller, Steven, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[031] .pdf | Franz Conrad von Hötzendorf  architect of the apocalypse (Sondhaus, Lawrence, 1958- author) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[032] .epub | From Prejudice to Persecution A History of Austrian Anti-Semitism (Bruce F. Pauley) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[033] .pdf | From Sadowa to Sarajevo  the foreign policy of Austria-Hungary, 1866-1914 (F R Bridge) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[034] .pdf | Frontiers, Islands, Forests, Stones Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900.pdf
+[035] .pdf | Galician Haskalah and the Austrian Enlightenment.pdf
+[036] .pdf | Guardians of the Nation Activists on the Language Frontiers of Imperial Austria (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[037] .pdf | History in Exile Memory and Identity at the Borders of the Balkans (Pamela Ballinger) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[038] .epub | History of Slovakia The Struggle for Survival (2005) (Stanislav J. Kirschbaum) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[039] .pdf | Hoyos Alexander — Der deutsch-englische Gegensatz.pdf
+[040] .pdf | Hungary and Her Successors (C.A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[041] .pdf | Hungarys Long Nineteenth Century Constitutional and Democratic Traditions in a European Perspective Collected Studies (László Péter, Miklós Lojkó) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[042] .pdf | In the service of the emperor  Italians in the Austrian armed forces, 1814-1918 (Sondhaus, Lawrence, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[043] .pdf | Interwar Vienna Culture between Tradition and Modernity (Studies in German Literature Linguistics and Culture) (Deborah Holmes, Lisa Silverman (editors)) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[044] .pdf | Inventing Germans class, nationality and colonial fantasy at the margins of the Hapsburg monarchy.pdf
+[045] .pdf | Islam under the double eagle  the Muslims of Bosnia and Hercegovina, 1878-1914 (Donia, Robert J) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[046] .epub | Isonzo The Forgotten Sacrifice of the Great War (John R. Schindler) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[047] .pdf | Jesuits and the politics of religious pluralism in eighteenth century Transylvania  culture, politics and religion, 1693-1773 (Shore, Paul) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[048] .pdf | Jews and German Politics The Case of Habsburg.pdf
+[049] .pdf | John-Paul Himka — Galician Villagers and the Ukrainian National Movement.pdf
+[050] .pdf | Joseph II (Beales, Derek Edward Dawson) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[051] .pdf | July 1914  soldiers, statesmen, and the coming of the Great War  a brief documentary history (Williamson, Samuel R, Van Wyk, Russel) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[052] .pdf | July 1914 the outbreak of the First World War selected documents (Geiss, Imanuel, ed) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[053] .pdf | Kidnapped Souls National Indifference and the Battle for Children in the Bohemian Lands, 1900-1948 (Tara Zahra) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[054] .pdf | Lucian Boia — History and Myth in Romanian Consciousness.pdf
+[055] .pdf | Making minorities and majorities national indifference and national self-determination in Habsburg central Europe.pdf
+[056] .pdf | Max-Stephan Schulze. Engineering and Economic Growth The Development of Austria-Hungarys Machine-Building Industry in the… (Pammer, Michael) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[057] .pdf | Michael Boro Petrovich — A History of Modern Serbia.pdf
+[058] .pdf | Modernity and crises of identity  culture and society in fin-de-siecle Vienna (Le Rider, Jacques) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[059] .pdf | Nationalism and the crowd in liberal Hungary, 1848-1914 (Freifeld, Alice) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[060] .pdf | Noble nationalists  the transformation of the Bohemian aristocracy (Eagle Glassheim) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[061] .pdf | October Fifteenth A History of Modern Hungary, 1929-1945, Volume 1 (C. A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[062] .pdf | October Fifteenth A History of Modern Hungary, 1929-1945, Volume 2 (C. A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[063] .pdf | Oil Empire Visions of Prosperity in Austrian Galicia (Alison Fleig Frank) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[064] .pdf | On the Economic Consequences of the Peace.pdf
+[065] .pdf | Orthodoxy and nationality  Andreiu Şaguna and the Rumanians of Transylvania, 1846-1873 (Hitchins, Keith, 1931-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[066] .pdf | Paris, 1919 Six Months that Changed the World (Margaret MacMillan Richard Holbrooke) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[067] .pdf | Patterns of growth and stagnation in the late nineteenth century Habsburg economy (MAX-STEPHAN SCHULZE) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[068] .pdf | Political radicalism in late imperial Vienna  origins of the Christian Social movement, 1848-1897 (Boyer, John W) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[069] .pdf | Pribram Secret Treaties Austria-Hungary.pdf
+[070] .pdf | Re-estimating Austrian GDP, 1870-1913 methods and sources.pdf
+[071] .pdf | Reconstructing a National Identity The Jews of Habsburg Austria during World War I (Studies in Jewish History) (Marsha L. Rozenblit) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[072] .pdf | Religion and Nationality in Western Ukraine The Greek Catholic Church and the Ruthenian National Movement in Galicia,… (John-Paul Himka) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[073] .epub | Ring of Steel Germany and Austria-Hungary in World War I (Alexander Watson) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[074] .pdf | Robin-Okey-Taming-Balkan-Nationalism-The-Habsburg-Civilizing-Mission-in-Bosnia-1878-1914-2007.pdf
+[075] .epub | Rumania 1866-1947 (Oxford History of Modern Europe) (Keith Hitchins) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[076] .pdf | Socialism in Galicia The Emergence of Polish Social Democracy and Ukrainian Radicalism (1860–1890) (John-Paul Himka) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[077] .pdf | Stjepan Radić, the Croat Peasant Party, and the Politics of Mass Mobilization,1904-1928 (Mark Biondich) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[078] .pdf | The Annexation of Bosnia 1908-1909 (Bernadotte E. Schmitt) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[079] .pdf | The Army of Francis Joseph (Gunther Rothenberg) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[080] .pdf | The Austrian Electoral Reform of 1907 (William Alexander Jenks) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[081] .pdf | The Austrian Mind An Intellectual and Social History, 1848-1938 (William M. Johnston) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[082] .pdf | The Austro-Hungarian Red Book.pdf
+[083] .epub | The Czechs and the Lands of the Bohemian Crown (Hugh LeCaine Agnew) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[084] .pdf | The First World War and the End of the Habsburg Monarchy, 1914-1918 (2013) (Manfried Rauchensteiner, Alex J. Kay (tr.) etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[085] .pdf | The First World War. Germany and Austria-Hungary 1914–1918 (Holger H. Herwig) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[086] .epub | The Great Departure  Mass Migration from Eastern Europe and the Making of the Free World (Tara Zahra) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[087] .pdf | The Great Powers and the European States System 1814-1914 (2nd Edition) (F.R. Bridge, Roger Bullen) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[088] .epub | The Habsburg Empire A New History (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[089] .epub | The Habsburg Empire, 1790-1918 (C.A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[090] .pdf | The Habsburg Monarchy as a Customs Union Economic Development in Austria-Hungary in the Nineteenth Century (John Komlos) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[091] .epub | The Habsburg Monarchy, 1618–1815 (Charles W. Ingrao) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[092] .pdf | The Habsburg and Hohenzollern dynasties in the seventeenth and eighteenth centuries (Macartney, C. A. (Carlile Aylmer) etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[093] .pdf | The Idea of Galicia History and Fantasy in Habsburg Political Culture (Larry Wolff) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[094] .pdf | The Idea of Nation among the Romanians.pdf
+[095] .pdf | The Jews Of Vienna In The Age Of Franz Joseph (Robert S. Wistrich) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[096] .pdf | The Jews of Vienna and the First World War (David Rechter) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[097] .pdf | The Jews of Vienna, 1867-1914  assimilation and identity (Rozenblit, Marsha L., 1950-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[098] .pdf | The Last years of Austria-Hungary  essays in political and military history, 1908-1918 (Cornwall, Mark) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[099] .pdf | The Lights that Failed European International History 1919-1933 (Zara Steiner) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[100] .epub | The Limits of Loyalty Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy (Laurence Cole (editor) etc.) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[101] .pdf | The Military Border in Croatia, 1740-1881 a Study of an Imperial Institution (Gunther Erich Rothenberg) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[102] .pdf | The Multinational Empire. Nationalism and National Reform in the Habsburg Monarchy 1848-1918. Volume I. Empire and… (Kann, Robert) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[103] .pdf | The Multinational Empire. Nationalism and National Reform in the Habsburg Monarchy 1848-1918. Volume II. Empire Reform (Kann, Robert) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[104] .epub | The Nation in the Village The Genesis of Peasant National Identity in Austrian Poland, 1848–1914 (Keely Stauter-Halsted) (z-library.sk, 1lib.sk, z-lib.sk).epub
+[105] .pdf | The Origins of the War in 1914 Vol.1 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[106] .pdf | The Origins of the War in 1914 Vol.2 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[107] .pdf | The Origins of the War in 1914 Vol.3 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[108] .pdf | The Politics of Backwardness in Hungary, 1825-1945 (Andrew C. Janos) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[109] .pdf | The Pomp and Politics of Patriotism Imperial Celebrations in Habsburg Austria, 1848-1916 (Daniel L. Unowsky) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[110] .pdf | The Resurrection and Collapse of Empire in Habsburg Serbia, 1914-1918 (Jonathan E. Gumz) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[111] .pdf | The Road to Sarajevo (1966) (Vladimir Dedijer) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[112] .pdf | The Rumanian national movement in Transylvania, 1780-1849 (Hitchins, Keith) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[113] .pdf | The Slovenes and Yugoslavism, 1890-1914 (Rogel, Carole) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[114] .pdf | The changing pattern of landownership in Hungary, 1867-1914.pdf
+[115] .pdf | The history of the dichotomy of civic Western and ethnic Eastern nationalism.pdf
+[116] .pdf | The making of the Habsburg monarchy, 1550-1700  an interpretation (Evans, Robert John Weston) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[117] .pdf | The socialism of fools  Georg Ritter von Schönerer and Austrian Pan-Germanism (Whiteside, Andrew Gladding, 1921-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[118] .pdf | Tisza István (Vermes, Gabor) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[119] .pdf | Vienna and the Fall of the Habsburg Empire Total War and Everyday Life in World War I (Maureen Healy) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[120] .pdf | Vienna and the Jews, 1867-1938  a cultural history (Beller, Steven, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[121] .pdf | WP106schulzeRegional income dispersion and market potential in the late nineteenth century Hapsburg Empire.pdf
+[122] .pdf | Wittgenstein’s Vienna (Allan Janik, Stephen Toulmin) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[123] .pdf | __libfile_REPOSITORY_Content_Schulze, M_Patterns of growth and stagnation in the late nineteenth century Habsburg economy_Patterns of growth and stagnation in the late nineteenth century Habsburg economy (LSE RO).pdf
+[124] .pdf | austro-hungarian documents relating ti the macedonian struggle 1896-1912 (F.R. BRIDGE) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[125] .pdf | saravejo the story of a political murder (joachim remak) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[126] .pdf | the dissolution of the habsburg monarchy (oscar jaszi) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[127] .pdf | Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (1).pdf
+[128] .pdf | Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (2).pdf
+[129] .pdf | Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (3).pdf
+[130] .pdf | Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf
+[131] .pdf | “Where our commonality is necessary…” Rethinking the End of the Habsburg Monarchy.pdf
+[132] .pdf | 《包容性帝国：哈布斯堡中欧的知识生产与文化实践》（Das integrative Empire，Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa）.pdf
+[133] .pdf | 《哈布斯堡帝国的多元文化城市，1880-1914：想象的共同体与冲突遭遇》.pdf
+[134] .pdf | 《王朝的支柱：女性、婚姻外交与哈布斯堡王朝网络（1567-1570）》（The Pillars of Dynasty：Women, Marriage Diplomacy,and the Habsburg Dynastic Network, 1567–15701） (1).pdf
+[135] .pdf | 一战奥官vol2（英译）.pdf
+[136] .pdf | 一战奥官（英译）.pdf
+[137] .pdf | 作为财政军事国家的哈布斯堡王朝：1648-1815的概况与前景.pdf
+[138] .pdf | 国际条约集 （1648-1871）.pdf
+[139] .docx | 奥匈帝国政治体系.docx
+[140] .pdf | 奥地利统治下的加利西亚和克拉科夫.pdf
+[141] .pdf | 帕尔格雷夫世界历史统计  欧洲卷：1750-1993年：第四版-1.pdf
+[142] .pdf | 近代早期哈布斯堡君主国行政史·第1卷：宫廷与王朝、皇帝与帝国和中央行政机构、战争与邦君财政.pdf
+
+=== PROCESSING LOG ===
+Apis, the congenial conspirator  the life of Colonel Dragutin T. Dimitrijević (MacKenzie, David, 1927-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.654698 | conf=low review=REVIEW desc_src=web_search
+Austria under the Iron Ring, 1879-1893 (Jenks, William Alexander, 1918-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.655536 | conf=low review=REVIEW desc_src=web_search
+Culture and political crisis in Vienna  Christian socialism in power, 1897-1918 (Boyer, John W) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.656327 | conf=high review=OK desc_src=web_search
+Bosnia and Hercegovina  a tradition betrayed (Donia, Robert J, Fine etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.657111 | conf=high review=OK desc_src=web_search
+A history of Habsburg Jews, 1670-1918 (McCagg, William O) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.657805 | conf=high review=OK desc_src=web_search
+Croatian National-Integrational Ideologies from the End of Illyrism to the Creation of Yugoslavia.pdf | DONE | 2026-07-29T11:56:10.658254 | conf=high review=OK desc_src=web_search
+Austria-Hungary and the Origins of the First World War (Samuel R. Williamson, Jr) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.658650 | conf=high review=OK desc_src=web_search
+Austrian History Yearbook 1979-1980 15-16 (Author Unknown) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:56:10.659024 | conf=low review=REVIEW desc_src=web_search
+Andreiu Şaguna and the restoration of the Rumanian Orthodox Metropolis in Transylvania, 1846-1868.pdf | DONE | 2026-07-29T11:56:48.841888 | conf=high review=OK desc_src=web_search
+Between States The Transylvanian Question and the European Idea During World War II (Holly Case) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T11:59:04.640785 | conf=low review=REVIEW desc_src=web_search
+Austria-Hungary and the First World War.pdf | DONE | 2026-07-29T11:59:04.641389 | conf=high review=OK desc_src=web_search
+1555-1740年的哈布斯堡王朝：统治、社会与政治 Die Habsburger Reiche,1555-1740 Herrschaft - Gesellschaft - Politik (1).pdf | DONE | 2026-07-29T11:59:04.641800 | conf=high review=OK desc_src=web_search
+Austria-Hungary's Economy in World War I.pdf | DONE | 2026-07-29T12:44:12.289545 | conf=medium review=REVIEW desc_src=web_search
+Austria-Hungarys Last War, 1914-1918 Vol 3 (1915) From the Capture of Brest-Litowsk to the End of the Year ( etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:44:12.290783 | conf=high review=OK desc_src=web_search
+Bosnia  A Short History (Noel Malcolm) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:44:12.291235 | conf=high review=OK desc_src=web_search
+Der habsburgische Mythos in der modernen österreichischen Literatur (Magris, Claudio) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:50:56.318403 | conf=high review=OK desc_src=web_search
+Diaspora Nationalism and Jewish Identity in Habsburg Galicia (Joshua Shanes) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:50:56.319047 | conf=high review=OK desc_src=web_search
+Economic development in East-Central Europe in the 19th and 20th centuries (Berend, T. Iván (Tibor Iván), 1930-, Ránki etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:50:56.319463 | conf=medium review=REVIEW desc_src=web_search
+Economic nationalism and economic integration the Austro_Hungarian Empire in the late nineteenth century.pdf | DONE | 2026-07-29T12:50:56.319831 | conf=high review=OK desc_src=web_search
+Economics and Empire, 1830-1914 (David K. Fieldhouse) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:50:56.320189 | conf=high review=OK desc_src=web_search
+Education and middle-class society in imperial Austria, 1848-1918 (Cohen, Gary B., 1948-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:53:08.946687 | conf=high review=OK desc_src=web_search
+Emperor Francis Joseph of Austria a biography (Redlich, Josef, 1869-1936) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:53:08.947174 | conf=medium review=REVIEW desc_src=web_search
+Endogenous Borders The Effects of New Borders on Trade in Central Europe 1885-1933.pdf | DONE | 2026-07-29T12:53:08.947583 | conf=high review=OK desc_src=web_search
+Engineering and Economic Growth. The Development of Austria-Hungarys Machine-Building Industry in the late Nineteenth Century… (Review by Franz Mathis) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:53:08.947949 | conf=high review=REVIEW desc_src=web_search
+Ethnic Nationalism and the Fall of Empires Central Europe, Russia, and the Middle East, 1914-1923 (Aviel Roshwald) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T12:53:08.948321 | conf=high review=OK desc_src=web_search
+European goods market integration in the very long run from the Black Death to the First World War.pdf | DONE | 2026-07-29T13:11:19.635523 | conf=high review=OK desc_src=web_search
+Exclusive revolutionaries  liberal politics, social experience, and national identity in the Austrian Empire, 1848-1914 (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:11:19.637270 | conf=high review=OK desc_src=web_search
+Exclusive revolutionaries liberal politics, social experience, and national identity in the Austrian Empire, 1848-1914.pdf | DONE | 2026-07-29T13:11:19.637849 | conf=high review=REVIEW desc_src=web_search
+Fin-de-siecle Vienna politics and culture (Schorske, Carl E) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T13:11:19.638383 | conf=high review=OK desc_src=web_search
+Francis Joseph (Beller, Steven, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:11:19.638979 | conf=medium review=REVIEW desc_src=web_search
+Franz Conrad von Hötzendorf  architect of the apocalypse (Sondhaus, Lawrence, 1958- author) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:35:04.469167 | conf=high review=OK desc_src=web_search
+From Prejudice to Persecution A History of Austrian Anti-Semitism (Bruce F. Pauley) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T13:35:04.469925 | conf=medium review=REVIEW desc_src=web_search
+From Sadowa to Sarajevo  the foreign policy of Austria-Hungary, 1866-1914 (F R Bridge) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:35:04.470404 | conf=high review=OK desc_src=web_search
+Frontiers, Islands, Forests, Stones Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900.pdf | DONE | 2026-07-29T13:35:04.471030 | conf=high review=OK desc_src=web_search
+Galician Haskalah and the Austrian Enlightenment.pdf | DONE | 2026-07-29T13:35:04.471441 | conf=low review=REVIEW desc_src=web_search
+Guardians of the Nation Activists on the Language Frontiers of Imperial Austria (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:35:04.471859 | conf=high review=OK desc_src=web_search
+History in Exile Memory and Identity at the Borders of the Balkans (Pamela Ballinger) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:35:04.472263 | conf=high review=OK desc_src=web_search
+History of Slovakia The Struggle for Survival (2005) (Stanislav J. Kirschbaum) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T13:35:04.472698 | conf=medium review=REVIEW desc_src=web_search
+Hoyos Alexander — Der deutsch-englische Gegensatz.pdf | DONE | 2026-07-29T13:35:04.473396 | conf=medium review=REVIEW desc_src=web_search
+Hungary and Her Successors (C.A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:35:04.473980 | conf=high review=OK desc_src=web_search
+Hungarys Long Nineteenth Century Constitutional and Democratic Traditions in a European Perspective Collected Studies (László Péter, Miklós Lojkó) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.834268 | conf=high review=OK desc_src=web_search
+In the service of the emperor  Italians in the Austrian armed forces, 1814-1918 (Sondhaus, Lawrence, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.834951 | conf=high review=OK desc_src=web_search
+Interwar Vienna Culture between Tradition and Modernity (Studies in German Literature Linguistics and Culture) (Deborah Holmes, Lisa Silverman (editors)) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.835554 | conf=high review=OK desc_src=web_search
+Inventing Germans class, nationality and colonial fantasy at the margins of the Hapsburg monarchy.pdf | DONE | 2026-07-29T13:41:18.836128 | conf=high review=OK desc_src=web_search
+Islam under the double eagle  the Muslims of Bosnia and Hercegovina, 1878-1914 (Donia, Robert J) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.836613 | conf=high review=OK desc_src=web_search
+Isonzo The Forgotten Sacrifice of the Great War (John R. Schindler) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T13:41:18.837061 | conf=medium review=REVIEW desc_src=web_search
+Jesuits and the politics of religious pluralism in eighteenth century Transylvania  culture, politics and religion, 1693-1773 (Shore, Paul) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.837555 | conf=high review=OK desc_src=web_search
+Jews and German Politics The Case of Habsburg.pdf | DONE | 2026-07-29T13:41:18.838012 | conf=high review=REVIEW desc_src=web_search
+John-Paul Himka — Galician Villagers and the Ukrainian National Movement.pdf | DONE | 2026-07-29T13:41:18.838499 | conf=high review=OK desc_src=web_search
+Joseph II (Beales, Derek Edward Dawson) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T13:41:18.839125 | conf=medium review=REVIEW desc_src=web_search
+July 1914  soldiers, statesmen, and the coming of the Great War  a brief documentary history (Williamson, Samuel R, Van Wyk, Russel) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.942939 | conf=high review=OK desc_src=web_search
+July 1914 the outbreak of the First World War selected documents (Geiss, Imanuel, ed) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.943913 | conf=high review=OK desc_src=web_search
+Kidnapped Souls National Indifference and the Battle for Children in the Bohemian Lands, 1900-1948 (Tara Zahra) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.944407 | conf=high review=OK desc_src=web_search
+Lucian Boia — History and Myth in Romanian Consciousness.pdf | DONE | 2026-07-29T14:29:39.944809 | conf=high review=OK desc_src=web_search
+Making minorities and majorities national indifference and national self-determination in Habsburg central Europe.pdf | DONE | 2026-07-29T14:29:39.945203 | conf=high review=OK desc_src=web_search
+Max-Stephan Schulze. Engineering and Economic Growth The Development of Austria-Hungarys Machine-Building Industry in the… (Pammer, Michael) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.945732 | conf=high review=OK desc_src=web_search
+Michael Boro Petrovich — A History of Modern Serbia.pdf | DONE | 2026-07-29T14:29:39.946183 | conf=high review=OK desc_src=web_search
+Modernity and crises of identity  culture and society in fin-de-siecle Vienna (Le Rider, Jacques) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.946569 | conf=high review=OK desc_src=web_search
+Nationalism and the crowd in liberal Hungary, 1848-1914 (Freifeld, Alice) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.946929 | conf=high review=OK desc_src=web_search
+Noble nationalists  the transformation of the Bohemian aristocracy (Eagle Glassheim) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:29:39.947334 | conf=high review=OK desc_src=web_search
+October Fifteenth A History of Modern Hungary, 1929-1945, Volume 1 (C. A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.916871 | conf=high review=OK desc_src=web_search
+October Fifteenth A History of Modern Hungary, 1929-1945, Volume 2 (C. A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.917481 | conf=high review=OK desc_src=web_search
+Oil Empire Visions of Prosperity in Austrian Galicia (Alison Fleig Frank) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.917883 | conf=high review=OK desc_src=web_search
+On the Economic Consequences of the Peace.pdf | DONE | 2026-07-29T14:32:34.918251 | conf=low review=REVIEW desc_src=web_search
+Orthodoxy and nationality  Andreiu Şaguna and the Rumanians of Transylvania, 1846-1873 (Hitchins, Keith, 1931-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.918646 | conf=high review=OK desc_src=web_search
+Paris, 1919 Six Months that Changed the World (Margaret MacMillan Richard Holbrooke) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.918994 | conf=high review=OK desc_src=web_search
+Patterns of growth and stagnation in the late nineteenth century Habsburg economy (MAX-STEPHAN SCHULZE) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.919688 | conf=high review=OK desc_src=web_search
+Political radicalism in late imperial Vienna  origins of the Christian Social movement, 1848-1897 (Boyer, John W) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:32:34.920086 | conf=high review=OK desc_src=web_search
+Pribram Secret Treaties Austria-Hungary.pdf | DONE | 2026-07-29T14:32:34.920509 | conf=high review=OK desc_src=web_search
+Re-estimating Austrian GDP, 1870-1913 methods and sources.pdf | DONE | 2026-07-29T14:32:34.920971 | conf=high review=OK desc_src=web_search
+Reconstructing a National Identity The Jews of Habsburg Austria during World War I (Studies in Jewish History) (Marsha L. Rozenblit) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.667081 | conf=high review=OK desc_src=web_search
+Religion and Nationality in Western Ukraine The Greek Catholic Church and the Ruthenian National Movement in Galicia,… (John-Paul Himka) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.667835 | conf=high review=OK desc_src=web_search
+Ring of Steel Germany and Austria-Hungary in World War I (Alexander Watson) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:35:09.668742 | conf=medium review=REVIEW desc_src=web_search
+Robin-Okey-Taming-Balkan-Nationalism-The-Habsburg-Civilizing-Mission-in-Bosnia-1878-1914-2007.pdf | DONE | 2026-07-29T14:35:09.669192 | conf=high review=OK desc_src=web_search
+Rumania 1866-1947 (Oxford History of Modern Europe) (Keith Hitchins) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:35:09.669824 | conf=medium review=REVIEW desc_src=web_search
+Socialism in Galicia The Emergence of Polish Social Democracy and Ukrainian Radicalism (1860–1890) (John-Paul Himka) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.670399 | conf=high review=OK desc_src=web_search
+Stjepan Radić, the Croat Peasant Party, and the Politics of Mass Mobilization,1904-1928 (Mark Biondich) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.670982 | conf=high review=OK desc_src=web_search
+The Annexation of Bosnia 1908-1909 (Bernadotte E. Schmitt) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.671419 | conf=high review=OK desc_src=web_search
+The Army of Francis Joseph (Gunther Rothenberg) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.671975 | conf=high review=OK desc_src=web_search
+The Austrian Electoral Reform of 1907 (William Alexander Jenks) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:35:09.672395 | conf=high review=OK desc_src=web_search
+The Austrian Mind An Intellectual and Social History, 1848-1938 (William M. Johnston) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:38:11.650942 | conf=high review=OK desc_src=web_search
+The Austro-Hungarian Red Book.pdf | DONE | 2026-07-29T14:38:11.651749 | conf=high review=OK desc_src=web_search
+The Czechs and the Lands of the Bohemian Crown (Hugh LeCaine Agnew) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:38:11.652324 | conf=medium review=REVIEW desc_src=web_search
+The First World War and the End of the Habsburg Monarchy, 1914-1918 (2013) (Manfried Rauchensteiner, Alex J. Kay (tr.) etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:38:11.652792 | conf=high review=OK desc_src=web_search
+The First World War. Germany and Austria-Hungary 1914–1918 (Holger H. Herwig) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:38:11.653328 | conf=high review=OK desc_src=web_search
+The Great Departure  Mass Migration from Eastern Europe and the Making of the Free World (Tara Zahra) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:38:11.653720 | conf=medium review=REVIEW desc_src=web_search
+The Great Powers and the European States System 1814-1914 (2nd Edition) (F.R. Bridge, Roger Bullen) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:38:11.654086 | conf=high review=OK desc_src=web_search
+The Habsburg Empire A New History (Pieter M. Judson) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:38:11.654426 | conf=medium review=REVIEW desc_src=web_search
+The Habsburg Empire, 1790-1918 (C.A. Macartney) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:38:11.654804 | conf=medium review=REVIEW desc_src=web_search
+The Habsburg Monarchy as a Customs Union Economic Development in Austria-Hungary in the Nineteenth Century (John Komlos) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:38:11.655154 | conf=high review=OK desc_src=web_search
+The Habsburg Monarchy, 1618–1815 (Charles W. Ingrao) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:41:04.621475 | conf=medium review=REVIEW desc_src=web_search
+The Habsburg and Hohenzollern dynasties in the seventeenth and eighteenth centuries (Macartney, C. A. (Carlile Aylmer) etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.622161 | conf=high review=OK desc_src=web_search
+The Idea of Galicia History and Fantasy in Habsburg Political Culture (Larry Wolff) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.622582 | conf=high review=OK desc_src=web_search
+The Idea of Nation among the Romanians.pdf | DONE | 2026-07-29T14:41:04.622988 | conf=medium review=REVIEW desc_src=web_search
+The Jews Of Vienna In The Age Of Franz Joseph (Robert S. Wistrich) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.623659 | conf=high review=OK desc_src=web_search
+The Jews of Vienna and the First World War (David Rechter) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.624419 | conf=high review=OK desc_src=web_search
+The Jews of Vienna, 1867-1914  assimilation and identity (Rozenblit, Marsha L., 1950-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.624949 | conf=high review=OK desc_src=web_search
+The Last years of Austria-Hungary  essays in political and military history, 1908-1918 (Cornwall, Mark) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.625388 | conf=high review=OK desc_src=web_search
+The Lights that Failed European International History 1919-1933 (Zara Steiner) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:41:04.625847 | conf=high review=OK desc_src=web_search
+The Limits of Loyalty Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy (Laurence Cole (editor) etc.) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:41:04.626317 | conf=medium review=REVIEW desc_src=web_search
+The Military Border in Croatia, 1740-1881 a Study of an Imperial Institution (Gunther Erich Rothenberg) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.195985 | conf=high review=OK desc_src=web_search
+The Multinational Empire. Nationalism and National Reform in the Habsburg Monarchy 1848-1918. Volume I. Empire and… (Kann, Robert) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.196643 | conf=high review=OK desc_src=web_search
+The Multinational Empire. Nationalism and National Reform in the Habsburg Monarchy 1848-1918. Volume II. Empire Reform (Kann, Robert) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.197040 | conf=high review=OK desc_src=web_search
+The Nation in the Village The Genesis of Peasant National Identity in Austrian Poland, 1848–1914 (Keely Stauter-Halsted) (z-library.sk, 1lib.sk, z-lib.sk).epub | DONE | 2026-07-29T14:44:25.197609 | conf=medium review=REVIEW desc_src=web_search
+The Origins of the War in 1914 Vol.1 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.198207 | conf=high review=OK desc_src=web_search
+The Origins of the War in 1914 Vol.2 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.198620 | conf=high review=OK desc_src=web_search
+The Origins of the War in 1914 Vol.3 (Luigi Albertini) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.198988 | conf=high review=OK desc_src=web_search
+The Politics of Backwardness in Hungary, 1825-1945 (Andrew C. Janos) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.199338 | conf=high review=OK desc_src=web_search
+The Pomp and Politics of Patriotism Imperial Celebrations in Habsburg Austria, 1848-1916 (Daniel L. Unowsky) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.199750 | conf=high review=OK desc_src=web_search
+The Resurrection and Collapse of Empire in Habsburg Serbia, 1914-1918 (Jonathan E. Gumz) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.200195 | conf=high review=OK desc_src=web_search
+The Road to Sarajevo (1966) (Vladimir Dedijer) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T14:44:25.200616 | conf=high review=OK desc_src=web_search
+The Rumanian national movement in Transylvania, 1780-1849 (Hitchins, Keith) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.540608 | conf=high review=OK desc_src=web_search
+The Slovenes and Yugoslavism, 1890-1914 (Rogel, Carole) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.541749 | conf=high review=OK desc_src=web_search
+The changing pattern of landownership in Hungary, 1867-1914.pdf | DONE | 2026-07-29T15:08:21.542329 | conf=low review=REVIEW desc_src=model_knowledge
+The history of the dichotomy of civic Western and ethnic Eastern nationalism.pdf | DONE | 2026-07-29T15:08:21.542812 | conf=low review=REVIEW desc_src=model_knowledge
+The making of the Habsburg monarchy, 1550-1700  an interpretation (Evans, Robert John Weston) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.543234 | conf=high review=OK desc_src=web_search
+The socialism of fools  Georg Ritter von Schönerer and Austrian Pan-Germanism (Whiteside, Andrew Gladding, 1921-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.543658 | conf=high review=OK desc_src=web_search
+Tisza István (Vermes, Gabor) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.544044 | conf=high review=OK desc_src=web_search
+Vienna and the Fall of the Habsburg Empire Total War and Everyday Life in World War I (Maureen Healy) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.544710 | conf=high review=OK desc_src=web_search
+Vienna and the Jews, 1867-1938  a cultural history (Beller, Steven, 1958-) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.545290 | conf=high review=OK desc_src=web_search
+WP106schulzeRegional income dispersion and market potential in the late nineteenth century Hapsburg Empire.pdf | DONE | 2026-07-29T15:08:21.545829 | conf=medium review=REVIEW desc_src=model_knowledge
+Wittgenstein's Vienna (Allan Janik, Stephen Toulmin) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.546324 | conf=high review=OK desc_src=web_search
+__libfile_REPOSITORY_Content_Schulze, M_Patterns of growth and stagnation in the late nineteenth century Habsburg economy_Patterns of growth and stagnation in the late nineteenth century Habsburg economy (LSE RO).pdf | DONE | 2026-07-29T15:08:21.546796 | conf=high review=OK desc_src=web_search
+austro-hungarian documents relating ti the macedonian struggle 1896-1912 (F.R. BRIDGE) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.547328 | conf=high review=OK desc_src=web_search
+saravejo the story of a political murder (joachim remak) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.547748 | conf=high review=OK desc_src=web_search
+the dissolution of the habsburg monarchy (oscar jaszi) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.548139 | conf=high review=OK desc_src=web_search
+Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf | DONE | 2026-07-29T15:08:21.548558 | conf=medium review=REVIEW desc_src=web_search
+Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (1).pdf | DONE | 2026-07-29T15:08:21.548997 | conf=medium review=REVIEW desc_src=web_search
+Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (2).pdf | DONE | 2026-07-29T15:08:21.549448 | conf=medium review=REVIEW desc_src=web_search
+Österreich-Ungarns letzter Krieg 1914-1918 (Glaise von Horstenau, Edmund, 1882- etc.) (z-library.sk, 1lib.sk, z-lib.sk) (3).pdf | DONE | 2026-07-29T15:08:21.549891 | conf=medium review=REVIEW desc_src=web_search
+Where our commonality is necessary… Rethinking the End of the Habsburg Monarchy.pdf | DONE | 2026-07-29T15:08:21.550342 | conf=low review=REVIEW desc_src=model_knowledge
+《包容性帝国：哈布斯堡中欧的知识生产与文化实践》（Das integrative Empire，Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa）.pdf | DONE | 2026-07-29T15:08:21.551057 | conf=medium review=REVIEW desc_src=web_search
+《哈布斯堡帝国的多元文化城市，1880-1914：想象的共同体与冲突遭遇》.pdf | DONE | 2026-07-29T15:08:21.551709 | conf=low review=REVIEW desc_src=model_knowledge
+《王朝的支柱：女性、婚姻外交与哈布斯堡王朝网络（1567-1570）》（The Pillars of Dynasty：Women, Marriage Diplomacy,and the Habsburg Dynastic Network, 1567–15701） (1).pdf | DONE | 2026-07-29T15:08:21.552161 | conf=low review=REVIEW desc_src=model_knowledge
+一战奥官vol2（英译）.pdf | DONE | 2026-07-29T15:08:21.552874 | conf=medium review=REVIEW desc_src=web_search
+一战奥官（英译）.pdf | DONE | 2026-07-29T15:08:21.553348 | conf=medium review=REVIEW desc_src=web_search
+作为财政军事国家的哈布斯堡王朝：1648-1815的概况与前景.pdf | DONE | 2026-07-29T15:08:21.553818 | conf=low review=REVIEW desc_src=model_knowledge
+国际条约集 （1648-1871）.pdf | DONE | 2026-07-29T15:08:21.554376 | conf=low review=REVIEW desc_src=model_knowledge
+奥匈帝国政治体系.docx | DONE | 2026-07-29T15:08:21.554814 | conf=low review=REVIEW desc_src=model_knowledge
+奥地利统治下的加利西亚和克拉科夫.pdf | DONE | 2026-07-29T15:08:21.555289 | conf=low review=REVIEW desc_src=model_knowledge
+帕尔格雷夫世界历史统计  欧洲卷：1750-1993年：第四版-1.pdf | DONE | 2026-07-29T15:08:21.555910 | conf=high review=OK desc_src=web_search
+近代早期哈布斯堡君主国行政史·第1卷：宫廷与王朝、皇帝与帝国和中央行政机构、战争与邦君财政.pdf | DONE | 2026-07-29T15:08:21.556515 | conf=low review=REVIEW desc_src=model_knowledge

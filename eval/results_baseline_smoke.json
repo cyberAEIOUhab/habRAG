@@ -1,0 +1,217 @@
+{
+  "generated_at": "2026-08-21T12:47:10",
+  "questions_file": "questions.json",
+  "mode": "retrieval",
+  "k": 15,
+  "baseline": true,
+  "summary": {
+    "mode": "retrieval",
+    "questions_run": 3,
+    "title_hit_rate": 0.667,
+    "citation_hit_rate": 0.667,
+    "mrr": 0.75
+  },
+  "results": [
+    {
+      "id": "q01",
+      "question": "《Fin-de-Siècle Vienna》中，Schorske 如何解释 19 世纪末维也纳自由主义的衰落？",
+      "retrieval": {
+        "top_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "Vienna and the Jews, 1867-1938: A Cultural History::23",
+            "citation": "Steven Beller, 1989, p. 18",
+            "relevance": 0.172
+          },
+          {
+            "rank": 2,
+            "chunk_id": "Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna::960",
+            "citation": "Jacques Le Rider, 1993, p. 308",
+            "relevance": 0.156
+          },
+          {
+            "rank": 3,
+            "chunk_id": "Vienna and the Jews, 1867-1938: A Cultural History::159",
+            "citation": "Steven Beller, 1989, p. 58",
+            "relevance": 0.148
+          },
+          {
+            "rank": 4,
+            "chunk_id": "Vienna and the Jews, 1867-1938: A Cultural History::872",
+            "citation": "Steven Beller, 1989, p. 257",
+            "relevance": 0.147
+          },
+          {
+            "rank": 5,
+            "chunk_id": "Nationalism and the Crowd in Liberal Hungary, 1848-1914::51",
+            "citation": "Alice Freifeld, 2000, p. 36",
+            "relevance": 0.136
+          }
+        ],
+        "returned_titles": [
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Nationalism and the Crowd in Liberal Hungary, 1848-1914",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Wittgenstein's Vienna",
+          "Vienna and the Fall of the Habsburg Empire: Total War and Everyday Life in World War I",
+          "Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna",
+          "Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna",
+          "Vienna and the Fall of the Habsburg Empire: Total War and Everyday Life in World War I",
+          "Vienna and the Jews, 1867-1938: A Cultural History",
+          "Modernity and Crises of Identity: Culture and Society in Fin-de-Siècle Vienna"
+        ],
+        "title_hits": {
+          "Fin-de-Siècle Vienna: Politics and Culture": {
+            "hit": false,
+            "first_rank": null,
+            "count": 0
+          }
+        },
+        "citation_hits": {
+          "Schorske, 2012": false
+        },
+        "first_rank": null
+      },
+      "elapsed_sec": 2.3
+    },
+    {
+      "id": "q02",
+      "question": "为什么说 Judson 的《The Habsburg Empire: A New History》属于修正主义阵营？他的核心论点是什么？",
+      "retrieval": {
+        "top_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa::17",
+            "citation": "Johannes Feichtinger und Heidemarie Uhl (Hrsg.), 2023, p. 16",
+            "relevance": 0.258
+          },
+          {
+            "rank": 2,
+            "chunk_id": "The Habsburg Empire: A New History::1",
+            "citation": "Pieter M. Judson, 2016",
+            "relevance": 0.258
+          },
+          {
+            "rank": 3,
+            "chunk_id": "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa::18",
+            "citation": "Johannes Feichtinger und Heidemarie Uhl (Hrsg.), 2023, p. 16",
+            "relevance": 0.22
+          },
+          {
+            "rank": 4,
+            "chunk_id": "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa::19",
+            "citation": "Johannes Feichtinger und Heidemarie Uhl (Hrsg.), 2023, p. 17",
+            "relevance": 0.189
+          },
+          {
+            "rank": 5,
+            "chunk_id": "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa::7",
+            "citation": "Johannes Feichtinger und Heidemarie Uhl (Hrsg.), 2023, p. 11",
+            "relevance": 0.187
+          }
+        ],
+        "returned_titles": [
+          "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa",
+          "The Habsburg Empire: A New History",
+          "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa",
+          "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa",
+          "Das integrative Empire: Wissensproduktion und kulturelle Praktiken in Habsburg-Zentraleuropa",
+          "Where Our Commonality Is Necessary…: Rethinking the End of the Habsburg Monarchy",
+          "The Habsburg Empire: A New History",
+          "The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy",
+          "Frontiers, Islands, Forests, Stones: Mapping the Geography of a German Identity in the Habsburg Monarchy, 1848-1900",
+          "The Habsburg Monarchy, 1618-1815",
+          "Francis Joseph",
+          "Francis Joseph",
+          "The Habsburg Monarchy as a Fiscal-Military State: Contours and Perspectives 1648-1815",
+          "The Austrian Mind: An Intellectual and Social History, 1848-1938",
+          "The Habsburg Empire: A New History"
+        ],
+        "title_hits": {
+          "The Habsburg Empire: A New History": {
+            "hit": true,
+            "first_rank": 2,
+            "count": 3
+          }
+        },
+        "citation_hits": {
+          "Judson, 2016": true
+        },
+        "first_rank": 2
+      },
+      "elapsed_sec": 1.4
+    },
+    {
+      "id": "q03",
+      "question": "奥斯卡·雅西（Oscar Jászi）如何论证哈布斯堡王朝解体的必然性？",
+      "retrieval": {
+        "top_chunks": [
+          {
+            "rank": 1,
+            "chunk_id": "The Dissolution of the Habsburg Monarchy::1118",
+            "citation": "Oscar Jászi, 1929, p. 506",
+            "relevance": 0.225
+          },
+          {
+            "rank": 2,
+            "chunk_id": "Francis Joseph::14",
+            "citation": "Steven Beller, 1996, p. 14",
+            "relevance": 0.224
+          },
+          {
+            "rank": 3,
+            "chunk_id": "Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century::15",
+            "citation": "Max-Stephan Schulze and Nikolaus Wolf, 2009, p. 8",
+            "relevance": 0.206
+          },
+          {
+            "rank": 4,
+            "chunk_id": "The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy::15",
+            "citation": "Laurence Cole and Daniel L. Unowsky (editors), 2007",
+            "relevance": 0.119
+          },
+          {
+            "rank": 5,
+            "chunk_id": "Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century::16",
+            "citation": "Max-Stephan Schulze and Nikolaus Wolf, 2009, p. 8",
+            "relevance": 0.117
+          }
+        ],
+        "returned_titles": [
+          "The Dissolution of the Habsburg Monarchy",
+          "Francis Joseph",
+          "Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century",
+          "The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy",
+          "Economic Nationalism and Economic Integration: The Austro-Hungarian Empire in the Late Nineteenth Century",
+          "The Dissolution of the Habsburg Monarchy",
+          "The Dissolution of the Habsburg Monarchy",
+          "The Multinational Empire: Nationalism and National Reform in the Habsburg Monarchy, 1848-1918. Volume I: Empire and Nationalities",
+          "Francis Joseph",
+          "The Dissolution of the Habsburg Monarchy",
+          "The Pomp and Politics of Patriotism: Imperial Celebrations in Habsburg Austria, 1848-1916",
+          "The Dissolution of the Habsburg Monarchy",
+          "The Limits of Loyalty: Imperial Symbolism, Popular Allegiances, and State Patriotism in the Late Habsburg Monarchy",
+          "The Dissolution of the Habsburg Monarchy",
+          "The Dissolution of the Habsburg Monarchy"
+        ],
+        "title_hits": {
+          "The Dissolution of the Habsburg Monarchy": {
+            "hit": true,
+            "first_rank": 1,
+            "count": 7
+          }
+        },
+        "citation_hits": {
+          "Jászi, 1929": true
+        },
+        "first_rank": 1
+      },
+      "elapsed_sec": 0.8
+    }
+  ]
+}
