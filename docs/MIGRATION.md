@@ -168,7 +168,7 @@ print("\n全部通过 → 可以继续。有任何一项报错 → 停下，把�
 
 ### 0.5 ★ 冒烟测试实测结果（2026-10-01，29/29 全部通过）
 
-集群：`in05-7fff4694e53214d.serverless.ali-cn-hangzhou.cloud.zilliz.com.cn`（Serverless-01，ali-cn-hangzhou）
+集群：Zilliz Cloud Serverless（`ali-cn-hangzhou`，集群名 `Serverless-01`）
 
 **结论：方案成立，可以迁移。** 以下全部为实测，非文档推断。
 

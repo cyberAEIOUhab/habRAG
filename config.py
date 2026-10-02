@@ -124,11 +124,12 @@ RERANK_CANDIDATES = int(_get("RERANK_CANDIDATES", "30"))            # 送入 rer
 # 回滚到本地：改成 "chroma"。
 BACKEND = _get("HABRAG_BACKEND", "zilliz").lower()
 
-# 集群地址（不是密钥）
-ZILLIZ_URI = _get(
-    "ZILLIZ_URI",
-    "https://in05-7fff4694e53214d.serverless.ali-cn-hangzhou.cloud.zilliz.com.cn",
-)
+# 集群地址（不是密钥，但每个部署各不相同 —— 请在自己的 .env 里填）
+# 格式：https://<cluster-id>.serverless.<region>.cloud.zilliz.com.cn
+# 中国区 Serverless 目前仅阿里云华东1（杭州）可用。
+# ★ 这里故意留空：公开仓库不应把某个人的集群写成默认值。
+#   使用时在 .env 里设置 ZILLIZ_URI，否则 BACKEND="zilliz" 会因缺少地址而明确报错。
+ZILLIZ_URI = _get("ZILLIZ_URI", "")
 ZILLIZ_COLLECTION = _get("ZILLIZ_COLLECTION", "habsburg")
 
 # 本地 Chroma 路径（回滚用，保留）
