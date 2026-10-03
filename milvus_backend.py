@@ -87,10 +87,23 @@ def where_to_expr(where):
             for op, val in v.items():
                 if op == "$contains":                    # region / subfield 数组
                     parts.append("ARRAY_CONTAINS(%s, %s)" % (k, _q(val)))
+                elif op == "$not_contains":              # 数组字段的负过滤
+                    parts.append("not ARRAY_CONTAINS(%s, %s)" % (k, _q(val)))
                 elif op == "$in":
                     parts.append("%s in [%s]" % (k, ", ".join(_q(x) for x in val)))
                 elif op == "$nin":
                     parts.append("%s not in [%s]" % (k, ", ".join(_q(x) for x in val)))
+                elif op == "$like":
+                    parts.append("%s like %s" % (k, _q(val)))
+                elif op == "$not_like":
+                    # ★ 必须写成 not (... like ...)：Milvus 不支持 `k not like v`
+                    #   （实测报 mismatched input 'like' expecting IN）。
+                    #   用途：检索时排除报刊（title 前缀匹配）。
+                    parts.append("not (%s like %s)" % (k, _q(val)))
+                elif op == "$is_null":
+                    # 值为 True → `k is null`；False → `k is not null`。
+                    # 用途：负过滤时把 NULL 行一并救回来（见 build_where 的 exclude）。
+                    parts.append("%s is %snull" % (k, "" if val else "not "))
                 elif op in _OPS:
                     parts.append("%s %s %s" % (k, _OPS[op], _q(val)))
                 else:

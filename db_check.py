@@ -44,6 +44,19 @@ def check():
     bookdata_titles = [b["title"] for b in bookdata]
     lookup = {b["title"]: b for b in bookdata}
 
+    # ★ 系列条目（如报刊《新自由报》）：bookdata 里只有一条系列条目，
+    #   实际 chunk 的 title 是期号级（"Neue Freie Presse, 1864-09-01"）。
+    #   下面两处判定都要走前缀回退，否则会误报：
+    #     · 系列条目本身被算成「零 chunk 的书」
+    #     · 每一期的 title 都被算成「孤儿」
+    prefixes = [b["title_prefix"] for b in bookdata if b.get("title_prefix")]
+
+    def covered_by_series(title):
+        return any(title.startswith(p) for p in prefixes)
+
+    def series_has_chunks(prefix):
+        return any(t.startswith(prefix) for t in counts)
+
     # 有书目但库内零chunk的书
     missing_in_db = [
         {
@@ -54,10 +67,14 @@ def check():
         }
         for b in bookdata
         if counts.get(b["title"], 0) == 0
+        and not (b.get("title_prefix") and series_has_chunks(b["title_prefix"]))
     ]
 
     # 库里有chunk但bookdata里没有的书名（孤儿）
-    orphans_in_db = sorted(t for t in counts if t not in lookup)
+    orphans_in_db = sorted(
+        t for t in counts
+        if t not in lookup and not covered_by_series(t)
+    )
 
     # bookdata内部重复
     dup_counter = Counter(bookdata_titles)

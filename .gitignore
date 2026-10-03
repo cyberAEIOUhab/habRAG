@@ -37,6 +37,11 @@ textfix_cache.json
 *_cache.json
 chunk_cache*.json
 
+# ---- Zilliz Import 的导出目录 ----
+# _nfp_import/ 里有 BulkWriter 产出的 Parquet（含**向量**与**片段正文**）
+# 以及嵌入缓存 _embed_cache.json（约 3.6 MB）。都是可由 TEI 重建的中间产物。
+_nfp_import/
+
 # ---- 个人数据：对话记录与反馈 ----
 sessions/
 feedback.jsonl

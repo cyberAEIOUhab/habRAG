@@ -22,7 +22,8 @@ app.py —— 奥匈帝国史研究助手（重构版）
     + bge-reranker-v2-m3精排(A8)。实现在corpus_lib.search_chunks（与eval同源），
     开关在config.py（HYBRID_SEARCH_ENABLED / RERANK_ENABLED / QUERY_REWRITE_ENABLED）
 11. 深度模式新增程序化检索计划步骤(A10)：进入工具循环前先让模型制定检索计划并自动执行
-12. 侧边栏新增检索过滤控件(A11)：普通模式直接生效，深度模式硬覆盖模型传的同类参数
+12. 侧边栏检索过滤控件(A11)：深度模式硬覆盖模型传的同类参数
+    （原「普通模式」已移除，其单次检索+生成的定位由「文献查找」取代）
 13. 引用校验升级为"引用↔片段映射"(A13)：回答下方显示引用对照表，随历史保存
 14. 新增：导出Markdown(A14)、流式输出(A15)、对话持久化多会话(A16，sources只存
     chunk_id不存全文，渲染时按id从库还原)、API错误显性化(A17)、每步计时(A24)、
@@ -35,6 +36,17 @@ app.py —— 奥匈帝国史研究助手（重构版）
 16. 新增Light模式（终端启动：streamlit run app.py -- -light）：界面与功能完全不变，
     主任务模型 deepseek-v4-pro→deepseek-v4-flash，引用核对/排版修正改用完全免费的
     glm-4.7-flash（config.py 中 GLM_* 配置）
+
+17. 模式改为单选三选一：【文献查找】/【深度分析】/【长文本分析】，默认文献查找。
+    原「普通模式」（单次检索+生成）已移除。
+18. 文献查找模式：用户给一句话描述 + 目标片段数，agent 以**覆盖度**而非"答案质量"
+    为目标多轮检索，把片段按文献分组忠实呈现。★ 绝对客观由架构保证——模型全程只调
+    工具，展示文本（统计行、分组标题）全部由代码组装，模型写的正文一律丢弃。
+    跨轮结果由 agent_loop 内已有的去重累加器收集；呈现前经 merge_adjacent_chunks
+    做连续性合并 + correct_units 做 OCR 错别字修正（先出原文，再并行修正逐条回填）。
+    侧边栏提供**负过滤**（排除条件，NULL 安全：只排指定值，不排该字段为空的行）。
+    底部「继续检索」按钮可在同一份结果上追加新片段，不重复已收集内容。
+19. 「继续对话（不重新检索）」从普通模式移到深度分析模式，候选池为所有轮次的去重并集
 """
 
 import os
@@ -42,6 +54,7 @@ import re
 import json
 import sys
 import time
+from collections import Counter
 
 import streamlit as st
 import chromadb
@@ -52,11 +65,13 @@ from config import (
     SILICONFLOW_API_KEY, SILICONFLOW_BASE_URL, EMBEDDING_MODEL,
     CHROMA_DB_PATH,
     HYBRID_SEARCH_ENABLED, QUERY_REWRITE_ENABLED, RERANK_ENABLED,
+    PRESS_TITLE_PREFIXES,
     GLM_API_KEY, GLM_BASE_URL, GLM_MODEL,
 )
 
-from corpus_lib import (correct_units, format_citation_tag, get_chunks_by_ids,
-                        get_collection, get_corrected_text, search_chunks)
+from corpus_lib import (build_where, correct_units, format_citation_tag,
+                        get_chunks_by_ids, get_collection, get_corrected_text,
+                        get_book_meta, load_bookdata, search_chunks)
 
 # ============================================================
 # Light模式：streamlit run app.py -- -light
@@ -225,7 +240,7 @@ def call_deepseek(messages, system_prompt="", tools=None, temperature=0.3,
 
 
 def _check_call(messages, temperature=0):
-    """引用核对（postprocess）专用：light模式用免费glm，普通模式用pro。"""
+    """引用核对（postprocess）专用：light模式用免费glm，常规走pro。"""
     if LIGHT_MODE:
         return call_deepseek(messages, temperature=temperature,
                              model=GLM_MODEL, api_key=GLM_API_KEY, base_url=GLM_BASE_URL)
@@ -319,26 +334,43 @@ def _excluded_ids():
 
 
 def tool_search_corpus(query, source_type=None, region=None, lang=None,
-                        subfield=None, stance=None, title=None, n_results=10):
+                        subfield=None, stance=None, title=None, n_results=10,
+                        include_press=False, exclude=None):
     """
     语义检索史料库（合并了原search_corpus + search_by_stance）。
     支持按source_type/region/lang/subfield/stance/title任意组合过滤；region/subfield
     支持多值列表（任一匹配，A11侧边栏多选用）。
     底层为corpus_lib.search_chunks：A9查询改写 + A7向量/全文RRF + A8 rerank精排。
     title用于把检索范围锁定在单一书目内（当用户问题明确限定某本书时使用）。
+
+    include_press：是否把报刊（《新自由报》等）纳入检索，**默认 False**。
+      报刊体量是其余语料的 10 倍以上，默认纳入会稀释结果。由 agent 自主决定。
+    exclude：负过滤 {字段: [要排除的值]}，供「文献查找」模式用；
+      语义见 corpus_lib.build_where（NULL 安全：只排该值，不排该字段为空的行）。
     """
     debug_log = None
     if st.session_state.get("dev_mode_on"):
         def debug_log(d):
             dev_record(d["title"], d["text"], d["is_json"])
 
-    return search_chunks(
+    res = search_chunks(
         query=query, source_type=source_type, region=region, lang=lang,
         subfield=subfield, stance=stance, title=title, n_results=n_results,
         excluded=_excluded_ids(),
         use_hybrid=HYBRID_SEARCH_ENABLED, use_rerank=RERANK_ENABLED,
-        use_rewrite=QUERY_REWRITE_ENABLED, debug_log=debug_log,
+        use_rewrite=QUERY_REWRITE_ENABLED, include_press=include_press,
+        exclude=exclude, debug_log=debug_log,
     )
+
+    # ★ 报刊被排除时附一行提示：agent 若判断错了（该开没开），看到这行能自我纠正。
+    #   只在结果偏少时附，避免每次调用都刷屏。
+    if not include_press and PRESS_TITLE_PREFIXES and len(res) < max(3, n_results // 2):
+        if isinstance(res, list):
+            res = list(res) + [{
+                "_note": "本次检索已排除报刊（如《新自由报》）。若问题涉及当时的报刊报道、"
+                         "舆论、物价、广告、出版市场或公众反应，请用 include_press=true 重试。"
+            }]
+    return res
 
 
 def tool_expand_chunk(chunk_id, window=2):
@@ -426,13 +458,20 @@ def tool_get_book_info(title=None, author=None):
     }
 
 
-def tool_list_sources_on_topic(topic, n_results=8):
-    """文献侦察：返回与主题相关的书目列表，不返回片段内容"""
+def tool_list_sources_on_topic(topic, n_results=8, include_press=False, exclude=None):
+    """文献侦察：返回与主题相关的书目列表，不返回片段内容。
+
+    include_press 语义同 tool_search_corpus（默认排除报刊）。
+    exclude 为负过滤（文献查找模式），语义见 corpus_lib.build_where。
+    ★ 注意：它不走 search_chunks，而是直接 collection.query，
+      所以过滤条件要在这里显式传（否则报刊会绕过默认排除混进书目列表）。
+    """
     collection = get_collection()
     query_emb = embed_text(topic)
 
     results = collection.query(
         query_embeddings=[query_emb],
+        where=build_where(exclude_press=not include_press, exclude=exclude),
         n_results=n_results * 3,
         include=["metadatas", "distances"],
     )
@@ -476,14 +515,27 @@ def tool_list_books_by_filter(region=None, subfield=None, stance=None, source_ty
 
     where = where_conditions[0] if len(where_conditions) == 1 else {"$and": where_conditions}
 
-    result = collection.get(where=where, include=["metadatas"], limit=5000)
+    # ★ 不传 limit → 适配器走 query_iterator 全表扫，避免被 limit 截断。
+    #   旧实现是 limit=5000，在 16 万行里只取前 5000 行（顺序不定），
+    #   会把只占 0.1% 的书目（如报刊《新自由报》162 条）随机漏掉。
+    # ★ include=[] 只取 chunk_id，title 从 "title::chunk_index" 解析
+    #   —— 与 get_book_counts 同法，省掉拉 16 万份 metadatas。
+    result = collection.get(where=where, include=[])
+    titles = {cid.rsplit("::", 1)[0] for cid in result["ids"] if cid}
 
-    titles = set(m.get("title") for m in result["metadatas"] if m.get("title"))
-    books = []
+    # ★ 报刊的 title 是期号级，折叠回系列名后再返回。
+    #   否则 30 年报刊会让这个工具返回上万条「书目」，对 agent 毫无用处。
+    collapsed = set()
     for t in titles:
+        p = next((p for p in PRESS_TITLE_PREFIXES if t.startswith(p)), None)
+        collapsed.add(p if p else t)
+
+    books = []
+    for t in collapsed:
         book = get_book_meta(t)
         books.append({"title": t, "author": book.get("author"), "year": book.get("year")})
-    books.sort(key=lambda x: (x.get("year") or ""))
+    # year 字段在不同条目里可能是 int 或 str（报刊是 "1864-1939"），统一成 str 再排
+    books.sort(key=lambda x: str(x.get("year") or ""))
     return books
 
 
@@ -552,17 +604,19 @@ def detect_scope_title(question):
 
 
 def ui_filters():
-    """侧边栏选中的检索过滤条件（A11）；空值不返回，供普通模式透传与深度模式硬覆盖。"""
+    """侧边栏选中的检索过滤条件（A11）；空值不返回。
+    供深度模式硬覆盖模型传的同类参数（文献查找模式用另一套负过滤，见 find_excludes）。"""
     f = st.session_state.get("ui_filters", {}) or {}
     return {k: v for k, v in f.items() if v}
 
 
-def execute_tool(name, args, scope_title=None, apply_ui_filters=True):
+def execute_tool(name, args, scope_title=None, apply_ui_filters=True, exclude=None):
     """
     scope_title非None时，代表本轮问题已被程序化识别为限定单一书目——
     这里做的是硬性覆盖/拒绝，不是"建议"，不依赖模型是否遵守。
     侧边栏过滤条件（A11）同样硬覆盖模型传的同类参数；
     apply_ui_filters=False 时长文本模式不使用侧边栏过滤（需要全库视野）。
+    exclude：负过滤（文献查找模式），透传给 search_corpus 与 list_sources_on_topic。
     """
     try:
         if name == "search_corpus":
@@ -590,6 +644,9 @@ def execute_tool(name, args, scope_title=None, apply_ui_filters=True):
                 stance=args.get("stance"),
                 title=effective_title,
                 n_results=args.get("n_results", 10),
+                # ★ 报刊是否纳入由模型自己决定，**不**放进上面的 ui_filters() 硬覆盖块
+                include_press=bool(args.get("include_press", False)),
+                exclude=exclude,
             )
         elif name == "expand_chunk":
             chunk_id = args["chunk_id"]
@@ -609,7 +666,9 @@ def execute_tool(name, args, scope_title=None, apply_ui_filters=True):
             )
         elif name == "list_sources_on_topic":
             result = tool_list_sources_on_topic(
-                topic=args["topic"], n_results=args.get("n_results", 8)
+                topic=args["topic"], n_results=args.get("n_results", 8),
+                include_press=bool(args.get("include_press", False)),
+                exclude=exclude,
             )
         elif name == "list_books_by_filter":
             result = tool_list_books_by_filter(
@@ -677,6 +736,25 @@ TOOLS = [
                             "不要让其他书目的内容混入结果。"
                         ),
                     },
+                    "include_press": {
+                        "type": "boolean",
+                        "description": (
+                            "是否把报刊纳入检索，默认 false（不纳入）。"
+                            "库中有维也纳《新自由报》1864 年起的选定期次，是唯一的报刊来源，"
+                            "内容是当天的社论、国外通讯、交易所行情、官方公告与商业广告。"
+                            "遇到下列问题时设为 true："
+                            "① 当时的报刊报道、新闻、舆论、公众反应；"
+                            "② 报纸如何呈现/评论某个事件；"
+                            "③ 19 世纪维也纳的物价、商品、广告、商业与出版市场；"
+                            "④ 交易所行情、债券价格、经济数据；"
+                            "⑤ 剧院、文学、文化专栏。"
+                            "下列问题保持默认 false：政治外交决策过程、人物生平、"
+                            "学术争论、军事行动 —— 报刊体量是其余语料的 10 倍以上，"
+                            "纳入会稀释这些问题的结果。"
+                            "★ 注意报刊文本是 Fraktur 字体 OCR，存在 s→f/j 字形混淆"
+                            "（Preffe=Presse、Politif=Politik），按标准拼写检索可能漏召回。"
+                        ),
+                    },
                 },
                 "required": ["query"],
             },
@@ -721,6 +799,15 @@ TOOLS = [
                 "properties": {
                     "topic": {"type": "string", "description": "主题关键词"},
                     "n_results": {"type": "integer", "description": "返回书目数量，默认8"},
+                    "include_press": {
+                        "type": "boolean",
+                        "description": (
+                            "是否包含报刊书目，默认 false。与 search_corpus 的同名参数一致；"
+                            "若你想找的是当时的报刊报道/舆论/物价/广告类文献，设 true。"
+                            "注意：本工具列的是「与主题相关的书目」，"
+                            "若要确认库里到底有哪些报刊，用 list_books_by_filter（它不受此参数限制）。"
+                        ),
+                    },
                 },
                 "required": ["topic"],
             },
@@ -792,6 +879,8 @@ SYSTEM_PROMPT = """你是一位专业的奥匈帝国历史研究助手，拥有�
    - 涉及特定学科视角（如经济史/军事史）的问题：用 search_corpus 并指定 subfield 参数
    - 关于文献库本身构成的问题（如"库里有哪些书讨论加利西亚"）：用 list_books_by_filter，
      不要用语义检索去回答这类结构化问题
+   - 涉及报刊的问题：见下方【报刊语料】一节，需要时在 search_corpus /
+     list_sources_on_topic 上传 include_press=true
 3. 发现高度相关但内容不完整的片段时，用 expand_chunk 扩展上下文
 4. 如果检索结果中出现明显的噪声片段（页眉页脚残留、脚注碎片、参考文献列表）或者与当前
    问题完全无关但反复占用检索名额的片段，用 exclude_chunks 排除掉，避免它们持续干扰后续检索
@@ -821,6 +910,11 @@ SYSTEM_PROMPT = """你是一位专业的奥匈帝国历史研究助手，拥有�
     前缀，其中可读出该文件的文种（Erlaß 指令 / Bericht 汇报 / Tel. 电报 /
     Denkschrift 备忘录等）、收发双方与日期，叙述时可直接采用；
     若只引用了某份文件的部分内容，可注明「Nr. 10364，第2/3部分」
+  · 报刊类：citation 形如「Neue Freie Presse 1864-09-01, S. 2 (Ausland)」，
+    照此引用（报名 + 出版日期 + 版次 + 栏目）。**不要**把报刊写成 (作者, 年份, p. 页码)
+    —— 报刊的 author 字段是创办人，与内容无关，用它做引注没有意义。
+    报纸没有页码意义上的"页"，用 S.（Seite/版次）；括号内是栏目名，
+    可据此说明所引内容属社论、国外通讯、行情表还是广告
 - 检索结果中每个片段都附带了 citation 字段（已按上述两类格式生成好），直接使用，不要用
   "片段1"/"片段2"这类编号指代史料
 - 如果某片段没有页码（citation中不含"p."，也不是档案编号形制），引用时只写 (作者, 年份)
@@ -828,7 +922,80 @@ SYSTEM_PROMPT = """你是一位专业的奥匈帝国历史研究助手，拥有�
 - 严格区分：史料直接支持的论断 / 基于史料的合理推断（标注"可推断"）/ 史料未涉及的内容
   （说明"现有史料不足以回答"）
 - 遇到不同史学倾向的矛盾论点，明确指出并分析分歧原因
-- 用中文回答，专有名词保留原文并附中文译名"""
+- 用中文回答，专有名词保留原文并附中文译名
+
+【报刊语料 —— 默认不检索，按需开启】
+库里除 190 种专著与档案汇编外，还有**报刊**：维也纳《新自由报》1864 年起的选定期次
+（唯一报刊来源，bookdata 中是一条系列条目，chunk 的 title 为期号级
+「Neue Freie Presse, YYYY-MM-DD」）。
+
+- **默认不纳入检索**。原因：报刊体量是其余语料的 10 倍以上，且内容宽泛，
+  默认纳入会把它挤进几乎所有问题的结果里，稀释专著与档案的精确证据。
+- 需要时在 `search_corpus` / `list_sources_on_topic` 上传 **`include_press=true`**。
+  下列问题应当开启：当时的报刊报道与舆论、报纸如何呈现某个事件、19 世纪维也纳的
+  物价/商品/广告/商业与出版市场、交易所行情与债券价格、剧院与文学专栏、公众反应。
+  下列问题保持默认：政治外交决策过程、人物生平、学术争论、军事行动。
+- 若检索结果条数偏少，返回里会出现一条 `_note` 提示报刊已被排除 ——
+  读到它且问题涉及上述题材时，用 include_press=true 重试。
+- 想确认库里到底有哪些报刊，用 `list_books_by_filter` 或 `get_book_info`
+  （这两个工具不受 include_press 限制，能看到报刊条目）。
+- ⚠️ 报刊文本是 Fraktur 字体的自动 OCR，错误率约 11–14%，全部是字形混淆：
+  `s→f/j`（Preffe=Presse、Politif=Politik、Dänemart=Dänemark）、`k→f`、`ß→h`。
+  **阅读与理解不受影响**，但按标准拼写检索可能漏召回；若怀疑是拼写问题，
+  可换用不带 s 的词、或直接用语义描述检索。**引用报刊原文时请按语义还原拼写**，
+  不要照搬错拼（引 `Politik` 而不是 `Politif`）。"""
+
+
+# ============================================================
+# 文献查找模式
+# ============================================================
+# 目标与其它模式根本不同：不是"回答得好"，而是"捞得全"。
+# ★ 本模式遵守「绝对客观」：模型全程只调工具，不产出任何展示文本。
+#   输出（统计行 + 片段清单）全部由渲染层用代码组装，模型碰不到。
+FIND_SYSTEM_PROMPT = """你是奥匈帝国史史料库的文献检索员。
+
+【你的任务】
+用户会给出一句话的描述。你要**尽可能完整地把库中与这个描述相关的片段找出来**，
+交给系统呈现给用户。
+
+**你不回答问题，不做分析，不下结论，不写综述。** 你的全部产出就是工具调用。
+系统只采纳工具返回的片段，你写的任何正文都不会被展示。
+
+【核心原则】
+1. 目标是**覆盖度**，不是选出"最好的几条"。宁可多捞，不要漏。
+2. 不要因为某个片段与某种预设或立场不符就跳过它。**相互矛盾的材料同样要收集** ——
+   用户要的是"库里有什么"，不是"哪个说法对"。
+3. 不要只搜一轮。同一主题要换不同术语、不同侧面、不同时期反复检索。
+   用户的描述通常是中文，**必须先翻译成英文或德文再检索**（库内以英德文为主），
+   并同时用两种语言的多个同义表达各试一次。
+4. 用户描述里的**每个要素都要有对应的检索**。若描述含 A 与 B 两个方面，
+   必须分别检索 A、检索 B、再检索 A 与 B 的结合。
+5. 检索词不要只用一个。历史术语有时代差异（如"关税同盟"可能是 Zollverein /
+   customs union / Zwischenzollinie），要用多个候选词各搜一遍。
+6. **一手与二手都要覆盖，不要只搜一类。** 库内既有档案汇编、条约文本、官方出版物、
+   当事人回忆录（source_type=primary），也有史学专著（secondary），
+   而且**二手著作里常常整段引述一手史料**。对同一个主题，两类都要各检索一遍；
+   若发现结果全是二手著作，就补一轮针对一手史料的检索（可试 source_type=primary，
+   但注意该标签是入库时的粗略标注，存在错标，只可作线索、不能当作筛除依据）。
+
+【检索流程】
+1. 先用 list_sources_on_topic 侦察库中有哪些文献涉及这个主题
+2. 用 search_corpus 多角度检索，按需使用 region / subfield / stance / source_type 过滤
+3. 发现高度相关但内容不完整的片段时，用 expand_chunk 补全上下文
+4. 只有在结果里反复出现明显噪声（页眉页脚、参考文献列表、纯目录页）时才用
+   exclude_chunks 排除，并说明原因。**本模式追求覆盖度，排除要克制。**
+
+【何时停止】
+系统会告诉你本次的目标片段数，达到后会自动停止，你无需自己计数。
+若已多轮检索且新的查询不再带来新片段，也可以主动停止。
+
+【报刊】
+报刊默认不纳入检索。若用户的描述涉及当时的报刊报道、舆论、物价、广告、
+交易所行情、出版市场或公众反应，请在 search_corpus 上传 include_press=true。
+
+【再次强调】
+不要输出任何导语、总结、评价、分类说明或"以下是检索结果"之类的话。
+直接开始调用工具。"""
 
 
 # ============================================================
@@ -894,7 +1061,22 @@ def _make_retrieval_plan(question):
 # ============================================================
 # Agent循环
 # ============================================================
-def agent_loop(question, history, status_container, dev_mode=False):
+def agent_loop(question, history, status_container, dev_mode=False,
+               system_prompt=None, target_chunks=None, exclude=None, extra_hint="",
+               stats=None):
+    """
+    agent 工具循环。深度分析模式与文献查找模式共用。
+
+    system_prompt : 覆盖默认 SYSTEM_PROMPT（文献查找用 FIND_SYSTEM_PROMPT）
+    target_chunks : 非None 时，累计检索片段达到该数量即停止（文献查找的目标数）
+    exclude       : 负过滤，透传给 execute_tool（文献查找的排除条件）
+    extra_hint    : 追加到用户消息末尾的系统提示（用于「继续检索」告知已有片段）
+    stats         : 可选 dict，回填本轮统计（tool_calls / llm_rounds / chunks）
+
+    返回 (answer, all_retrieved_chunks)。
+    文献查找模式只取第二个返回值——第一个（模型正文）按「绝对客观」的要求不展示。
+    """
+    system_prompt = system_prompt or SYSTEM_PROMPT
     clean_history = [
         {"role": m["role"], "content": m["content"]}
         for m in history[-(MAX_HISTORY_TURNS * 2):]
@@ -910,12 +1092,30 @@ def agent_loop(question, history, status_container, dev_mode=False):
             f"expand_chunk工具本轮只会返回该书内容，无需自行传入title参数，也无法获取"
             f"该书之外的片段。）"
         )
+    if extra_hint:
+        user_content = f"{user_content}\n\n{extra_hint}"
     messages = clean_history + [{"role": "user", "content": user_content}]
 
     tool_call_count = 0
     llm_round = 0
     all_retrieved_chunks = []
     seen_chunk_ids = set()
+
+    def _finish(answer):
+        """统一出口：把本轮统计写回调用方传入的 stats（文献查找的统计行要用）。"""
+        if stats is not None:
+            stats["tool_calls"] = tool_call_count
+            stats["llm_rounds"] = llm_round
+            stats["chunks"] = len(all_retrieved_chunks)
+        return answer, all_retrieved_chunks
+
+    def _reached_target():
+        """★ 每执行完一次工具调用就查一次，而不是等整轮结束。
+
+        模型一轮里可能并发发好几个 search_corpus（A10 检索计划还会先跑 2-3 步），
+        若只在整轮末尾判断，目标 8 条实测会超收到 44 条 —— 用户指定的条数就失去意义了。
+        """
+        return bool(target_chunks) and len(all_retrieved_chunks) >= target_chunks
 
     # ---- A10：程序化检索计划（先计划后执行，结果以plan_N工具消息进入上下文）----
     plan = _make_retrieval_plan(question)
@@ -935,7 +1135,8 @@ def agent_loop(question, history, status_container, dev_mode=False):
             tool_call_count += 1
             t0 = time.time()
             status_container.write(f"🧭 执行计划第{i+1}步：检索（{purpose or args['query'][:40]}）")
-            result_str = execute_tool("search_corpus", args, scope_title=scope_title)
+            result_str = execute_tool("search_corpus", args, scope_title=scope_title,
+                                      exclude=exclude)
             result_data = json.loads(result_str)
             if dev_mode:
                 dev_record(f"计划检索 · 第{i+1}步 · {purpose or args['query'][:40]}",
@@ -948,6 +1149,14 @@ def agent_loop(question, history, status_container, dev_mode=False):
                         seen_chunk_ids.add(cid)
                         all_retrieved_chunks.append(item)
             plan_results.append({"role": "tool", "tool_call_id": call_id, "content": result_str})
+            if _reached_target():
+                # 计划才跑了几步就够数了 —— 直接收工，别再空跑剩下的计划步骤
+                status_container.write(
+                    f"✅ 已达目标片段数（{len(all_retrieved_chunks)}/{target_chunks}），停止检索")
+                if dev_mode:
+                    dev_record("循环终止 · 计划阶段已达目标片段数",
+                               f"累计 {len(all_retrieved_chunks)} 条 ≥ 目标 {target_chunks} 条")
+                return _finish("")
         # thinking模式要求带tool_calls的assistant消息必须含reasoning_content字段（可空），
         # DeepSeek不接受content为null，用空字符串
         messages.append({"role": "assistant", "content": "", "reasoning_content": "",
@@ -975,12 +1184,12 @@ def agent_loop(question, history, status_container, dev_mode=False):
 
         t0 = time.time()
         response = call_deepseek(
-            messages=messages, system_prompt=SYSTEM_PROMPT, tools=TOOLS, temperature=0.3
+            messages=messages, system_prompt=system_prompt, tools=TOOLS, temperature=0.3
         )
         if "error" in response:
             if dev_mode:
                 dev_record(f"LLM调用 第{llm_round}轮 · 报错", response["error"])
-            return f"⚠️ {response['error']}", all_retrieved_chunks
+            return _finish(f"⚠️ {response['error']}")
 
         choice = response["choices"][0]
         finish_reason = choice["finish_reason"]
@@ -1006,7 +1215,7 @@ def agent_loop(question, history, status_container, dev_mode=False):
         messages.append(assistant_msg)
 
         if finish_reason != "tool_calls" or not message.get("tool_calls"):
-            return message.get("content", "（无回答）"), all_retrieved_chunks
+            return _finish(message.get("content", "（无回答）"))
 
         tool_results = []
         for tc in message["tool_calls"]:
@@ -1017,7 +1226,8 @@ def agent_loop(question, history, status_container, dev_mode=False):
             status_container.write(f"🔍 调用工具：**{tool_name}**（第{tool_call_count}次）")
 
             t0 = time.time()
-            result_str = execute_tool(tool_name, tool_args, scope_title=scope_title)
+            result_str = execute_tool(tool_name, tool_args, scope_title=scope_title,
+                                      exclude=exclude)
             result_data = json.loads(result_str)
 
             if dev_mode:
@@ -1036,12 +1246,22 @@ def agent_loop(question, history, status_container, dev_mode=False):
                 "role": "tool", "tool_call_id": tc["id"], "content": result_str
             })
 
+            if _reached_target():
+                # 模型一轮里可能并发发了好几个 search_corpus，够数就别再执行剩下的了
+                status_container.write(
+                    f"✅ 已达目标片段数（{len(all_retrieved_chunks)}/{target_chunks}），停止检索")
+                if dev_mode:
+                    dev_record("循环终止 · 已达目标片段数",
+                               f"累计 {len(all_retrieved_chunks)} 条 ≥ 目标 {target_chunks} 条，"
+                               f"共调用工具 {tool_call_count} 次")
+                return _finish("")
+
         messages.extend(tool_results)
 
     if dev_mode:
         dev_record("循环终止 · 超过工具调用上限",
                    f"已连续调用 {tool_call_count} 次工具，达到 MAX_TOOL_CALLS={MAX_TOOL_CALLS}")
-    return "⚠️ 工具调用次数超过上限，请缩短问题或降低复杂度。", all_retrieved_chunks
+    return _finish("⚠️ 工具调用次数超过上限，请缩短问题或降低复杂度。")
 
 
 # ============================================================
@@ -1575,6 +1795,103 @@ def render_chunk_expander(chunks):
 
 
 # ============================================================
+# 文献查找模式的输出渲染
+# ============================================================
+# ★ 「绝对客观」的落实点：下面所有展示文本（统计行、分组标题、出处行）
+#   全部由代码生成，模型全程只调工具、不产出任何展示文本。
+def find_group_units(units):
+    """按文献分组：组间按命中片段数降序，组内沿用 chunk_index 升序。
+
+    merge_adjacent_chunks 已经把单元按 (书名, 起始chunk_index) 排好，
+    所以组内顺序直接沿用，这里只重排组的顺序。
+    """
+    groups = {}
+    for u in units:
+        if isinstance(u, dict):
+            groups.setdefault(u.get("title") or "未知书目", []).append(u)
+    out = []
+    for title, items in groups.items():
+        # 组内按起始 chunk_index 升序（「继续检索」追加后仍保持阅读顺序）
+        items.sort(key=lambda u: _resolve_chunk_index(u) or 0)
+        n = sum(len(u.get("all_chunk_ids") or [u.get("chunk_id")]) for u in items)
+        out.append({"title": title, "units": items, "n_chunks": n,
+                    "source_type": items[0].get("source_type")})
+    out.sort(key=lambda g: (-g["n_chunks"], g["title"]))
+    return out
+
+
+def build_find_stats(units, stats=None):
+    """程序化生成统计行（不由模型写 —— 这是「绝对客观」的一部分）。"""
+    groups = find_group_units(units)
+    n_chunks = sum(g["n_chunks"] for g in groups)
+    by_type = {}
+    for g in groups:
+        by_type[g["source_type"] or "未标注"] = by_type.get(g["source_type"] or "未标注", 0) + 1
+    label = {"primary": "一手", "secondary": "二手", "mixed": "混合", "未标注": "未标注"}
+    type_str = " / ".join("%s %d" % (label[k], by_type[k])
+                          for k in ("primary", "secondary", "mixed", "未标注")
+                          if by_type.get(k))
+    parts = []
+    for key, fmt in (("llm_rounds", "检索 %d 轮"), ("tool_calls", "工具调用 %d 次")):
+        if stats and stats.get(key):
+            parts.append(fmt % stats[key])
+    parts.append("命中 %d 条片段" % n_chunks)
+    parts.append("覆盖 %d 种文献（%s）" % (len(groups), type_str or "无"))
+    parts.append("合并为 %d 个展示单元" % len(units))
+    return "📊 " + " · ".join(parts)
+
+
+def render_find_results(units, stats_line=None):
+    """文献查找模式的输出：统计行 + 按文献分组的展示单元。
+
+    ★ 修正时序：先用原文秒出，再并行修正并逐条回填。
+      首次查一个全新主题时修正要等几十秒，先出内容体感差别很大；
+      命中缓存后则是瞬时的。
+    ★ 重绘区域内**不放任何 widget** —— 回填时会反复重绘同一容器，
+      放 widget 有触发重复 key 报错的风险。
+    """
+    if stats_line:
+        st.markdown(stats_line)
+    if not units:
+        st.info("未检索到任何相关片段。可放宽下方的排除条件，或换个说法重试。")
+        return
+
+    groups = find_group_units(units)
+    ph = st.empty()
+    prog = st.empty()
+
+    def draw():
+        with ph.container():
+            for g in groups:
+                st.markdown(f"#### 《{g['title']}》 · {g['n_chunks']} 条片段")
+                for u in g["units"]:
+                    chapter = f" · 《{u['chapter_title']}》章节" if u.get("chapter_title") else ""
+                    st.markdown(
+                        f"**{u.get('citation', '未知来源')}**{chapter} · "
+                        f"{u.get('source_type') or ''} · "
+                        f"{'/'.join(u.get('region') or []) if isinstance(u.get('region'), list) else (u.get('region') or '')}"
+                    )
+                    raw = u.get("text", "")
+                    fixed = get_corrected_text(u)
+                    st.text(fixed)
+                    if fixed != raw:
+                        st.caption("🪄 文本已自动修正排版与拼写（OCR 字形混淆，仅展示层修正）")
+                    st.markdown("---")
+
+    draw()
+
+    def _cb(done, total, key):
+        prog.caption(f"🪄 正在修正文本 {done}/{total}…")
+        draw()
+
+    fixed_n = correct_units([u for u in units if isinstance(u, dict)],
+                            max_workers=6, progress_cb=_cb)
+    prog.empty()
+    if fixed_n:
+        st.caption(f"🪄 本次新修正了 {fixed_n} 个展示单元的文本（已缓存，之后即时显示）")
+
+
+# ============================================================
 # 会话持久化（A16）/ 反馈（A26）/ 导出（A14）
 # ============================================================
 def _sessions_index_path():
@@ -1622,6 +1939,8 @@ def save_session(sid, messages):
                 "citation_map": m.get("citation_map") or [],
                 "long_text": m.get("long_text") or "",
                 "long_reqs": m.get("long_reqs") or "",
+                "mode": m.get("mode") or "",
+                "find_query": m.get("find_query") or "",
                 "ts": m.get("ts") or "",
             }
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -1823,15 +2142,44 @@ if "long_ledger" not in st.session_state:
     st.session_state.long_ledger = []
 
 
+@st.cache_data(ttl=600, show_spinner=False)
+def _find_title_options():
+    """「排除具体书目」的候选。
+
+    ★ 取自 bookdata.json（193 条，瞬时），**不要**去库里扫 distinct title ——
+      那需要 query_iterator 全表扫 16 万行，会让默认模式的首屏卡上一分多钟。
+      多列出几本零 chunk 的书无妨，少了才是问题。
+    """
+    try:
+        titles = {b.get("title") for b in load_bookdata() if b.get("title")}
+    except Exception:
+        return []
+    return sorted(titles)
+
+
+def find_excludes():
+    """文献查找模式的负过滤条件（侧栏「排除条件」面板写入，空值不返回）。"""
+    f = st.session_state.get("find_excludes", {}) or {}
+    return {k: v for k, v in f.items() if v}
+
+
 # ============================================================
 # 侧边栏
 # ============================================================
 with st.sidebar:
     st.header("设置")
-    deep_mode = st.toggle("深度分析模式", value=False,
-                          help="开启后模型自主决定检索策略和次数，响应更慢但分析更全面")
-    long_text_mode = st.toggle("长文本分析模式", value=False,
-                               help="输入长文本+分析要求，三阶段台账式逐论点史料核查（耗时与费用较高）")
+    MODES = ["文献查找", "深度分析", "长文本分析"]
+    MODE_HELP = {
+        "文献查找": "给一句话描述，agent 忠实地把库中相关片段检索出来并按文献分组呈现。"
+                    "不做分析、不下结论，输出全部由代码组装。最快。",
+        "深度分析": "模型自主决定检索策略和次数，生成一段有论据的分析回答。较慢但更全面。",
+        "长文本分析": "输入长文本+分析要求，三阶段台账式逐论点史料核查（耗时与费用较高）。",
+    }
+    mode = st.radio("模式", MODES, index=0, key="ui_mode")
+    st.caption(MODE_HELP.get(mode, ""))
+    find_mode = mode == "文献查找"
+    deep_mode = mode == "深度分析"
+    long_text_mode = mode == "长文本分析"
     dev_mode = st.toggle("开发者模式", value=False,
                          help="显示Agent执行轨迹：每一步的模型输入/输出、工具调用参数与返回结果")
     st.session_state["dev_mode_on"] = dev_mode
@@ -1845,26 +2193,55 @@ with st.sidebar:
         st.rerun()
 
     st.markdown("---")
-    st.header("检索过滤")
-    st.caption("普通模式直接生效；深度模式会覆盖模型传的同类参数。")
-    ui_source_type = st.selectbox("史料类型", ["不限"] + SOURCE_TYPE_CANDIDATES, key="ui_source_type")
-    ui_stance = st.selectbox("史学立场", ["不限"] + STANCE_CANDIDATES, key="ui_stance")
-    ui_lang = st.selectbox("语言", ["不限", "英文", "中文", "德文", "匈牙利文", "波兰文", "混合"], key="ui_lang")
-    ui_subfields = st.multiselect("学科视角", SUBFIELD_CANDIDATES, key="ui_subfields")
-    ui_regions = st.multiselect("地区", REGION_CANDIDATES, key="ui_regions")
-    st.session_state["ui_filters"] = {
-        "source_type": ui_source_type if ui_source_type != "不限" else None,
-        "stance": ui_stance if ui_stance != "不限" else None,
-        "lang": ui_lang if ui_lang != "不限" else None,
-        "subfield": ui_subfields or None,
-        "region": ui_regions or None,
-    }
-    if st.button("重置过滤"):
-        for k in ("ui_source_type", "ui_stance", "ui_lang"):
-            st.session_state[k] = "不限"
-        for k in ("ui_subfields", "ui_regions"):
-            st.session_state[k] = []
-        st.rerun()
+    if find_mode:
+        # ---- 文献查找：负过滤（默认收录全部来源，勾选的被排除）----
+        st.header("排除条件")
+        st.caption("默认收录全部来源（含二手著作里引述的一手史料）。"
+                   "只有勾选的项目会被排除，未勾选的一律保留。")
+        fx_source = st.multiselect("排除史料类型", SOURCE_TYPE_CANDIDATES, key="fx_source")
+        fx_lang = st.multiselect("排除语言", ["英文", "中文", "德文", "匈牙利文", "波兰文", "混合"],
+                                 key="fx_lang")
+        fx_sub = st.multiselect("排除学科视角", SUBFIELD_CANDIDATES, key="fx_sub")
+        fx_region = st.multiselect("排除地区", REGION_CANDIDATES, key="fx_region")
+        fx_stance = st.multiselect("排除史学立场", STANCE_CANDIDATES, key="fx_stance")
+        fx_ds = st.checkbox("排除广告与行情（报刊的 Inserate / Börse）", value=False, key="fx_ds")
+        fx_titles = st.multiselect("排除具体书目", _find_title_options(), key="fx_titles")
+        st.session_state["find_excludes"] = {
+            "source_type": fx_source,
+            "language": fx_lang,
+            "subfield": fx_sub,
+            "region": fx_region,
+            "stance": fx_stance,
+            "doc_section": ["Inserate", "Börse"] if fx_ds else [],
+            "title": fx_titles,
+        }
+        if st.button("重置排除条件"):
+            for k in ("fx_source", "fx_lang", "fx_sub", "fx_region", "fx_stance", "fx_titles"):
+                st.session_state[k] = []
+            st.session_state["fx_ds"] = False
+            st.rerun()
+        st.caption("报刊（《新自由报》）默认不纳入；由 agent 根据描述判断是否开启。")
+    else:
+        st.header("检索过滤")
+        st.caption("深度模式会覆盖模型传的同类参数。")
+        ui_source_type = st.selectbox("史料类型", ["不限"] + SOURCE_TYPE_CANDIDATES, key="ui_source_type")
+        ui_stance = st.selectbox("史学立场", ["不限"] + STANCE_CANDIDATES, key="ui_stance")
+        ui_lang = st.selectbox("语言", ["不限", "英文", "中文", "德文", "匈牙利文", "波兰文", "混合"], key="ui_lang")
+        ui_subfields = st.multiselect("学科视角", SUBFIELD_CANDIDATES, key="ui_subfields")
+        ui_regions = st.multiselect("地区", REGION_CANDIDATES, key="ui_regions")
+        st.session_state["ui_filters"] = {
+            "source_type": ui_source_type if ui_source_type != "不限" else None,
+            "stance": ui_stance if ui_stance != "不限" else None,
+            "lang": ui_lang if ui_lang != "不限" else None,
+            "subfield": ui_subfields or None,
+            "region": ui_regions or None,
+        }
+        if st.button("重置过滤"):
+            for k in ("ui_source_type", "ui_stance", "ui_lang"):
+                st.session_state[k] = "不限"
+            for k in ("ui_subfields", "ui_regions"):
+                st.session_state[k] = []
+            st.rerun()
 
     st.markdown("---")
     st.header("会话")
@@ -1915,22 +2292,36 @@ _handle_session_actions(new_session_btn, delete_btn, delete_confirmed, sel_sessi
 # ============================================================
 # 显示历史对话
 # ============================================================
+_find_more_n = None      # 「继续检索」被点击时记录追加条数，循环后统一处理
 for i, message in enumerate(st.session_state.messages):
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-        if message.get("long_text"):
-            with st.expander("查看提交的长文本"):
-                st.text(message["long_text"])
-        if message.get("sources"):
-            render_chunk_expander(hydrate_sources(message["sources"]))
-        if message.get("citation_map"):
-            with st.expander(f"🔗 引用对照（{len(message['citation_map'])} 处）"):
-                for cm in message["citation_map"]:
-                    chapter = f" · 《{cm['chapter_title']}》" if cm.get("chapter_title") else ""
-                    st.markdown(
-                        f"**{cm.get('citation_text','')}** → "
-                        f"《{cm.get('source','未知书目')}》{chapter} · `{cm.get('chunk_id')}`"
-                    )
+        if message.get("mode") == "find":
+            # 文献查找模式：content 是程序化统计行，sources 是按文献分组前的展示单元
+            render_find_results(hydrate_sources(message.get("sources") or []),
+                                stats_line=message.get("content"))
+            if (message["role"] == "assistant"
+                    and i == len(st.session_state.messages) - 1):
+                fc1, fc2 = st.columns([1, 3])
+                _n = fc1.number_input(
+                    "追加片段数", min_value=1, max_value=200, value=20,
+                    key="find_more_n", label_visibility="collapsed")
+                if fc2.button("🔄 继续检索（追加新片段）", key="find_more_btn"):
+                    _find_more_n = int(_n)
+        else:
+            st.markdown(message["content"])
+            if message.get("long_text"):
+                with st.expander("查看提交的长文本"):
+                    st.text(message["long_text"])
+            if message.get("sources"):
+                render_chunk_expander(hydrate_sources(message["sources"]))
+            if message.get("citation_map"):
+                with st.expander(f"🔗 引用对照（{len(message['citation_map'])} 处）"):
+                    for cm in message["citation_map"]:
+                        chapter = f" · 《{cm['chapter_title']}》" if cm.get("chapter_title") else ""
+                        st.markdown(
+                            f"**{cm.get('citation_text','')}** → "
+                            f"《{cm.get('source','未知书目')}》{chapter} · `{cm.get('chunk_id')}`"
+                        )
         if dev_mode and message.get("dev_log"):
             render_dev_log(message["dev_log"])
         if message["role"] == "assistant":
@@ -1949,6 +2340,8 @@ for i, message in enumerate(st.session_state.messages):
 # 输入框
 # ============================================================
 with st.form("question_form", clear_on_submit=True):
+    find_query = ""
+    find_target = 20
     if long_text_mode:
         long_text_input = st.text_area("待分析长文本", height=340,
                                        help="粘贴需要详细分析/核查的长文本（论文、观点陈述等）")
@@ -1956,6 +2349,19 @@ with st.form("question_form", clear_on_submit=True):
         submitted = st.form_submit_button("开始分析")
         continue_chat = False
         question = ""
+    elif find_mode:
+        find_query = st.text_input("描述你要找的内容...",
+                                   placeholder="例：1867 年奥匈折衷方案谈判期间匈牙利的立场")
+        fc1, fc2 = st.columns([1, 3])
+        find_target = fc1.number_input("目标片段数", min_value=5, max_value=200, value=20, step=5)
+        with fc2:
+            st.caption("agent 会多角度检索直到凑够这个数量。不做分析、不下结论，"
+                       "只把相关片段按文献分组呈现。")
+        submitted = st.form_submit_button("开始查找")
+        continue_chat = False
+        question = ""
+        long_text_input = ""
+        long_reqs_input = ""
     else:
         question = st.text_input("输入你的问题...")
         col1, col2 = st.columns(2)
@@ -1966,7 +2372,108 @@ with st.form("question_form", clear_on_submit=True):
         long_text_input = ""
         long_reqs_input = ""
 
-if long_text_mode and submitted and long_text_input.strip():
+# ============================================================
+# 文献查找模式
+# ============================================================
+# ★ 本模式遵守「绝对客观」：agent 只调工具，模型正文一律丢弃（_ans 不用），
+#   展示的统计行与分组标题全部由渲染层用代码生成。
+if find_mode and _find_more_n is not None:
+    # ---------- 继续检索：在最后一条查找结果的片段池上追加 ----------
+    _idx = next((k for k in range(len(st.session_state.messages) - 1, -1, -1)
+                 if st.session_state.messages[k].get("mode") == "find"), None)
+    if _idx is None:
+        st.warning("没有可继续的查找结果，请先发起一次查找。")
+    else:
+        st.session_state.dev_log = []
+        _msg = st.session_state.messages[_idx]
+        _q = _msg.get("find_query") or ""
+        _have = hydrate_sources(_msg.get("sources") or [])
+        _have_ids = {cid for u in _have for cid in (u.get("all_chunk_ids") or [])}
+        _dist = Counter(u.get("title") for u in _have)
+        _hint = (
+            f"（这是**继续检索**。本会话已经收集了 {len(_have_ids)} 条片段，分布如下：\n"
+            + "、".join(f"{t}（{n} 条）" for t, n in _dist.most_common())
+            + f"\n请**不要重复**已收集的内容，从不同角度、不同术语、不同文献继续找 "
+              f"{_find_more_n} 条新片段。）"
+        )
+
+        with st.chat_message("user"):
+            st.markdown(f"🔄 继续检索：再找 {_find_more_n} 条")
+        with st.chat_message("assistant"):
+            status = st.empty()
+            status.write("🔄 正在从新的角度检索…")
+            _stats = {}
+            try:
+                _ans, _new_chunks = agent_loop(
+                    _q, st.session_state.messages[:_idx], status, dev_mode=dev_mode,
+                    system_prompt=FIND_SYSTEM_PROMPT, target_chunks=_find_more_n,
+                    exclude=find_excludes() or None, extra_hint=_hint, stats=_stats)
+            except Exception as e:
+                st.error(f"检索失败：{e}")
+                _new_chunks = []
+            status.empty()
+
+            _new_units = [u for u in merge_adjacent_chunks(_new_chunks)
+                          if not any(c in _have_ids for c in (u.get("all_chunk_ids") or []))]
+            _all_units = _have + _new_units
+            _stats_line = build_find_stats(_all_units, _stats)
+            st.success(f"本次新增 {len(_new_units)} 个展示单元；"
+                       f"列表已更新到上方（合计 {len(_all_units)} 个）。")
+            if dev_mode:
+                render_dev_log()
+
+        st.session_state.messages[_idx]["sources"] = compact_sources(_all_units)
+        st.session_state.messages[_idx]["content"] = _stats_line
+        _sid = st.session_state.get("current_session")
+        if _sid:
+            _touch_session(_sid, st.session_state.messages)
+        st.rerun()
+
+elif find_mode and submitted and find_query.strip():
+    # ---------- 一次新的查找 ----------
+    st.session_state.dev_log = []
+    _q = find_query.strip()
+    _target = int(find_target)
+    with st.chat_message("user"):
+        st.markdown(_q)
+        st.caption(f"🔎 文献查找 · 目标 {_target} 条片段")
+    with st.chat_message("assistant"):
+        status = st.empty()
+        status.write("🔎 正在多角度检索…")
+        _stats = {}
+        try:
+            _ans, _chunks = agent_loop(
+                _q, st.session_state.messages, status, dev_mode=dev_mode,
+                system_prompt=FIND_SYSTEM_PROMPT, target_chunks=_target,
+                exclude=find_excludes() or None,
+                extra_hint=f"（本次目标片段数：{_target} 条。达到后系统会自动停止。）",
+                stats=_stats)
+        except Exception as e:
+            st.error(f"检索失败：{e}")
+            _chunks = []
+        status.empty()
+        # 模型正文按「绝对客观」要求一律丢弃；下面全部由代码组装
+        _units = merge_adjacent_chunks(_chunks)
+        _stats_line = build_find_stats(_units, _stats)
+        render_find_results(_units, _stats_line)
+        if dev_mode:
+            render_dev_log()
+
+    _ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    st.session_state.messages.append({"role": "user", "content": _q, "ts": _ts})
+    st.session_state.messages.append({
+        "role": "assistant", "content": _stats_line,
+        "sources": compact_sources(_units),
+        "mode": "find", "find_query": _q,
+        "dev_log": list(st.session_state.dev_log) if dev_mode else [],
+        "ts": _ts,
+    })
+    _sid = st.session_state.get("current_session")
+    if _sid:
+        _touch_session(_sid, st.session_state.messages)
+    st.rerun()
+
+elif long_text_mode and submitted and long_text_input.strip():
     st.session_state.dev_log = []
     long_text = long_text_input.strip()
     long_reqs = long_reqs_input.strip()
@@ -2147,61 +2654,12 @@ elif (submitted or continue_chat) and question:
             if dev_mode:
                 dev_record("生成 · 模型输出", _clip(answer, 3000), elapsed=time.time() - t0)
 
-        elif deep_mode:
+        else:
+            # 深度分析模式（普通模式已移除：检索层由「文献查找」承担）
             status = st.empty()
             status.write("🤔 正在分析问题...")
             answer, retrieved_chunks = agent_loop(question, st.session_state.messages, status, dev_mode=dev_mode)
             status.empty()
-
-        else:
-            t0 = time.time()
-            try:
-                with st.spinner("正在检索史料..."):
-                    # scope_title非None时直接锁定title参数，range外内容压根不会被检索出来
-                    # ui_filters()为侧边栏过滤条件（A11）
-                    retrieved_chunks = tool_search_corpus(
-                        query=question, title=scope_title, n_results=15, **ui_filters()
-                    )
-            except Exception as e:
-                st.error(f"检索失败：{e}")
-                retrieved_chunks = []
-            if dev_mode:
-                dev_record("检索 · search_corpus（A7混合+A8精排+A9改写）", json.dumps({
-                    "输入": {"query": question, "title": scope_title, "n_results": 15,
-                             "ui_filters": ui_filters()},
-                    "输出": {
-                        "retrieved_chunks": len(retrieved_chunks),
-                        "chunks": [{"chunk_id": c.get("chunk_id"), "citation": c.get("citation")}
-                                   for c in retrieved_chunks],
-                    },
-                }, ensure_ascii=False, indent=2), is_json=True, elapsed=time.time() - t0)
-
-            context = "\n\n".join([
-                f"[{c.get('citation','?')}]\n{c.get('text','')}"
-                for c in retrieved_chunks
-            ])
-            history = [
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages[-(MAX_HISTORY_TURNS * 2):]
-            ]
-            history.append({
-                "role": "user",
-                "content": f"史料片段：\n{context}\n\n问题：{question}",
-            })
-            if dev_mode:
-                dev_record("生成 · 流式 call_deepseek（单次检索模式）", json.dumps({
-                    "history_turns": len(history),
-                    "context_chunks": len(retrieved_chunks),
-                    "last_user_content": _clip(history[-1]["content"], 3000),
-                }, ensure_ascii=False, indent=2), is_json=True)
-            t0 = time.time()
-            try:
-                answer = st.write_stream(call_deepseek_stream(history, SYSTEM_PROMPT))
-            except Exception as e:
-                st.error(f"生成失败：{e}")
-                answer = "⚠️ 生成失败，请重新发送问题。"
-            if dev_mode:
-                dev_record("生成 · 模型输出", _clip(answer, 3000), elapsed=time.time() - t0)
 
         # 统一后处理：校验引用 + 筛出真正被引用/有重大帮助的片段 + 引用映射（A13）
         # （retrieved_chunks是本轮检索到的全部候选，display_chunks是筛选后要展示的子集）

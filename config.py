@@ -115,6 +115,22 @@ RERANK_CANDIDATES = int(_get("RERANK_CANDIDATES", "30"))            # 送入 rer
 
 
 # ============================================================
+# 报刊语料（《新自由报》等）
+# ============================================================
+# 报刊的 chunk 用「系列名, YYYY-MM-DD」作 title（期号级），bookdata 里只有
+# 一条系列条目（含 title_prefix），靠 get_book_meta 的前缀回退关联。
+#
+# ★ 检索默认**排除**报刊：报刊体量是其余语料的 10 倍以上（实测 162 chunk/期，
+#   30 年约 175 万），纳入会稀释结果。是否开启由 **agent** 通过工具参数
+#   include_press 决定，不是用户开关。
+# ★ 但「列书目」类工具（list_books_by_filter / get_book_info）**不排除** ——
+#   否则 agent 永远不知道库里有报刊，也就永远不会开启它。
+PRESS_TITLE_PREFIXES = [p.strip() for p in
+                        _get("HABRAG_PRESS_PREFIXES", "Neue Freie Presse").split("|")
+                        if p.strip()]
+
+
+# ============================================================
 # 数据后端选择：本地 Chroma  ↔  Zilliz Cloud Serverless
 # ============================================================
 # "zilliz" = Zilliz Cloud Serverless（阿里云杭州）← 当前生产后端

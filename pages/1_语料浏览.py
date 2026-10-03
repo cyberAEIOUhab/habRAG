@@ -31,6 +31,25 @@ def load_book_list():
     return sorted(counts.items(), key=lambda x: (-x[1], x[0].lower()))
 
 
+def split_series(books):
+    """把 (title, chunk数) 列表按系列前缀拆成两组。
+
+    报刊的 title 是期号级（"Neue Freie Presse, 1864-09-01"），
+    若与 190 种专著平铺在一个下拉里，30 年就是上万项、且全挤在顶部
+    （按 chunk 数降序，报刊每期 100+ 片段会排在前面）。
+    所以报刊单独归一类，类内再按期次选。
+    """
+    prefixes = corpus_lib.PRESS_TITLE_PREFIXES
+    plain, series = [], {}
+    for t, n in books:
+        p = next((p for p in prefixes if t.startswith(p)), None)
+        if p:
+            series.setdefault(p, []).append((t, n))
+        else:
+            plain.append((t, n))
+    return plain, series
+
+
 @st.cache_data(ttl=600, show_spinner=False)
 def load_book_chunks(title):
     return corpus_lib.get_chunks_for_book(title)
@@ -52,16 +71,48 @@ def reset_page():
 
 books = load_book_list()
 bookdata = load_bookdata_lookup()
-titles = [t for t, _ in books]
-labels = [f"{t}（{n} 片段）" for t, n in books]
+plain_books, series_books = split_series(books)
 
 with st.sidebar:
     st.header("选择书目")
-    if not titles:
+    if not books:
         st.warning("库中没有可浏览的书目。")
         st.stop()
-    sel_label = st.selectbox("书目（按片段数排序）", labels, key="browse_book", on_change=reset_page)
-    sel_title = titles[labels.index(sel_label)]
+
+    # ---- 第一级：语料类别 ----
+    categories = ["专著与档案"]
+    if series_books:
+        categories.append("报刊")
+    category = st.radio("语料类别", categories, horizontal=True,
+                        key="browse_category", on_change=reset_page)
+
+    if category == "报刊":
+        # ---- 报刊：先选系列，再选期次 ----
+        prefix = st.selectbox("报刊", sorted(series_books), key="browse_series",
+                              on_change=reset_page)
+        issues = sorted(series_books[prefix], key=lambda x: x[0], reverse=True)
+        issue_labels = ["全部期次"] + [f"{t}（{n} 片段）" for t, n in issues]
+        sel_issue = st.selectbox("期次（新→旧）", issue_labels, key="browse_issue",
+                                 on_change=reset_page)
+        if sel_issue == "全部期次":
+            sel_title = None
+        else:
+            sel_title = issues[issue_labels.index(sel_issue) - 1][0]
+        st.caption("报刊文本为 Fraktur 字体 OCR，存在 s/f、s/j 字形混淆"
+                   "（Preffe=Presse、Politif=Politik），检索时按标准拼写可能漏召回。")
+    else:
+        sel_title = None
+
+    if category == "专著与档案":
+        labels = [f"{t}（{n} 片段）" for t, n in plain_books]
+        titles = [t for t, _ in plain_books]
+        sel_label = st.selectbox("书目（按片段数排序）", labels,
+                                 key="browse_book", on_change=reset_page)
+        sel_title = titles[labels.index(sel_label)]
+    elif sel_title is None:
+        st.info("当前为「全部期次」。请在上方选择一个具体期次以浏览片段。")
+        st.caption("报刊按期入库，浏览需指定期次。")
+        st.stop()
 
     chunks = load_book_chunks(sel_title)
     chapters = load_chapters(sel_title)

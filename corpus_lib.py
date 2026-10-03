@@ -40,6 +40,7 @@ from config import (
     GLM_API_KEY,
     GLM_BASE_URL,
     GLM_MODEL,
+    PRESS_TITLE_PREFIXES,
     RERANK_MODEL,
     SILICONFLOW_API_KEY,
     SILICONFLOW_BASE_URL,
@@ -121,13 +122,33 @@ def get_bookdata_lookup():
     return {b["title"]: b for b in load_bookdata()}
 
 
+def get_series_lookup():
+    """系列前缀 → bookdata 条目。报刊用法：chunk 的 title 是期号级
+    （"Neue Freie Presse, 1864-09-01"），bookdata 里只有一条系列条目
+    （title="Neue Freie Presse", title_prefix="Neue Freie Presse"）。"""
+    out = {}
+    for b in load_bookdata():
+        p = b.get("title_prefix")
+        if p:
+            out[p] = b
+    return out
+
+
 def get_book_meta(title):
-    """按title反查bookdata.json，找不到时返回占位数据而不是报错"""
+    """按title反查bookdata.json，找不到时返回占位数据而不是报错。
+
+    ★ 两级查找：先精确匹配 title；未命中则按 title_prefix 回退到系列条目
+      （报刊的期号级 title 靠这一步拿到系列级的作者/年代/描述）。
+    """
     meta = get_bookdata_lookup().get(title)
-    if meta is None:
-        return {"title": title, "author": "未知", "year": "未知",
-                "publisher": None, "description": None, "language": "未知"}
-    return meta
+    if meta is not None:
+        return meta
+    t = title or ""
+    for prefix, series in get_series_lookup().items():
+        if t.startswith(prefix):
+            return series
+    return {"title": title, "author": "未知", "year": "未知",
+            "publisher": None, "description": None, "language": "未知"}
 
 
 # ============================================================
@@ -161,12 +182,35 @@ _DOC_PREFIX_RE = re.compile(r"^\[([^\]]{3,100})\]")
 
 
 def format_citation_tag(chunk_meta, text=None):
-    """生成引用标注。
+    """生成引用标注。三类形制：
 
-    档案汇编类（chunk metadata 带 doc_number，且正文首部带 [卷次 · Nr. 编号 · 日期] 前缀）
-    按学术惯例输出「ÖUA VIII, Nr. 10364」形制；其余史料仍为「(作者, 年份, p. 页码)」。
-    该前缀由 ingest_new.py 写入，是判定档案件的可信依据。
+      报刊      「Neue Freie Presse 1864-09-01, S. 2 (Ausland)」
+      档案汇编   「ÖUA VIII, Nr. 10364」   —— 正文带 [卷次 · Nr. 编号 · 日期] 前缀
+      其余史料   「(作者, 年份, p. 页码)」
+
+    报刊判定放在最前：报刊 chunk 也有 doc_number（文章编号 A 2），
+    但正文里没有档案前缀，若不先判会掉进「作者, 年份」分支，
+    而报刊的「作者」是创办人，拿来做引注毫无意义。
     """
+    title = chunk_meta.get("title") or ""
+
+    # ---- 报刊（title 为期号级「系列名, YYYY-MM-DD」）----
+    if is_press_title(title):
+        m = re.match(r"^(?P<series>.+),\s*(?P<date>\d{4}-\d{2}-\d{2})$", title)
+        series = m.group("series") if m else title
+        date = m.group("date") if m else ""
+        # 允许 bookdata 用 citation_name 指定更短的引注名（如 "NFP" / "《新自由报》"）
+        name = get_book_meta(title).get("citation_name") or series
+        cite = name + (" " + date if date else "")
+        page = chunk_meta.get("page_num")
+        if page and page != -1:
+            cite += f", S. {page}"
+        sec = chunk_meta.get("doc_section")
+        if sec and sec != "Artikel":      # "Artikel" 是无栏目时的兜底，不必标
+            cite += f" ({sec})"
+        return cite
+
+    # ---- 档案汇编 ----
     if chunk_meta.get("doc_number"):
         label = None
         if text:
@@ -181,6 +225,8 @@ def format_citation_tag(chunk_meta, text=None):
             if section:
                 cite += f" ({section})"
             return cite
+
+    # ---- 其余史料 ----
     book = get_book_meta(chunk_meta["title"])
     author = book.get("author") or "未知作者"
     year = book.get("year") or "未知年份"
@@ -303,11 +349,28 @@ def rewrite_queries(question, max_queries=3):
 # ============================================================
 # 检索增强：where构建 / 全文 / RRF / rerank（A7/A8/A9）
 # ============================================================
+def is_press_title(title):
+    """判断某个 title 是否属于报刊系列（按期号级 title 的前缀匹配）。"""
+    t = title or ""
+    return any(t.startswith(p) for p in PRESS_TITLE_PREFIXES)
+
+
 def build_where(source_type=None, region=None, lang=None, subfield=None,
-                stance=None, title=None):
+                stance=None, title=None, exclude_press=False, exclude=None):
     """
     构建Chroma where条件。
     region/subfield 支持单值或列表（多选语义=任一匹配，用$or实现）。
+
+    exclude_press=True 时追加 title 前缀否定条件，把报刊挡在检索之外。
+    两条腿（稠密 search_dense / 稀疏 search_sparse）共用同一个 where，
+    所以在这里加一次即可；本地 FTS5 腿不走 where，需在 _meta_matches 里同步。
+
+    exclude：负过滤，{字段名: [要排除的值, ...]}，供「文献查找」模式用。
+      ★ 每个条件都写成 `字段 NOT IN [...] OR 字段 IS NULL`。
+        Milvus 的 NULL 三值逻辑下 `x != 'y'` 对 NULL 行返回 UNKNOWN（不是 TRUE），
+        直接写 not in 会把所有该字段为 NULL 的行一并排除 —— 实测这类行在现有
+        语料里是绝大多数（例如 doc_section 只有 MRP/ÖUA/报刊有值）。
+        加 `or is null` 才是正确的「排除某值」，而不是「排除没这个值的行」。
     """
     conds = []
     if source_type:
@@ -328,6 +391,22 @@ def build_where(source_type=None, region=None, lang=None, subfield=None,
         conds.append({"title": {"$eq": title}})
     if stance:
         conds.append({"stance": {"$eq": stance}})
+    if exclude_press:
+        for p in PRESS_TITLE_PREFIXES:
+            conds.append({"title": {"$not_like": p + "%"}})
+    if exclude:
+        for field, vals in exclude.items():
+            vals = [v for v in (vals or []) if v not in (None, "")]
+            if not vals:
+                continue
+            if field in ("region", "subfield"):
+                # 数组字段：逐个值取反（多个条件 AND = 一个都不许出现）
+                for v in vals:
+                    conds.append({"$or": [{field: {"$not_contains": v}},
+                                          {field: {"$is_null": True}}]})
+            else:
+                conds.append({"$or": [{field: {"$nin": vals}},
+                                      {field: {"$is_null": True}}]})
     if not conds:
         return None
     return conds[0] if len(conds) == 1 else {"$and": conds}
@@ -338,8 +417,27 @@ _FULLTEXT_ERR = None  # 最近一次全文检索失败原因（供开发者模�
 
 
 def _meta_matches(meta, source_type=None, region=None, lang=None, subfield=None,
-                  stance=None, title=None):
-    """Python侧的过滤条件判定，与 build_where 语义一致（供全文腿结果过滤用）"""
+                  stance=None, title=None, exclude_press=False, exclude=None):
+    """Python侧的过滤条件判定，与 build_where 语义一致（供全文腿结果过滤用）。
+
+    ★ exclude_press / exclude 必须与 build_where 同步：本地后端的 FTS5 全文腿
+      拿不到 where 条件（它是直查 sqlite 再在 Python 里过滤），漏了这里就等于
+      本地后端的过滤完全失效。
+    ★ exclude 的语义同样是「排除该值，但保留该字段为 NULL 的行」（见 build_where）。
+    """
+    if exclude_press and is_press_title(meta.get("title")):
+        return False
+    if exclude:
+        for field, vals in exclude.items():
+            vals = [v for v in (vals or []) if v not in (None, "")]
+            if not vals:
+                continue
+            mv = meta.get(field)
+            if field in ("region", "subfield"):
+                if any(v in (mv or []) for v in vals):
+                    return False
+            elif mv is not None and mv in vals:
+                return False
     if source_type and meta.get("source_type") != source_type:
         return False
     if region:
@@ -362,7 +460,8 @@ def _meta_matches(meta, source_type=None, region=None, lang=None, subfield=None,
 
 
 def fulltext_query(query_text, source_type=None, region=None, lang=None, subfield=None,
-                   stance=None, title=None, n_results=10):
+                   stance=None, title=None, n_results=10, exclude_press=False,
+                   exclude=None):
     """
     全文检索腿（A7）：sqlite FTS5（trigram分词器）直查 + Python侧过滤。
     chroma的query_texts API在本collection不可用，故直接查库内FTS表：
@@ -427,7 +526,8 @@ def fulltext_query(query_text, source_type=None, region=None, lang=None, subfiel
     out = []
     for cid in chunk_ids:  # 按FTS相关度顺序输出
         pair = by_cid.get(cid)
-        if pair and _meta_matches(pair[0], source_type, region, lang, subfield, stance, title):
+        if pair and _meta_matches(pair[0], source_type, region, lang, subfield, stance,
+                                  title, exclude_press, exclude):
             out.append(pair)
         if len(out) >= n_results:
             break
@@ -494,7 +594,7 @@ def rerank_documents(query, documents, top_n):
 def search_chunks(query, source_type=None, region=None, lang=None, subfield=None,
                   stance=None, title=None, n_results=10, excluded=None,
                   use_hybrid=True, use_rerank=True, use_rewrite=True,
-                  debug_log=None):
+                  include_press=False, exclude=None, debug_log=None):
     """
     增强版语义检索（app.py tool_search_corpus 与 eval 共用的同源实现）。
 
@@ -502,6 +602,10 @@ def search_chunks(query, source_type=None, region=None, lang=None, subfield=None
     跨查询再次RRF融合 → A8 rerank精排（可降级）→ 过滤excluded → 截断top-n。
 
     region/subfield 可为单值或多值列表；excluded 为chunk_id集合。
+    include_press=False（默认）时把报刊（config.PRESS_TITLE_PREFIXES）挡在
+      检索之外 —— 报刊体量是其余语料的 10 倍以上，默认纳入会稀释结果。
+      是否开启由 **agent** 通过工具参数决定，不是用户开关。
+    exclude：负过滤 {字段: [要排除的值]}，语义见 build_where（NULL 安全）。
     debug_log: 可选回调 debug_log({"title":..., "text":..., "is_json":...})，
     供开发者模式记录检索中间步骤。
     """
@@ -514,7 +618,8 @@ def search_chunks(query, source_type=None, region=None, lang=None, subfield=None
 
     collection = get_collection()
     where = build_where(source_type=source_type, region=region, lang=lang,
-                        subfield=subfield, stance=stance, title=title)
+                        subfield=subfield, stance=stance, title=title,
+                        exclude_press=not include_press, exclude=exclude)
 
     # ---- A9 查询改写：仅中文问题触发 ----
     queries = [query]
@@ -572,7 +677,8 @@ def search_chunks(query, source_type=None, region=None, lang=None, subfield=None
                 else:
                     ft = fulltext_query(q, source_type=source_type, region=region, lang=lang,
                                         subfield=subfield, stance=stance, title=title,
-                                        n_results=cand)
+                                        n_results=cand, exclude_press=not include_press,
+                                        exclude=exclude)
             except Exception as e:
                 _dbg("检索增强 · 全文检索失败", {"query": q, "error": str(e)})
                 ft = []
@@ -806,13 +912,17 @@ def get_corrected_text(unit):
     return fixed
 
 
-def correct_units(units, max_workers=4):
+def correct_units(units, max_workers=4, progress_cb=None):
     """
     并行预修正多个展示单元（只对缓存未命中的单元调用 flash）。
     合并单元按分隔符拆段修正，全部段成功才写入缓存。
     返回本次新修正的单元数。供渲染前批量预热，避免逐条串行等待。
+
+    progress_cb(done, total, key)：某个单元的全部段落都修正完成后回调一次。
+    供调用方做「先出原文、再逐条回填」的实时展示（文献查找模式用），
+    回调异常一律吞掉，绝不影响展示。
     """
-    from concurrent.futures import ThreadPoolExecutor
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
     cache = _load_textfix_cache()
     tasks = []
@@ -836,24 +946,39 @@ def correct_units(units, max_workers=4):
         key, si, seg = item
         return key, si, fix_display_text(seg)
 
+    parts_by_key = dict(tasks)
+    seg_total, seg_done = {}, {}
+    for key, _si, _seg in seg_tasks:
+        seg_total[key] = seg_total.get(key, 0) + 1
+
     fixed_map = {}
+    fixed_n = 0
     workers = min(max_workers, 2) if LIGHT_MODE else max_workers  # 免费glm限流，降低并发
     with ThreadPoolExecutor(max_workers=min(workers, len(seg_tasks))) as ex:
-        for key, si, fixed in ex.map(_work, seg_tasks):
+        futures = [ex.submit(_work, t) for t in seg_tasks]
+        for fut in as_completed(futures):
+            try:
+                key, si, fixed = fut.result()
+            except Exception:
+                # 单段失败：该单元最终判为「不成功」，展示时回退原文（不写缓存）
+                continue
             fixed_map.setdefault(key, {})[si] = fixed
-
-    fixed_n = 0
-    for key, parts in tasks:
-        ok = all(
-            fixed_map.get(key, {}).get(i)
-            for i in range(len(parts))
-            if parts[i].strip()
-        )
-        if ok:
+            seg_done[key] = seg_done.get(key, 0) + 1
+            if seg_done[key] != seg_total.get(key):
+                continue                      # 该单元还有段没回来
+            parts = parts_by_key.get(key) or []
+            if not all(fixed_map.get(key, {}).get(i)
+                       for i in range(len(parts)) if parts[i].strip()):
+                continue
             rebuilt = [fixed_map.get(key, {}).get(i) or parts[i] for i in range(len(parts))]
             with _tf_cache_lock:
                 _load_textfix_cache()[key] = _MERGE_SEP.join(rebuilt)
             fixed_n += 1
+            if progress_cb:
+                try:
+                    progress_cb(fixed_n, len(tasks), key)
+                except Exception:
+                    pass
     if fixed_n:
         _save_textfix_cache()
     return fixed_n

@@ -5290,5 +5290,26 @@
     "needs_review": false,
     "extraction_notes": "TEI-XML 原生数字文本，共 159 个文件（含卷首导论），其中带日期协议 150 份。1927年维也纳司法宫大火致 CMR 系列原始档案部分损毁，无正文的空壳占位须排除在正文入库之外，其元数据可另作负证据索引。",
     "priority_tier": "high"
+  },
+  {
+    "filename": "Neue Freie Presse",
+    "title": "Neue Freie Presse",
+    "author": "Michael Etienne, Max Friedländer (Gründer)",
+    "year": "1864-1939",
+    "language": "德文",
+    "publisher": "Neue Freie Presse, Wien",
+    "page_count": null,
+    "is_scanned": false,
+    "has_bookmarks": false,
+    "bookmark_titles": [],
+    "description": "维也纳自由派日报，1864 年 9 月 1 日创刊，1939 年停刊，是奥匈帝国时期最具影响力的报纸之一。政治上倾向德意志自由派，支持宪政与中央集权。内容含社论、国外通讯（Inland/Ausland 栏目，多带 Wien/Berlin/Paris 等 dateline）、交易所行情（Wiener Börse）、官方公告（Amtliches/Kundmachung）、剧院与文学专栏（Feuilleton）以及大量商业广告（Inserate）。本语料收录其选定期次，按期号入库：chunk 的 title 为「Neue Freie Presse, YYYY-MM-DD」，doc_section 记录栏目（Artikel/Inserate/Amtliches/Impressum/Börse 或真实栏目名），doc_date 为通讯 dateline（≠ 出版日期），chapter_title 为文章标题。★ 文本为 Fraktur 字体的自动 OCR，错误率约 11–14%，全部是字形混淆：s→f/j（Preffe=Presse、Politif=Politik）、k→f、ß→h。阅读与理解不受影响，但按 s 拼写检索可能漏召回；引用时请按语义还原拼写。★ 检索默认排除报刊（体量是其余语料的 10 倍以上），需要时用 include_press=true 显式纳入。",
+    "description_source": "manual",
+    "extraction_confidence": 1.0,
+    "needs_review": false,
+    "extraction_notes": "系列条目：真实数据按期入库，chunk 的 title 为期号级，靠 title_prefix 回退。",
+    "priority_tier": null,
+    "title_prefix": "Neue Freie Presse",
+    "source_category": "press",
+    "is_series": true
   }
 ]

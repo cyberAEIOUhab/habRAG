@@ -11399,5 +11399,20 @@
       "全帝国"
     ],
     "source_type": "primary"
+  },
+  {
+    "title": "Neue Freie Presse",
+    "stance": "不涉及该争论",
+    "granularity": "book",
+    "subfield": [
+      "政治史",
+      "外交史",
+      "经济史"
+    ],
+    "period": "1864-1939",
+    "region": [
+      "全帝国"
+    ],
+    "source_type": "primary"
   }
 ]
